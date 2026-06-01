@@ -1,0 +1,41 @@
+# Internal/sensitive files
+papervale_products.csv
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.sublime-project
+.sublime-workspace
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+
+# Node.js (if used)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build & Temp
+dist/
+build/
+*.tmp
+*.log
+
+# Backup files
+*.bak
+*.backup
+*~

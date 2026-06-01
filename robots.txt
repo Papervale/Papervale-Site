@@ -1,0 +1,29 @@
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+Disallow: /components/
+
+# Point search engines to sitemap
+Sitemap: https://www.papervaletrees.com/sitemap.xml
+
+# Specific rules for common crawlers
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block common spam bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /

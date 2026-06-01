@@ -1,0 +1,985 @@
+# Papervale Trees — AI-Readable Product Catalogue
+# Northern Ireland's first UKISG Certified tree nursery
+# 48 Old Newry Road, Rathfriland, Co. Down, BT34 5BQ
+# Tel: 028 3085 0059 | Email: info@papervaletrees.com
+# Delivering throughout the UK & Ireland | 2-3 Day Tracked Delivery
+# EU Plant Passport: UK/NI 8943 | VAT Reg No. 326849373
+# Last updated: September 2025
+
+## About
+Papervale Trees is Northern Ireland's first UKISG Certified tree nursery, supplying over 300 varieties
+of home-grown, fully traceable trees to home gardeners, landscape architects, and commercial contractors
+across the UK and Ireland. Container-grown stock available all year round. Bareroot/rootball November–March.
+
+## Shop
+URL: https://www.papervaletrees.com/shop.html
+Availability list: https://www.papervaletrees.com/availability.html
+
+## Product Catalogue (758 lines, 263 species)
+Format: Code | Latin Name | Common Name | Pot Size | Height | Price (inc. VAT) | Stock
+
+### ABIES
+  16249 | ABIES alba | European Silver Fir | 3Ltr | 30-50cm | £24.00 | Stock: 45
+  16220 | ABIES concolor | Colorado White Fir | 5Ltr | 40-60cm | £28.50 | Stock: 27
+  12550 | ABIES concolor | Colorado White Fir | 7.5Ltr | 50-75cm | £34.50 | Stock: 3
+  10735 | ABIES fraseri | Fraser Fir | 3Ltr | 75-100cm | £25.50 | Stock: 8
+  11635 | ABIES grandis | Grand Fir | 3Ltr | 90-120cm | £24.00 | Stock: 15
+  14389 | ABIES grandis | Grand Fir | 5Ltr | 100-125cm | £28.50 | Stock: 35
+  12235 | ABIES koreana | Korean Fir | 3Ltr | 50-75cm | £24.00 | Stock: 58
+  12538 | ABIES koreana | Korean Fir | 5Ltr | 50-75cm | £28.50 | Stock: 50
+  15656 | ABIES koreana | Korean Fir | 7.5Ltr | 60-90cm | £34.50 | Stock: 1
+  15657 | ABIES koreana | Korean Fir | 15Ltr | 75-100cm | £45.00 | Stock: 1
+  10736 | ABIES lasiocarpa | Subalpine fir | 5Ltr | 30-50cm | £28.50 | Stock: 3
+  12226 | ABIES nobilis | Noble Fir | 3Ltr | 20-40cm | £22.50 | Stock: 11
+  16237 | ABIES nordmanniana | Nordmann Fir | 3Ltr | 40-60cm | £25.50 | Stock: 95
+  10737 | ABIES nordmanniana | Nordmann Fir | 7.5Ltr | 50-75cm | £37.50 | Stock: 6
+  11916 | ABIES nordmanniana | Nordmann Fir | 45Ltr | 120-150cm | £95.00 | Stock: 1
+  14013 | ABIES nordmanniana | Nordmann Fir | 45Ltr | 150-175cm | £115.00 | Stock: 3
+  12560 | ABIES pinsapo | Spanish Fir | 3Ltr | 20-40cm | £16.50 | Stock: 26
+  10060 | ABIES pinsapo | Spanish Fir | 5Ltr | 30-50cm | £28.50 | Stock: 2
+
+### ACACIA
+  1158 | ACACIA dealbata | Blue Wattle | 3Ltr | 120-140cm | £34.50 | Stock: 10
+  11483 | ACACIA melanoxylon | Australian Blackwood | 20Ltr | 250-300cm | £90.00 | Stock: 19
+
+### ACER
+  16263 | ACER buergerianum | Trident Maple | 5Ltr | 90-120cm | £34.50 | Stock: 11
+  14388 | ACER campestre | Field Maple | 1Ltr | 75-100cm | £6.50 | Stock: 6
+  11707 | ACER campestre | Field Maple | 3Ltr | 90-120cm | £18.00 | Stock: 35
+  10945 | ACER campestre | Field Maple | 12Ltr | 300-350cm | £95.00 | Stock: 12
+  13990 | ACER campestre | Field Maple | 35Ltr | 400-450cm | £195.00 | Stock: 14
+  1149 | ACER campestre 'Elsrijk' | Dutch Field Maple | 12Ltr | 250-300cm | £75.00 | Stock: 9
+  11830 | ACER campestre 'Queen Elizabeth' | Field Maple | 20Ltr | 300-350cm | £85.00 | Stock: 10
+  11743 | ACER campestre 'Red Shine' | Field Maple | 7.5Ltr | 200-250cm | £45.00 | Stock: 7
+  15631 | ACER campestre 'Red Shine' | Field Maple | 12Ltr | 250-300cm | £65.00 | Stock: 5
+  11771 | ACER cappadocicum 'Aureum' | Golden Maple | 5Ltr | 125-150cm | £34.50 | Stock: 15
+  11769 | ACER cappadocicum 'Rubrum' | Red Maple | 5Ltr | 125-150cm | £34.50 | Stock: 15
+  16346 | ACER davidii | Snakebark Maple | 5Ltr | 100-125cm | £34.50 | Stock: 5
+  15638 | ACER davidii | Snakebark Maple | 12Ltr | 200-250cm | £70.00 | Stock: 17
+  10893 | ACER davidii | Snakebark Maple | 12Ltr | 300-350cm | £95.00 | Stock: 1
+  11694 | ACER davidii | Snakebark Maple | 30Ltr | 200-250cm | £185.00 | Stock: 2
+  13993 | ACER freemanii 'Armstrong' | Scarlet Maple | 50Ltr | 500-600cm | £265.00 | Stock: 4
+  11727 | ACER freemanii 'Armstrong' | Scarlet Maple | 50Ltr | 600-700cm | £295.00 | Stock: 3
+  12846 | ACER freemanii 'Autumn Blaze' | Maple | 3Ltr | 90-120cm | £25.50 | Stock: 22
+  15751 | ACER freemanii 'Autumn Blaze' | Maple | 5Ltr | 140-160cm | £34.50 | Stock: 25
+  12311 | ACER freemanii 'Autumn Blaze' | Maple | 5Ltr | 150-200cm | £36.00 | Stock: 2
+  12310 | ACER freemanii 'Autumn Blaze' | Maple | 12Ltr | 250-300cm | £65.00 | Stock: 13
+  11778 | ACER freemanii 'Autumn Blaze' | Maple | 20Ltr | 350-400cm | £95.00 | Stock: 10
+  13785 | ACER freemanii 'Autumn Blaze' | Maple | 35Ltr | 450-500cm | £165.00 | Stock: 8
+  13916 | ACER freemanii 'Autumn Blaze' | Maple | 50Ltr | 500-600cm | £245.00 | Stock: 2
+  13187 | ACER freemanii 'Celebration' | Scarlet Maple | 5Ltr | 90-120cm | £28.50 | Stock: 10
+  11165 | ACER freemanii 'Celebration' | Scarlet Maple | 90Ltr | 600-700cm | £395.00 | Stock: 4
+  1624 | ACER ginnala | Amur Maple | 5Ltr | 75-100cm | £28.50 | Stock: 1
+  15752 | ACER ginnala | Amur Maple | 5Ltr | 100-125cm | £34.50 | Stock: 1
+  11833 | ACER griseum | Paperbark Maple | 7.5Ltr | 150-175cm | £65.00 | Stock: 2
+  16210 | ACER griseum | Paperbark Maple | 20Ltr | 100-125cm | £75.00 | Stock: 19
+  16347 | ACER griseum | Paperbark Maple | 7.5Ltr | 200-250cm | £95.00 | Stock: 1
+  1119 | ACER monspessulanum | Montpelier maple | 12Ltr | 175-200cm | £55.00 | Stock: 6
+  10783 | ACER negundo 'Flamingo' | Box Elder | 3Ltr | 150-175cm | £28.50 | Stock: 1
+  15753 | ACER negundo 'Flamingo' | Box Elder | 5Ltr | 90-120cm | £31.50 | Stock: 15
+  16313 | ACER negundo 'Flamingo' | Box Elder | 12Ltr | 200-250cm | £48.00 | Stock: 5
+  12848 | ACER 'Pacific Sunset' | Norway Maple | 3Ltr | 100-125cm | £25.50 | Stock: 21
+  1121 | ACER palmatum | Japanese Maple | 3Ltr | 90-120cm | £28.50 | Stock: 2
+  16345 | ACER palmatum | Japanese Maple | 5Ltr | 75-100cm | £34.50 | Stock: 30
+  15755 | ACER palmatum 'Bloodgood' | Japanese Maple | 3Ltr | 50-75cm | £28.50 | Stock: 18
+  15759 | ACER palmatum 'Fireglow' | Dwarf Japanese Maple | 3Ltr | 50-75cm | £28.50 | Stock: 10
+  15760 | ACER palmatum 'Orange Dream' | Japanese Maple | 3Ltr | 75-100cm | £28.50 | Stock: 6
+  12333 | ACER palmatum 'Aureum' | Japanese Maple | 7.5Ltr | 90-120cm | £42.00 | Stock: 18
+  15757 | ACER palmatum 'Crimson Queen' | Japanese Maple | 3Ltr | 50-75cm | £28.50 | Stock: 10
+  15761 | ACER palmatum 'Skeeter's Broom' | Japanese Maple | 3Ltr | 50-75cm | £28.50 | Stock: 7
+  16333 | ACER plat. | Norway Maple | 5Ltr | 250-300cm | £45.00 | Stock: 2
+  11613 | ACER plat. | Norway Maple | 20Ltr | 250-300cm | £70.00 | Stock: 7
+  13205 | ACER plat. | Norway Maple | 35Ltr | 350-400cm | £135.00 | Stock: 2
+  13192 | ACER plat. | Norway Maple | 50Ltr | 400-450cm | £195.00 | Stock: 2
+  10950 | ACER plat. | Norway Maple | 70Ltr | 450-500cm | £295.00 | Stock: 1
+  13193 | ACER plat. | Norway Maple | 90Ltr | 450-500cm | £360.00 | Stock: 1
+  1175 | ACER plat. 'Columnare' | Upright Norway Maple | 20Ltr | 250-300cm | £95.00 | Stock: 16
+  12414 | ACER plat. 'Columnare' | Upright Norway Maple | 70Ltr | 450-500cm | £295.00 | Stock: 6
+  10960 | ACER plat. 'Columnare' | Upright Norway Maple | 130Ltr | 500-600cm | £575.00 | Stock: 1
+  12372 | ACER plat. 'Crimson King' | Purple Norway Maple | 2Ltr | 125-150cm | £28.50 | Stock: 10
+  16308 | ACER plat. 'Crimson King' | Purple Norway Maple | 12Ltr | 200-250cm | £55.00 | Stock: 14
+  12143 | ACER plat. 'Crimson Sentry' | Norway Maple | 35Ltr | 300-350cm | £215.00 | Stock: 1
+  10938 | ACER plat. 'Deborah' | Norway Maple | 50Ltr | 450-500cm | £295.00 | Stock: 3
+  1182 | ACER plat. 'Drummondii' | Norway Maple | 20Ltr | 300-350cm | £95.00 | Stock: 2
+  15736 | ACER plat. 'Drummondii' | Norway Maple | 25Ltr | 300-350cm | £95.00 | Stock: 5
+  11195 | ACER plat. 'Drummondii' | Norway Maple | 35Ltr | 350-400cm | £175.00 | Stock: 1
+  12415 | ACER plat. 'Drummondii' | Norway Maple | 35Ltr | 400-450cm | £215.00 | Stock: 1
+  15738 | ACER plat. 'Lorbergii' | Norway Maple | 25Ltr | 250-300cm | £115.00 | Stock: 8
+  12331 | ACER plat. 'Princeton Gold' | Golden Norway Maple | 20Ltr | 250-300cm | £75.00 | Stock: 25
+  10536 | ACER plat. 'Princeton Gold' | Golden Norway Maple | 35Ltr | 400-450cm | £190.00 | Stock: 1
+  12299 | ACER plat. 'Royal Red' | Norway Maple | 12Ltr | 200-250cm | £55.00 | Stock: 9
+  16257 | ACER pseudoplatanus | Sycamore | 5Ltr | 125-150cm | £28.00 | Stock: 28
+  13918 | ACER pseudoplatanus | Sycamore | 25Ltr | 350-400cm | £125.00 | Stock: 3
+  16282 | ACER pseudoplatanus | Sycamore | 35Ltr | 450-500cm | £155.00 | Stock: 4
+  11834 | ACER pseudoplatanus 'Leopoldii' | Variegated Sycamore | 7.5Ltr | 125-150cm | £38.50 | Stock: 2
+  15633 | ACER pseudoplatanus 'Spaethii' | Spaethii Sycamore | 12Ltr | 250-300cm | £70.00 | Stock: 5
+  13185 | ACER pseudoplatanus 'Spaethii' | Spaethii Sycamore | 50Ltr | 400-450cm | £195.00 | Stock: 1
+  16401 | ACER pseudoplatanus 'Spaethii' | Spaethii Sycamore | 70Ltr | 400-500cm | £345.00 | Stock: 1
+  11603 | ACER rubrum 'Fairview Flame' | Canadian Red Maple | 20Ltr | 350-400cm | £120.00 | Stock: 10
+  16217 | ACER rubrum 'October Glory' | Canadian Red Maple | 5Ltr | 75-100cm | £28.50 | Stock: 25
+  11837 | ACER rubrum 'October Glory' | Canadian Red Maple | 5Ltr | 175-200cm | £34.50 | Stock: 16
+  11602 | ACER rubrum 'October Glory' | Canadian Red Maple | 7.5Ltr | 250-300cm | £70.00 | Stock: 2
+  16336 | ACER rubrum 'Red Sunset' | Canadian Red Maple | 25Ltr | 350-400cm | £140.00 | Stock: 1
+  11574 | ACER rubrum 'Red Sunset' | Canadian Red Maple | 90Ltr | 500-600cm | £395.00 | Stock: 1
+  15636 | ACER rubrum 'Sun Valley' | Canadian Red Maple | 12Ltr | 250-300cm | £70.00 | Stock: 1
+  1070 | ACER rubrum 'Sun Valley' | Canadian Red Maple | 35Ltr | 400-500cm | £195.00 | Stock: 3
+  10086 | ACER saccharinum 'Born's Gracious' | Silver Maple | 12Ltr | 250-300cm | £75.00 | Stock: 6
+  13923 | ACER saccharinum 'Born's Gracious' | Silver Maple | 50Ltr | 400-450cm | £155.00 | Stock: 4
+  12849 | ACER saccharinum Pyramidale | Silver Maple | 5Ltr | 125-150cm | £31.50 | Stock: 25
+  15632 | ACER saccharinum Pyramidale | Silver Maple | 25Ltr | 300-350cm | £115.00 | Stock: 2
+  13924 | ACER saccharinum Pyramidale | Silver Maple | 35Ltr | 450-500cm | £165.00 | Stock: 4
+  13925 | ACER saccharinum Pyramidale | Silver Maple | 50Ltr | 500-600cm | £245.00 | Stock: 1
+
+### AESCULUS
+  16266 | AESCULUS hippocastanum | Horse Chestnut | 3Ltr | 60-90cm | £24.00 | Stock: 38
+  11693 | AESCULUS hippocastanum | Horse Chestnut | 3Ltr | 125-150cm | £25.50 | Stock: 12
+  16307 | AESCULUS hippocastanum | Horse Chestnut | 12Ltr | 200-225cm | £55.00 | Stock: 8
+  11059 | AESCULUS hippocastanum 'Laciniata' | Cut Leaf Horse Chestnut | 7.5Ltr | 75-100cm | £45.00 | Stock: 4
+  11773 | AESCULUS indica | Indian Horse Chestnut | 3Ltr | 125-150cm | £28.50 | Stock: 12
+  15762 | AESCULUS x carnea 'Briotii' | Red Horse Chestnut | 5Ltr | 90-120cm | £31.50 | Stock: 18
+  16266 | AESCULUS hippocastanum | Horse Chestnut | 3Ltr | 60-90cm | £24.00 | Stock: 38
+
+### AILANTHUS
+  15720 | AILANTHUS altissima | Tree of Heaven | 3Ltr | 100-125cm | £28.50 | Stock: 1
+
+### ALBIZIA
+  11715 | ALBIZIA julibrissin | Silk Tree | 1Ltr | 20-40cm | £12.00 | Stock: 20
+  1071 | ALBIZIA julibrissin | Silk Tree | 3Ltr | 60-90cm | £25.50 | Stock: 5
+
+### ALNUS
+  16295 | ALNUS cordata | Italian Alder | 5Ltr | 125-150cm | £25.50 | Stock: 1
+  14005 | ALNUS cordata | Italian Alder | 35Ltr | 400-450cm | £160.00 | Stock: 3
+  11706 | ALNUS glutinosa | Common Alder | 3Ltr | 100-125cm | £18.00 | Stock: 13
+  16285 | ALNUS glutinosa | Common Alder | 25Ltr | 450-500cm | £135.00 | Stock: 12
+  11496 | ALNUS glutinosa 'Imperialis' | Cut-Leaf Alder | 5Ltr | 200-250cm | £37.50 | Stock: 1
+  14414 | ALNUS glutinosa 'Imperialis' | Cut-Leaf Alder | 5Ltr | 250-300cm | £65.00 | Stock: 1
+  11604 | ALNUS glutinosa 'Imperialis' | Cut-Leaf Alder | 12Ltr | 300-350cm | £95.00 | Stock: 1
+  11532 | ALNUS glutinosa 'Imperialis' | Cut-Leaf Alder | 20Ltr | 350-400cm | £120.00 | Stock: 1
+  14007 | ALNUS glutinosa 'Imperialis' | Cut-Leaf Alder | 30Ltr | 450-500cm | £235.00 | Stock: 2
+  14415 | ALNUS glutinosa 'Aurea' | Golden Alder | 7.5Ltr | 250-300cm | £70.00 | Stock: 1
+  15763 | ALNUS glutinosa 'Laciniata' | Cut-leaved Common Alder | 3Ltr | 100-125cm | £25.50 | Stock: 12
+  11494 | ALNUS glutinosa 'Laciniata' | Cut-leaved Common Alder | 12Ltr | 250-300cm | £90.00 | Stock: 1
+  12519 | ALNUS incana 'Aurea' | Golden Alder | 5Ltr | 140-160cm | £34.50 | Stock: 10
+  15764 | ALNUS x spaethii | Spaeth's Alder | 5Ltr | 100-125cm | £28.50 | Stock: 25
+  11084 | ALNUS x spaethii | Spaeth's Alder | 35Ltr | 350-400cm | £155.00 | Stock: 10
+
+### AMELANCHIER
+  15765 | AMELANCHIER alnifolia 'Obelisk' | Snowy Mespilus | 3Ltr | 90-120cm | £31.50 | Stock: 24
+  1073 | AMELANCHIER alnifolia 'Obelisk' | Snowy Mespilus | 3Ltr | 125-150cm | £34.50 | Stock: 4
+  10413 | AMELANCHIER canadensis | Serviceberry | 12Ltr | 250-300cm | £60.00 | Stock: 4
+  16228 | AMELANCHIER canadensis 'Prince William' | Canadian Serviceberry | 3Ltr | 75-100cm | £25.50 | Stock: 28
+  12504 | AMELANCHIER lamarckii | Snowy Mespilus | 3Ltr | 75-100cm | £28.50 | Stock: 25
+  16272 | AMELANCHIER lamarckii | Snowy Mespilus | 5Ltr | 125-150cm | £31.50 | Stock: 88
+  11522 | AMELANCHIER lamarckii | Snowy Mespilus | 7.5Ltr | 250-300cm | £75.00 | Stock: 8
+  15654 | AMELANCHIER lamarckii | Snowy Mespilus | 20Ltr | 250-300cm | £85.00 | Stock: 3
+  11523 | AMELANCHIER lamarckii | Snowy Mespilus | 12Ltr | 300-350cm | £110.00 | Stock: 3
+  13927 | AMELANCHIER lamarckii | Snowy Mespilus | 35Ltr | 300-350cm | £160.00 | Stock: 1
+  12517 | AMELANCHIER lamarckii | Snowy Mespilus [m/s] | 5Ltr | 100-125cm | £42.00 | Stock: 49
+  10815 | AMELANCHIER lamarckii | Snowy Mespilus [m/s] | 12Ltr | 140-160cm | £55.00 | Stock: 11
+  11840 | AMELANCHIER 'Robin Hill' | Juneberry | 7.5Ltr | 140-160cm | £34.50 | Stock: 16
+  11065 | AMELANCHIER 'Robin Hill' | Juneberry | 12Ltr | 200-225cm | £60.00 | Stock: 10
+  15655 | AMELANCHIER 'Robin Hill' | Juneberry | 25Ltr | 250-300cm | £95.00 | Stock: 1
+
+### ARALIA
+  11668 | ARALIA elata | Angelica Tree | 3Ltr | 125-150cm | £28.50 | Stock: 16
+  10891 | ARALIA elata | Angelica Tree | 50Ltr | 250-300cm | £165.00 | Stock: 11
+  11667 | ARALIA elata | Angelica Tree | 35Ltr | 200-300cm | £165.00 | Stock: 8
+
+### ARBUTUS
+  1103 | ARBUTUS unedo | Killarney Strawberry Tree | 3Ltr | 50-75cm | £25.50 | Stock: 40
+  12583 | ARBUTUS unedo | Killarney Strawberry Tree | 5Ltr | 175-200cm | £55.00 | Stock: 5
+  11690 | ARBUTUS unedo | Killarney Strawberry Tree | 20Ltr | 120-150cm | £95.00 | Stock: 4
+
+### BAMBOO
+  10092 | BAMBOO pseudosasa 'Japonica' | Bamboo | 20Ltr | 140-160cm | £60.00 | Stock: 5
+
+### BETULA
+  11238 | BETULA albosinensis 'Fascination' | Chinese Red Birch | 12Ltr | 300-350cm | £95.00 | Stock: 7
+  13942 | BETULA albosinensis 'Fascination' | Chinese Red Birch | 50Ltr | 350-400cm | £170.00 | Stock: 2
+  1229 | BETULA albosinensis septentrionalis | Chinese Red Birch | 12Ltr | 250-300cm | £75.00 | Stock: 27
+  14351 | BETULA ermanii | Erman's Birch | 1Ltr | 60-90cm | £6.50 | Stock: 6
+  11717 | BETULA ermanii | Erman's Birch | 3Ltr | 75-100cm | £18.00 | Stock: 29
+  16219 | BETULA nigra | River Birch | 3Ltr | 90-120cm | £25.50 | Stock: 35
+  16258 | BETULA papyrifera | Paper Birch | 5Ltr | 125-150cm | £28.50 | Stock: 75
+  10809 | BETULA papyrifera | Paper Birch [m/s] | 90Ltr | 350-400cm | £285.00 | Stock: 8
+  10785 | BETULA pendula | Silver Birch | 3Ltr | 175-200cm | £22.50 | Stock: 3
+  16302 | BETULA pendula | Silver Birch | 7.5Ltr | 150-175cm | £34.50 | Stock: 11
+  11810 | BETULA pendula | Silver Birch | 35Ltr | 450-500cm | £160.00 | Stock: 29
+  13946 | BETULA pendula | Silver Birch | 70Ltr | 500-550cm | £230.00 | Stock: 13
+  16262 | BETULA pendula | Silver Birch | 90Ltr | 500-550cm | £270.00 | Stock: 13
+  16339 | BETULA pendula | Silver Birch | 90Ltr | 550-600cm | £295.00 | Stock: 6
+  16261 | BETULA pendula | Silver Birch | 90Ltr | 600-700cm | £325.00 | Stock: 1
+  16338 | BETULA pendula | Silver Birch | 230Ltr | 500-600cm | £470.00 | Stock: 1
+  13182 | BETULA pendula | Silver Birch [m/s] | 350Ltr | 500-600cm | £625.00 | Stock: 1
+  11562 | BETULA pendula | Silver Birch [m/s] | 350Ltr | 600-700cm | £750.00 | Stock: 2
+  11841 | BETULA pendula 'Tristis' | Weeping Silver Birch | 12Ltr | 250-300cm | £60.00 | Stock: 8
+  1124 | BETULA pendula 'Fastigiata' | Upright Silver Birch | 3Ltr | 100-125cm | £28.50 | Stock: 20
+  10808 | BETULA pendula 'Fastigiata' | Upright Silver Birch | 12Ltr | 150-175cm | £45.00 | Stock: 11
+  16106 | BETULA pendula 'Fastigiata Joes' | Silver Birch | 3Ltr | 90-120cm | £28.50 | Stock: 20
+  11750 | BETULA pendula 'Fastigiata Joes' | Silver Birch | 20Ltr | 350-400cm | £110.00 | Stock: 31
+  12335 | BETULA pendula 'Youngii' | Young's Weeping Birch | 3Ltr | 125-150cm | £28.50 | Stock: 4
+  13045 | BETULA pendula 'Youngii' | Young's Weeping Birch | 5Ltr | 150-175cm | £37.50 | Stock: 30
+  1260 | BETULA pendula 'Youngii' | Young's Weeping Birch | 12Ltr | 200-250cm | £65.00 | Stock: 3
+  13053 | BETULA pubescens | Downy Birch | 3Ltr | 75-100cm | £18.00 | Stock: 1
+  13054 | BETULA pubescens | Downy Birch | 3Ltr | 120-140cm | £25.50 | Stock: 1
+  16296 | BETULA pubescens | Downy Birch | 5Ltr | 125-150cm | £28.50 | Stock: 16
+  15620 | BETULA pubescens | Downy Birch | 12Ltr | 250-300cm | £70.00 | Stock: 7
+  14455 | BETULA pubescens | Downy Birch | 25Ltr | 400-500cm | £110.00 | Stock: 6
+  11746 | BETULA pubescens | Downy Birch [shrub] | 25Ltr | 200-250cm | £90.00 | Stock: 1
+  15768 | BETULA utilis 'Doorenbos' | Himalayan Birch | 3Ltr | 75-100cm | £25.50 | Stock: 15
+  12374 | BETULA utilis 'Doorenbos' | Himalayan Birch | 3Ltr | 150-175cm | £28.50 | Stock: 5
+  12489 | BETULA utilis 'Doorenbos' | Himalayan Birch [m/s] | 3Ltr | 90-120cm | £34.50 | Stock: 1
+  16277 | BETULA utilis 'Doorenbos' | Himalayan Birch [m/s] | 110Ltr | 300-350cm | £425.00 | Stock: 3
+  11843 | BETULA utilis 'Edinburgh' | Himalayan Birch | 5Ltr | 175-200cm | £31.50 | Stock: 6
+  15628 | BETULA utilis 'Edinburgh' | Himalayan Birch | 25Ltr | 300-350cm | £135.00 | Stock: 7
+  1265 | BETULA utilis jacquemontii | Himalayan Birch | 7.5Ltr | 200-250cm | £48.00 | Stock: 36
+  13046 | BETULA utilis jacquemontii | Himalayan Birch [feathered] | 12Ltr | 150-200cm | £65.00 | Stock: 12
+  10802 | BETULA utilis jacquemontii | Himalayan Birch [m/s] | 5Ltr | 125-150cm | £37.50 | Stock: 2
+  11871 | BETULA utilis 'Nepalese Orange' | Himalayan Birch | 5Ltr | 200-250cm | £48.00 | Stock: 7
+
+### CARPINUS
+  12207 | CARPINUS bet. 'Lucas' | Fastigate Hornbeam [feathered] | 130Ltr | 400-500cm | £425.00 | Stock: 1
+  15769 | CARPINUS bet. 'Fastigiata' | Upright Hornbeam | 3Ltr | 100-125cm | £28.50 | Stock: 24
+  11626 | CARPINUS bet. 'Fastigiata' | Upright Hornbeam | 5Ltr | 150-200cm | £34.50 | Stock: 18
+  1274 | CARPINUS bet. 'Fastigiata' | Upright Hornbeam | 5Ltr | 200-250cm | £65.00 | Stock: 20
+  14425 | CARPINUS bet. 'Fastigiata' | Upright Hornbeam | 20Ltr | 300-350cm | £80.00 | Stock: 1
+  14008 | CARPINUS bet. 'Fastigiata' | Upright Hornbeam | 70Ltr | 450-500cm | £355.00 | Stock: 3
+  12376 | CARPINUS bet. 'Frans Fontaine' | Upright hornbeam | 5Ltr | 200-250cm | £34.50 | Stock: 12
+  15770 | CARPINUS bet. 'Frans Fontaine' | Upright hornbeam | 5Ltr | 125-150cm | £34.50 | Stock: 23
+  1013 | CARPINUS bet. 'Frans Fontaine' | Upright hornbeam | 7.5Ltr | 200-250cm | £37.50 | Stock: 8
+  14011 | CARPINUS bet. 'Frans Fontaine' | Upright hornbeam | 50Ltr | 400-450cm | £270.00 | Stock: 2
+  15726 | CARPINUS bet. 'Frans Fontaine' | Upright Hornbeam [Feathered] | 50Ltr | 400-450cm | £285.00 | Stock: 2
+  11446 | CARPINUS bet. 'Lucas' | Fastigate Hornbeam | 3Ltr | 200-250cm | £31.50 | Stock: 3
+  16315 | CARPINUS bet. 'Lucas' | Fastigate Hornbeam | 5Ltr | 90-120cm | £31.50 | Stock: 25
+  14426 | CARPINUS bet. 'Lucas' | Fastigate Hornbeam | 25Ltr | 300-350cm | £115.00 | Stock: 3
+  1278 | CARPINUS bet. 'Quercifolia' | Oak-leaved Hornbeam | 35Ltr | 300-350cm | £170.00 | Stock: 23
+  15771 | CARPINUS bet. 'Rockhampton Red' | Hornbeam | 3Ltr | 100-125cm | £28.50 | Stock: 45
+  14428 | CARPINUS bet. 'Rockhampton Red' | Hornbeam | 20Ltr | 250-300cm | £95.00 | Stock: 3
+  12241 | CARPINUS betulus | Common Hornbeam | 20Ltr | 200-250cm | £70.00 | Stock: 9
+  12231 | CARPINUS betulus | Common Hornbeam | 50Ltr | 450-500cm | £240.00 | Stock: 3
+  14010 | CARPINUS betulus | Common Hornbeam | 50Ltr | 500-600cm | £345.00 | Stock: 1
+  10104 | CARPINUS betulus | Common Hornbeam | 70Ltr | 350-400cm | £370.00 | Stock: 1
+  14009 | CARPINUS betulus | Common Hornbeam | 70Ltr | 500-600cm | £385.00 | Stock: 1
+  12457 | CARPINUS betulus | Common Hornbeam | 90Ltr | 500-600cm | £495.00 | Stock: 1
+  11757 | CARPINUS betulus | Hornbeam [3/yr pleached] | 90Ltr | 1.8x1.8x1.2m | £495.00 | Stock: 6
+  11590 | CARPINUS betulus | Hornbeam [4/yr pleached] | 90Ltr | 1.8x1.8x1.2m | £595.00 | Stock: 4
+  11761 | CARPINUS betulus | Hornbeam [5/yr pleached] | 230Ltr | 1.8x2x2m | £650.00 | Stock: 1
+  12850 | CARPINUS japonica | Japanese Hornbeam | 3Ltr | 90-120cm | £25.50 | Stock: 30
+  11064 | CARPINUS japonica | Japanese Hornbeam | 12Ltr | 175-200cm | £60.00 | Stock: 1
+  1282 | CARPINUS turczaninowii | Korean Hornbeam | 12Ltr | 75-100cm | £45.00 | Stock: 1
+
+### CARYA
+  16225 | CARYA illinoinensis | Pecan | 3Ltr | 60-90cm | £25.50 | Stock: 28
+  16224 | CARYA ovata | Shagbark Hickory | 3Ltr | 30-50cm | £25.50 | Stock: 35
+
+### CASTANEA
+  16265 | CASTANEA sativa | Sweet Chestnut | 5Ltr | 120-150cm | £34.50 | Stock: 48
+  16265 | CASTANEA sativa | Sweet Chestnut | 5Ltr | 120-150cm | £34.50 | Stock: 48
+
+### CATALPA
+  10885 | CATALPA bignonioides | Indian Bean Tree | 5Ltr | 150-200cm | £34.50 | Stock: 3
+  10884 | CATALPA bignonioides | Indian Bean Tree | 12Ltr | 200-250cm | £55.00 | Stock: 7
+  13952 | CATALPA bignonioides | Indian Bean Tree | 35Ltr | 200-250cm | £145.00 | Stock: 3
+  13953 | CATALPA bignonioides | Indian Bean Tree | 35Ltr | 250-300cm | £175.00 | Stock: 2
+  12586 | CATALPA bignonioides 'Aurea' | Golden Indian Bean Tree | 12Ltr | 150-200cm | £60.00 | Stock: 8
+
+### CEDRUS
+  15774 | CEDRUS atlantica | Atlas Cedar | 3Ltr | 40-60cm | £25.50 | Stock: 26
+  1128 | CEDRUS atlantica | Atlas Cedar | 12Ltr | 100-125cm | £55.00 | Stock: 5
+  15772 | CEDRUS atlantica 'Glauca' | Blue Atlas Cedar | 3Ltr | 60-90cm | £28.50 | Stock: 21
+  12336 | CEDRUS atlantica 'Glauca' | Blue Atlas Cedar | 5Ltr | 90-120cm | £37.50 | Stock: 7
+  10742 | CEDRUS deodara | Deodar Cedar | 3Ltr | 75-100cm | £25.50 | Stock: 12
+  11816 | CEDRUS deodara | Deodar Cedar | 5Ltr | 75-100cm | £31.50 | Stock: 29
+  15775 | CEDRUS libani | Cedar of Lebanon | 3Ltr | 50-75cm | £25.50 | Stock: 20
+  12346 | CEDRUS libani | Cedar of Lebanon | 5Ltr | 60-90cm | £31.50 | Stock: 9
+
+### CELTIS
+  11123 | CELTIS occidentalis | Hackberry | 5Ltr | 150-200cm | £34.50 | Stock: 1
+  10112 | CELTIS sinensis | Chinese Hackberry | 12Ltr | 175-200cm | £60.00 | Stock: 1
+
+### CERCIDIPHYLLUM
+  16107 | CERCIDIPHYLLUM japonicum | Katsura | 3Ltr | 90-120cm | £25.50 | Stock: 33
+  10591 | CERCIDIPHYLLUM japonicum | Katsura | 20Ltr | 300-350cm | £135.00 | Stock: 15
+  11672 | CERCIDIPHYLLUM japonicum | Katsura | 25Ltr | 250-300cm | £140.00 | Stock: 10
+
+### CERCIS
+  11716 | CERCIS siliquastrum | Judas Tree | 1Ltr | 20-40cm | £6.50 | Stock: 48
+  1077 | CERCIS siliquastrum | Judas Tree | 5Ltr | 75-100cm | £28.50 | Stock: 12
+
+### CHITALPA
+  15776 | CHITALPA tashkentensis 'Pink Dawn' | Summer Bells Desert Willow | 3Ltr | 60-90cm | £24.00 | Stock: 20
+  10888 | CHITALPA tashkentensis 'Pink Dawn' | Summer Bells Desert Willow | 45Ltr | 200-300cm | £230.00 | Stock: 4
+
+### CLADRASTIS
+  1293 | CLADRASTIS kentukea | Kentucky Yellow-Wood | 5Ltr | 140-160cm | £37.50 | Stock: 8
+  10116 | CLADRASTIS kentukea | Kentucky Yellow-Wood | 7.5Ltr | 150-175cm | £45.00 | Stock: 8
+
+### CORDYLINE
+  16317 | CORDYLINE australis | Cordyline | 5Ltr | 75-100cm | £25.50 | Stock: 25
+
+### CORNUS
+  16280 | CORNUS controversa | Wedding Cake Tree | 35Ltr | 200-250cm | £170.00 | Stock: 1
+  11697 | CORNUS controversa 'Variegata' | Wedding Cake Tree | 7.5Ltr | 30-50cm | £34.50 | Stock: 2
+  12854 | CORNUS controversa 'Variegata' | Wedding Cake Tree | 3Ltr | 60-80cm | £34.50 | Stock: 1
+  16212 | CORNUS florida | Flowering Dogwood | 3Ltr | 60-90cm | £24.00 | Stock: 45
+  12459 | CORNUS florida 'Cherokee Chief' | Flowering Dogwood | 5Ltr | 30-50cm | £28.50 | Stock: 7
+  13229 | CORNUS kousa 'Milky Way' | Chinese Dogwood | 25Ltr | 100-125cm | £95.00 | Stock: 2
+  15777 | CORNUS kousa 'China Girl' | Flowering Dogwood | 3Ltr | 60-80cm | £31.50 | Stock: 21
+  12454 | CORNUS kousa 'China Girl' | Flowering Dogwood | 25Ltr | 100-125cm | £95.00 | Stock: 4
+  15778 | CORNUS kousa chinensis | Chinese Dogwood | 3Ltr | 75-100cm | £25.50 | Stock: 30
+  12523 | CORNUS kousa chinensis | Chinese Dogwood | 3Ltr | 100-125cm | £28.50 | Stock: 36
+  16064 | CORNUS kousa 'Satomi' | Flowering Dogwood | 3Ltr | 60-90cm | £25.50 | Stock: 17
+  12855 | CORNUS kousa 'White Giant' | Dogwood | 5Ltr | 125-150cm | £37.50 | Stock: 10
+  16283 | CORNUS mas | Cornealian Cherry [bush] | 12Ltr | 200-250cm | £65.00 | Stock: 25
+  10831 | CORNUS mas | Cornealian Cherry [bush] | 25Ltr | 150-200cm | £75.00 | Stock: 5
+  16291 | CORNUS mas | Cornelian Cherry [m/s] | 3Ltr | 90-120cm | £25.50 | Stock: 30
+  12339 | CORNUS wilsoniana | Wilson's dogwood | 45Ltr | 175-200cm | £135.00 | Stock: 2
+
+### CORYLUS
+  11762 | CORYLUS avellana | Hazel [m/s] | 90Ltr | 250-300cm | £225.00 | Stock: 9
+  1130 | CORYLUS avellana 'Contorta' | Contorted Hazel | 3Ltr | 50-75cm | £24.00 | Stock: 3
+  11695 | CORYLUS colurna | Turkish Hazel | 2Ltr | 90-120cm | £18.00 | Stock: 8
+  11597 | CORYLUS colurna | Turkish Hazel | 20Ltr | 250-300cm | £90.00 | Stock: 9
+
+### COTONEASTER
+  13047 | COTONEASTER watereri 'Cornubia' | Cotoneaster | 3Ltr | 100-125cm | £28.50 | Stock: 4
+  12588 | COTONEASTER watereri 'Cornubia' | Cotoneaster | 5Ltr | 175-200cm | £34.50 | Stock: 17
+  11844 | COTONEASTER watereri 'Cornubia' | Cotoneaster | 12Ltr | 175-200cm | £48.00 | Stock: 18
+  14453 | COTONEASTER watereri 'Cornubia' | Cotoneaster | 12Ltr | 250-300cm | £85.00 | Stock: 2
+
+### CRATAEGUS
+  15781 | CRATAEGUS 'Paul's Scarlet' | Midland Hawthorn | 5Ltr | 125-150cm | £34.50 | Stock: 18
+  10920 | CRATAEGUS 'Paul's Scarlet' | Midland Hawthorn | 5Ltr | 250-300cm | £48.00 | Stock: 1
+  10921 | CRATAEGUS 'Paul's Scarlet' | Midland Hawthorn | 12Ltr | 250-300cm | £70.00 | Stock: 2
+  15780 | CRATAEGUS laevigata 'Crimson Cloud' | Midland Hawthorn | 5Ltr | 120-140cm | £34.50 | Stock: 19
+  12379 | CRATAEGUS laevigata 'Crimson Cloud' | Midland Hawthorn | 5Ltr | 140-160cm | £37.50 | Stock: 8
+  11692 | CRATAEGUS laevigata 'Crimson Cloud' | Midland Hawthorn | 12Ltr | 200-250cm | £65.00 | Stock: 4
+  15782 | CRATAEGUS laevigata 'Rosea Flore Pleno' | English Hawthorn | 5Ltr | 120-140cm | £34.50 | Stock: 19
+  12381 | CRATAEGUS laevigata 'Rosea Flore Pleno' | English Hawthorn | 5Ltr | 150-175cm | £37.50 | Stock: 9
+  15649 | CRATAEGUS laevigata 'Rosea Flore Pleno' | English Hawthorn | 12Ltr | 200-250cm | £55.00 | Stock: 2
+  1315 | CRATAEGUS laevigata 'Rosea Flore Pleno' | English Hawthorn | 12Ltr | 300-350cm | £75.00 | Stock: 6
+  13191 | CRATAEGUS monogyna | Hawthorn [m/s] | 12Ltr | 60-90cm | £28.50 | Stock: 2
+  11302 | CRATAEGUS monogyna | Hawthorn [m/s] | 110Ltr | 200-250cm | £240.00 | Stock: 1
+  12856 | CRATAEGUS mordenensis 'Toba' | Hawthorn Tree | 5Ltr | 100-125cm | £31.50 | Stock: 1
+  15650 | CRATAEGUS mordenensis 'Toba' | Hawthorn Tree | 20Ltr | 300-350cm | £85.00 | Stock: 3
+
+### CRATEAGUS
+  12182 | CRATEAGUS monogyna 'Stricta' | Hawthorn | 25Ltr | 300-350cm | £130.00 | Stock: 2
+  14012 | CRATEAGUS monogyna 'Stricta' | Hawthorn | 25Ltr | 300-350cm | £150.00 | Stock: 3
+
+### CUPRESSUS
+  16244 | CUPRESSUS macrocarpa | Monterey Cypress | 3Ltr | 25-50cm | £24.00 | Stock: 14
+  11627 | CUPRESSUS macrocarpa | Monterey Cypress | 20Ltr | 200-250cm | £75.00 | Stock: 17
+  12533 | CUPRESSUS sempervirens 'Stricta' | Italian Cypress | 3Ltr | 60-80cm | £28.50 | Stock: 6
+
+### CYDONIA
+  16152 | CYDONIA oblonga 'Vranja' | Edible Quince | 12Ltr | 150-200cm | £37.50 | Stock: 5
+
+### DAVIDIA
+  11248 | DAVIDIA involucrata | Handkerchief Tree | 3Ltr | 90-120cm | £28.50 | Stock: 18
+  11648 | DAVIDIA involucrata | Handkerchief Tree | 7.5Ltr | 200-250cm | £75.00 | Stock: 9
+  15640 | DAVIDIA involucrata | Handkerchief Tree | 12Ltr | 200-250cm | £80.00 | Stock: 3
+
+### ELAEAGNUS
+  13264 | ELAEAGNUS x ebbingei | Elaeagnus | 7.5Ltr | 175-200cm | £42.00 | Stock: 9
+  16206 | ELAEAGNUS x ebbingei | Elaeagnus [pleached] | 50Ltr | 1.8mx1.2mx1m | £450.00 | Stock: 10
+
+### EUCALYPTUS
+  11146 | EUCALYPTUS dalrympleana | Mountain Gum | 20Ltr | 200-250cm | £90.00 | Stock: 9
+  16230 | EUCALYPTUS gunnii | Cider Gum | 7.5Ltr | 90-120cm | £37.50 | Stock: 43
+  16066 | EUCALYPTUS gunnii 'France Bleu' | Cider Gum | 3Ltr | 90-120cm | £22.50 | Stock: 19
+  11150 | EUCALYPTUS moorei | Narrow-leaved Sally | 12Ltr | 225-250cm | £65.00 | Stock: 4
+  11148 | EUCALYPTUS perriniana | Spinning Gum | 12Ltr | 200-250cm | £65.00 | Stock: 19
+
+### EUONYMUS
+  11845 | EUONYMUS europaeus 'Red Cascade' | Spindleberry | 3Ltr | 150-175cm | £28.50 | Stock: 16
+
+### FAGUS
+  11797 | FAGUS syl. 'Purpurea Pendula' | Weeping Purple Beech | 3Ltr | 50-75cm | £28.50 | Stock: 6
+  1331 | FAGUS syl. 'Asplenifolia' | Fern Leaved Beech | 3Ltr | 75-100cm | £31.50 | Stock: 33
+  14004 | FAGUS syl. 'Asplenifolia' | Fern Leaved Beech | 5Ltr | 90-120cm | £37.50 | Stock: 1
+  12050 | FAGUS syl. 'Atropunicea' | Copper Beech | 2Ltr | 50-75cm | £18.00 | Stock: 22
+  10769 | FAGUS syl. 'Dawyck Gold' | Golden Upright Beech | 3Ltr | 75-100cm | £25.50 | Stock: 11
+  11580 | FAGUS syl. 'Dawyck Gold' | Golden Upright Beech | 90Ltr | 500-550cm | £460.00 | Stock: 1
+  16067 | FAGUS syl. 'Dawyck Green' | Upright Green Beech | 3Ltr | 60-90cm | £28.50 | Stock: 12
+  16402 | FAGUS syl. 'Dawyck Green' | Upright Green Beech | 5Ltr | 150-175cm | £37.50 | Stock: 1
+  14441 | FAGUS syl. 'Dawyck Green' | Upright Green Beech | 12Ltr | 250-300cm | £125.00 | Stock: 3
+  11188 | FAGUS syl. 'Dawyck Green' | Upright Green Beech | 160Ltr | 600-700cm | £695.00 | Stock: 1
+  14002 | FAGUS syl. 'Dawyck Purple' | Upright Purple Beech | 3Ltr | 90-120cm | £28.50 | Stock: 8
+  10772 | FAGUS syl. 'Dawyck Purple' | Upright Purple Beech | 5Ltr | 75-100cm | £31.50 | Stock: 2
+  10771 | FAGUS syl. 'Dawyck Purple' | Upright Purple Beech | 7.5Ltr | 150-175cm | £48.00 | Stock: 3
+  14440 | FAGUS syl. 'Dawyck Purple' | Upright Purple Beech | 12Ltr | 250-300cm | £80.00 | Stock: 1
+  1110 | FAGUS syl. 'Rohan Obelisk' | Upright Rohan Beech | 20Ltr | 250-300cm | £195.00 | Stock: 1
+  11249 | FAGUS syl. 'Tricolor' | Variegated Beech | 5Ltr | 90-120cm | £34.50 | Stock: 1
+  16304 | FAGUS sylvatica | Beech | 2Ltr | 60-90cm | £18.00 | Stock: 180
+  11088 | FAGUS sylvatica | Beech | 20Ltr | 125-150cm | £48.00 | Stock: 1
+  16201 | FAGUS sylvatica | Beech | 20Ltr | 200-250cm | £65.00 | Stock: 32
+  16205 | FAGUS sylvatica | Beech | 25Ltr | 250-300cm | £115.00 | Stock: 2
+  11452 | FAGUS sylvatica | Beech [feathered] | 130Ltr | 400-500cm | £470.00 | Stock: 1
+
+### FARGESIA
+  12334 | FARGESIA robusta formidable | Mountain Bamboo | 5Ltr | 60-90cm | £31.50 | Stock: 18
+
+### FICUS
+  12503 | FICUS 'Brown Turkey' | Fig | 3Ltr | 60-90cm | £18.50 | Stock: 18
+  15785 | FICUS 'Brown Turkey' | Fig | 3Ltr | 30-50cm | £24.00 | Stock: 21
+
+### FRAXINUS
+  16069 | FRAXINUS angustifolia 'Raywood' | Claret Ash | 3Ltr | 100-125cm | £28.50 | Stock: 15
+
+### GINKGO
+  10857 | GINKGO biloba | Maidenhair Tree | 3Ltr | 90-120cm | £25.50 | Stock: 6
+  13276 | GINKGO biloba | Maidenhair Tree | 3Ltr | 40-60cm | £25.50 | Stock: 35
+  16189 | GINKGO biloba | Maidenhair Tree | 5Ltr | 125-150cm | £34.50 | Stock: 22
+  10859 | GINKGO biloba | Maidenhair Tree | 7.5Ltr | 125-150cm | £37.50 | Stock: 3
+  10861 | GINKGO biloba | Maidenhair Tree | 35Ltr | 250-300cm | £170.00 | Stock: 2
+  10860 | GINKGO biloba | Maidenhair Tree | 180Ltr | 500-600cm | £650.00 | Stock: 1
+  11775 | GINKGO biloba 'Blagon' | Maidenhair Tree | 3Ltr | 75-100cm | £28.50 | Stock: 21
+  16188 | GINKGO biloba 'Brivingtetun' | Maidenhair Tree | 3Ltr | 60-90cm | £28.50 | Stock: 15
+  11623 | GINKGO biloba 'Menhir' | Maidenhair Tree | 3Ltr | 60-90cm | £28.50 | Stock: 8
+  12383 | GINKGO biloba 'Princeton Sentry' | Maidenhair Tree | 3Ltr | 75-100cm | £25.50 | Stock: 28
+  1351 | GINKGO biloba 'Princeton Sentry' | Maidenhair Tree | 5Ltr | 75-100cm | £34.50 | Stock: 4
+
+### GLEDITSIA
+  16070 | GLEDITSIA triacanthos 'Sunburst' | Honey Locust | 2Ltr | 75-100cm | £28.50 | Stock: 9
+  12350 | GLEDITSIA triacanthos 'Sunburst' | Honey Locust | 20Ltr | 250-300cm | £75.00 | Stock: 21
+
+### HALESIA
+  15786 | HALESIA carolina | Snowdrop Tree | 3Ltr | 40-60cm | £24.00 | Stock: 7
+  11846 | HALESIA carolina | Snowdrop Tree | 3Ltr | 100-125cm | £28.50 | Stock: 6
+  12341 | HALESIA carolina | Snowdrop Tree | 35Ltr | 200-250cm | £195.00 | Stock: 4
+
+### HAMAMELIS
+  13266 | HAMAMELIS x intermedia 'Diane' | Witch Hazel | 3Ltr | 90-120cm | £28.50 | Stock: 4
+
+### HEPTACODIUM
+  16218 | HEPTACODIUM miconioides | Seven Son Flower | 3Ltr | 75-100cm | £28.50 | Stock: 35
+  16231 | HEPTACODIUM miconioides | Seven Son Flower | 5Ltr | 125-150cm | £45.00 | Stock: 14
+  15668 | HEPTACODIUM miconioides | Seven Son Flower | 35Ltr | 250-300cm | £185.00 | Stock: 2
+
+### HIBISCUS
+  1359 | HIBISCUS syriacus 'Hamabo' | Tree Hollyhock | 3Ltr | 75-100cm | £25.50 | Stock: 5
+  13190 | HIBISCUS syriacus 'Hamabo' | Tree Hollyhock | 25Ltr | 160-180cm | £75.00 | Stock: 1
+
+### ILEX
+  11703 | ILEX aquifolium | Holly [caned] | 12Ltr | 150-200cm | £55.00 | Stock: 7
+  15788 | ILEX aquifolium 'Alaska' | Holly | 3Ltr | 40-60cm | £22.50 | Stock: 17
+  10843 | ILEX aquifolium 'Alaska' | Holly | 3Ltr | 75-100cm | £25.50 | Stock: 61
+  11489 | ILEX 'Golden King' | Variegated Holly | 7.5Ltr | 175-200cm | £75.00 | Stock: 3
+  10841 | ILEX 'Nellie R. Stevens' | Holly | 3Ltr | 60-90cm | £18.00 | Stock: 2
+
+### JUGLANS
+  10701 | JUGLANS nigra | Black Walnut | 3Ltr | 100-125cm | £31.50 | Stock: 1
+  15789 | JUGLANS nigra | Black Walnut | 5Ltr | 100-125cm | £31.50 | Stock: 25
+  14427 | JUGLANS nigra | Black Walnut | 20Ltr | 250-300cm | £85.00 | Stock: 5
+  15790 | JUGLANS regia | Walnut | 5Ltr | 100-125cm | £31.50 | Stock: 37
+  11137 | JUGLANS regia | Walnut | 7.5Ltr | 150-200cm | £55.00 | Stock: 5
+
+### JUNIPERUS
+  15791 | JUNIPERUS scopulorum 'Blue Arrow' | Rocky Mountain Juniper | 3Ltr | 30-50cm | £22.50 | Stock: 21
+  12384 | JUNIPERUS scopulorum 'Blue Arrow' | Rocky Mountain Juniper | 3Ltr | 60-80cm | £24.00 | Stock: 16
+  11089 | JUNIPERUS scopulorum 'Skyrocket' | Rocky Mountain Juniper | 50Ltr | 250-300cm | £145.00 | Stock: 3
+  10332 | JUNIPERUS 'Wichita Blue' | Rocky Mountain Juniper | 50Ltr | 300-350cm | £285.00 | Stock: 1
+
+### KOELREUTERIA
+  15792 | KOELREUTERIA paniculata | Pride of India | 3Ltr | 40-60cm | £24.00 | Stock: 22
+  1371 | KOELREUTERIA paniculata | Pride of India | 12Ltr | 200-250cm | £60.00 | Stock: 3
+
+### LABURNUM
+  11069 | LABURNUM x watereri 'Vossii' | Laburnum | 20Ltr | 250-300cm | £155.00 | Stock: 1
+
+### LAGERSTROEMIA
+  11869 | LAGERSTROEMIA indica 'Rosea' | Crape Myrtle | 7.5Ltr | 140-160cm | £48.00 | Stock: 2
+
+### LARIX
+  12351 | LARIX decidua | European Larch | 3Ltr | 90-120cm | £25.50 | Stock: 9
+  16214 | LARIX decidua | European Larch | 5Ltr | 90-120cm | £28.50 | Stock: 24
+  16216 | LARIX kaempferi | Japanese Larch | 5Ltr | 90-120cm | £28.50 | Stock: 25
+  12541 | LARIX kaempferi | Japanese Larch | 5Ltr | 120-140cm | £31.50 | Stock: 12
+  10734 | LARIX kaempferi | Japanese Larch | 20Ltr | 200-250cm | £75.00 | Stock: 2
+
+### LAURUS
+  11045 | LAURUS nobilis | Bay | 3Ltr | 120-140cm | £28.50 | Stock: 9
+  11043 | LAURUS nobilis | Bay | 7.5Ltr | 175-200cm | £37.50 | Stock: 12
+
+### LIQUIDAMBAR
+  13954 | LIQUIDAMBAR styraciflua | Sweet Gum | 35Ltr | 250-300cm | £145.00 | Stock: 1
+  13955 | LIQUIDAMBAR styraciflua | Sweet Gum | 35Ltr | 300-350cm | £165.00 | Stock: 1
+  12507 | LIQUIDAMBAR styraciflua 'Lane Roberts' | Sweet Gum | 5Ltr | 200-250cm | £45.00 | Stock: 8
+  16306 | LIQUIDAMBAR styraciflua 'Slender Silhouette' | Upright Sweet Gum | 3Ltr | 90-120cm | £28.50 | Stock: 22
+  11166 | LIQUIDAMBAR styraciflua 'Slender Silhouette' | Upright Sweet Gum | 12Ltr | 150-175cm | £70.00 | Stock: 1
+  16259 | LIQUIDAMBAR styraciflua 'Worplesdon' | Sweet Gum | 5Ltr | 125-150cm | £34.50 | Stock: 31
+  11541 | LIQUIDAMBAR styraciflua 'Worplesdon' | Sweet Gum | 20Ltr | 300-350cm | £140.00 | Stock: 1
+
+### LIRIODENDRON
+  16234 | LIRIODENDRON tulipifera | Tulip Tree | 3Ltr | 100-125cm | £25.50 | Stock: 51
+  11095 | LIRIODENDRON tulipifera | Tulip Tree | 5Ltr | 200-250cm | £45.00 | Stock: 5
+  11096 | LIRIODENDRON tulipifera | Tulip Tree | 35Ltr | 150-200cm | £110.00 | Stock: 1
+  15685 | LIRIODENDRON tulipifera | Tulip Tree | 35Ltr | 250-300cm | £135.00 | Stock: 5
+  14000 | LIRIODENDRON tulipifera | Tulip Tree | 35Ltr | 400-450cm | £195.00 | Stock: 2
+  15794 | LIRIODENDRON tulipifera 'Aureomarginatum' | Variegated Tulip Tree | 3Ltr | 90-120cm | £28.50 | Stock: 12
+  12385 | LIRIODENDRON tulipifera 'Aureomarginatum' | Variegated Tulip Tree | 7.5Ltr | 150-175cm | £55.00 | Stock: 2
+  16073 | LIRIODENDRON tulipifera 'Fastigiatum' | Columnar Tulip Tree | 3Ltr | 75-100cm | £28.50 | Stock: 12
+
+### MAGNOLIA
+  16071 | MAGNOLIA 'Galaxy' | Magnolia | 5Ltr | 90-120cm | £34.50 | Stock: 16
+  13957 | MAGNOLIA 'Galaxy' | Magnolia [standard] | 35Ltr | 250-300cm | £145.00 | Stock: 1
+  10140 | MAGNOLIA grandiflora | Evergreen Magnolia | 3Ltr | 90-120cm | £34.50 | Stock: 42
+  10833 | MAGNOLIA kobus | Northern Japanese Magnolia | 3Ltr | 150-175cm | £25.50 | Stock: 2
+  10476 | MAGNOLIA 'Star Wars' | Magnolia | 12Ltr | 175-200cm | £65.00 | Stock: 9
+  1043 | MAGNOLIA stellata | Star Magnolia [m/s] | 3Ltr | 90-120cm | £25.50 | Stock: 35
+  15797 | MAGNOLIA 'Susan' | Magnolia | 5Ltr | 120-140cm | £34.50 | Stock: 25
+  11658 | MAGNOLIA 'Susan' | Magnolia | 5Ltr | 100-125cm | £36.00 | Stock: 6
+  11651 | MAGNOLIA x loebneri 'Leonard Messel' | Magnolia | 5Ltr | 150-200cm | £42.00 | Stock: 7
+  10702 | MAGNOLIA 'Yellow Bird' | Magnolia | 3Ltr | 75-100cm | £28.50 | Stock: 5
+
+### MALUS
+  12307 | MALUS 'Prairie Fire' | Crab Apple | 3Ltr | 125-150cm | £25.50 | Stock: 27
+  11794 | MALUS 'Prairie Fire' | Crab Apple | 12Ltr | 175-200cm | £65.00 | Stock: 5
+  12387 | MALUS baccata 'Columnaris Red' | Columnar Crabapple | 5Ltr | 90-120cm | £28.50 | Stock: 7
+  10142 | MALUS 'Crimson Brilliant' | Flowering Crab Apple | 12Ltr | 175-200cm | £48.00 | Stock: 15
+  16030 | MALUS domestica 'Beauty of Bath' | Apple | 12Ltr | 150-200cm | £37.50 | Stock: 2
+  16278 | MALUS domestica 'Beauty of Bath' | Apple | 20Ltr | 200-250cm | £65.00 | Stock: 9
+  16113 | MALUS domestica 'Braeburn' | Apple | 20Ltr | 200-250cm | £65.00 | Stock: 3
+  16158 | MALUS domestica 'Bramley's Seedling' | Apple | 12Ltr | 150-200cm | £37.50 | Stock: 14
+  16128 | MALUS domestica 'Charles Ross' | Apple | 12Ltr | 150-200cm | £37.50 | Stock: 5
+  16159 | MALUS domestica 'Cox's Orange Pippin' | Apple | 12Ltr | 150-200cm | £37.50 | Stock: 6
+  16130 | MALUS domestica 'Ellison's Orange' | Apple | 12Ltr | 150-200cm | £37.50 | Stock: 5
+  16161 | MALUS domestica 'Elstar' | Apple | 12Ltr | 150-200cm | £37.50 | Stock: 6
+  10147 | MALUS domestica 'Elstar' | Apple | 20Ltr | 200-250cm | £55.00 | Stock: 4
+  16041 | MALUS domestica 'Greensleeves' | Apple | 12Ltr | 150-200cm | £37.50 | Stock: 2
+  16042 | MALUS domestica 'Howgate Wonder' | Apple | 12Ltr | 150-200cm | £37.50 | Stock: 5
+  11724 | MALUS domestica 'Howgate Wonder' | Apple | 20Ltr | 200-250cm | £55.00 | Stock: 2
+  16045 | MALUS domestica 'James Grieve' | Apple | 12Ltr | 150-200cm | £37.50 | Stock: 5
+  16164 | MALUS domestica 'Jonagold' | Apple | 12Ltr | 150-200cm | £37.50 | Stock: 8
+  16165 | MALUS domestica Katja | Katy Apple | 12Ltr | 150-200cm | £37.50 | Stock: 6
+  16091 | MALUS domestica 'Laxton's Superb' | Apple | 12Ltr | 150-200cm | £37.50 | Stock: 5
+  10150 | MALUS domestica 'Laxton's Superb' | Apple | 20Ltr | 200-250cm | £55.00 | Stock: 1
+  16167 | MALUS domestica 'Red Devil' | Apple | 12Ltr | 150-200cm | £37.50 | Stock: 6
+  16168 | MALUS domestica 'Rode Jonathan' | Red Apple | 12Ltr | 150-200cm | £37.50 | Stock: 9
+  16181 | MALUS domestica 'Scrumptious' | Apple | 12Ltr | 150-200cm | £37.50 | Stock: 5
+  16169 | MALUS domestica 'Spartan' | Apple | 12Ltr | 150-200cm | £37.50 | Stock: 3
+  11731 | MALUS domestica 'Spartan' | Apple | 20Ltr | 200-250cm | £55.00 | Stock: 2
+  16132 | MALUS domestica 'Summerred' | Apple | 12Ltr | 150-200cm | £37.50 | Stock: 5
+  16134 | MALUS domestica 'Worcester Pearmain' | Apple | 12Ltr | 150-200cm | £37.50 | Stock: 7
+  12534 | MALUS 'Evereste' | Flowering Crab Apple | 3Ltr | 140-160cm | £28.50 | Stock: 7
+  13040 | MALUS 'Evereste' | Flowering Crab Apple | 5Ltr | 120-140cm | £34.50 | Stock: 24
+  14390 | MALUS 'Evereste' | Flowering Crab Apple | 20Ltr | 200-250cm | £70.00 | Stock: 1
+  15725 | MALUS 'Evereste' | Flowering Crab Apple | 25Ltr | 300-350cm | £135.00 | Stock: 1
+  13958 | MALUS 'Evereste' | Flowering Crab Apple | 35Ltr | 300-350cm | £165.00 | Stock: 1
+  12295 | MALUS 'Evereste' | Flowering Crab Apple | 90Ltr | 300-350cm | £280.00 | Stock: 1
+  13041 | MALUS 'Golden Hornet' | Flowering Crab Apple | 5Ltr | 125-150cm | £34.50 | Stock: 11
+  10163 | MALUS 'Golden Hornet' | Flowering Crab Apple | 20Ltr | 200-250cm | £65.00 | Stock: 2
+  11255 | MALUS 'John Downie' | Flowering Crab Apple | 5Ltr | 150-175cm | £36.00 | Stock: 1
+  11689 | MALUS 'John Downie' | Flowering Crab Apple | 20Ltr | 250-300cm | £125.00 | Stock: 9
+  11600 | MALUS 'John Downie' | Flowering Crab Apple | 35Ltr | 300-350cm | £145.00 | Stock: 18
+  1398 | MALUS 'Profusion' | Flowering Crab Apple | 5Ltr | 175-200cm | £34.50 | Stock: 10
+  12355 | MALUS 'Red Sentinel' | Flowering Crab Apple | 12Ltr | 200-225cm | £55.00 | Stock: 9
+  14391 | MALUS 'Red Sentinel' | Flowering Crab Apple | 20Ltr | 250-300cm | £75.00 | Stock: 3
+  11533 | MALUS 'Red Sentinel' | Flowering Crab Apple | 25Ltr | 250-300cm | £115.00 | Stock: 5
+  13200 | MALUS 'Red Sentinel' | Flowering Crab Apple | 35Ltr | 400-450cm | £185.00 | Stock: 1
+  12294 | MALUS 'Red Sentinel' | Flowering Crab Apple | 90Ltr | 300-350cm | £260.00 | Stock: 1
+  11822 | MALUS 'Royalty' | Flowering Crab Apple | 20Ltr | 250-300cm | £125.00 | Stock: 2
+  13042 | MALUS 'Rudolph' | Flowering Crab Apple | 2Ltr | 100-125cm | £22.50 | Stock: 12
+  11847 | MALUS 'Rudolph' | Flowering Crab Apple | 7.5Ltr | 175-200cm | £45.00 | Stock: 12
+  11256 | MALUS 'Rudolph' | Flowering Crab Apple | 12Ltr | 200-225cm | £65.00 | Stock: 2
+  11691 | MALUS 'Rudolph' | Flowering Crab Apple | 20Ltr | 250-300cm | £125.00 | Stock: 10
+  11347 | MALUS sylvestris | Apple | 12Ltr | 250-300cm | £55.00 | Stock: 4
+  10928 | MALUS trilobata | Flowering Crab | 5Ltr | 125-150cm | £37.50 | Stock: 2
+  13959 | MALUS trilobata | Flowering Crab | 35Ltr | 350-400cm | £180.00 | Stock: 1
+  1407 | MALUS trilobata | Flowering Crab | 35Ltr | 300-350cm | £235.00 | Stock: 1
+
+### MESPILUS
+  1081 | MESPILUS germanica | Medlar | 3Ltr | 100-125cm | £28.50 | Stock: 12
+
+### METASEQUOIA
+  11629 | METASEQUOIA glytostroboides | Dawn Redwood | 20Ltr | 175-200cm | £65.00 | Stock: 5
+  11594 | METASEQUOIA glytostroboides | Dawn Redwood | 12Ltr | 250-300cm | £90.00 | Stock: 6
+  15740 | METASEQUOIA glytostroboides | Dawn Redwood | 35Ltr | 300-350cm | £180.00 | Stock: 1
+  10848 | METASEQUOIA glytostroboides | Dawn Redwood | 130Ltr | 500-600cm | £650.00 | Stock: 2
+
+### MORUS
+  12356 | MORUS alba | White Mulberry | 3Ltr | 90-120cm | £18.00 | Stock: 25
+  15798 | MORUS alba | White Mulberry | 3Ltr | 75-100cm | £24.00 | Stock: 60
+  16075 | MORUS kagayamae | Japanese Mulberry | 5Ltr | 140-160cm | £37.50 | Stock: 17
+  15799 | MORUS nigra | Black Mulberry | 3Ltr | 75-100cm | £24.00 | Stock: 24
+
+### NOTHOFAGUS
+  16254 | NOTHOFAGUS antarctica | Antarctic Beech | 3Ltr | 75-100cm | £28.50 | Stock: 29
+  11799 | NOTHOFAGUS procera | Beech | 2Ltr | 60-90cm | £16.50 | Stock: 2
+
+### NYSSA
+  1111 | NYSSA sylvatica | Tupelo | 3Ltr | 90-120cm | £31.50 | Stock: 5
+  12389 | NYSSA sylvatica | Tupelo | 5Ltr | 140-160cm | £37.50 | Stock: 45
+  12342 | NYSSA sylvatica | Tupelo | 35Ltr | 125-150cm | £120.00 | Stock: 3
+
+### OSTRYA
+  11075 | OSTRYA carpinifolia | Hop Hornbeam | 12Ltr | 200-250cm | £65.00 | Stock: 14
+  14443 | OSTRYA carpinifolia | Hop Hornbeam | 12Ltr | 250-300cm | £80.00 | Stock: 5
+  11076 | OSTRYA carpinifolia | Hop Hornbeam | 20Ltr | 300-350cm | £95.00 | Stock: 1
+
+### PARROTIA
+  14418 | PARROTIA persica | Persian Ironwood Tree | 12Ltr | 200-250cm | £85.00 | Stock: 1
+  16343 | PARROTIA persica | Persian Ironwood [Shrub] | 5Ltr | 60-90cm | £31.50 | Stock: 30
+  16300 | PARROTIA persica 'Persian Spire' | Persian Ironwood | 3Ltr | 50-75cm | £25.50 | Stock: 20
+  11764 | PARROTIA persica 'Persian Spire' | Persian Ironwood | 3Ltr | 75-100cm | £37.50 | Stock: 10
+  15800 | PARROTIA persica 'Vanessa' | Persian Ironwood | 3Ltr | 75-100cm | £28.50 | Stock: 32
+  16240 | PARROTIA persica 'Vanessa' | Persian Ironwood | 7.5Ltr | 175-200cm | £60.00 | Stock: 15
+
+### PAULOWNIA
+  1084 | PAULOWNIA tomentosa | Foxglove Tree | 3Ltr | 75-100cm | £28.50 | Stock: 2
+  15680 | PAULOWNIA tomentosa | Foxglove Tree | 25Ltr | 200-300cm | £125.00 | Stock: 13
+
+### PHELLODENDRON
+  16236 | PHELLODENDRON amurense | Amur cork tree | 3Ltr | 60-90cm | £24.00 | Stock: 28
+
+### PICEA
+  10855 | PICEA abies | Norway Spruce | 3Ltr | 75-100cm | £25.50 | Stock: 41
+  15659 | PICEA abies | Norway Spruce | 12Ltr | 120-140cm | £45.00 | Stock: 1
+  11591 | PICEA abies | Norway Spruce | 130Ltr | 350-400cm | £245.00 | Stock: 2
+  15705 | PICEA glauca var. albertiana 'Conica' | Dwarf Alberta Spruce | 5Ltr | 30-40cm | £25.50 | Stock: 25
+  16213 | PICEA omorika | Serbian Spruce | 3Ltr | 40-60cm | £24.00 | Stock: 35
+  16247 | PICEA pungens glauca | Colorado Blue Spruce | 3Ltr | 40-60cm | £24.00 | Stock: 35
+  11637 | PICEA sitchensis | Sitka Spruce | 3Ltr | 120-140cm | £24.00 | Stock: 19
+  16312 | PICEA sitchensis | Sitka Spruce | 7.5Ltr | 150-175cm | £37.50 | Stock: 17
+
+### PINUS
+  11805 | PINUS armandii | Chinese White Pine | 3Ltr | 50-75cm | £22.50 | Stock: 33
+  1430 | PINUS contorta | Lodgepole Pine | 7.5Ltr | 150-200cm | £55.00 | Stock: 14
+  12516 | PINUS halepensis | Aleppo Pine | 5Ltr | 90-120cm | £28.50 | Stock: 9
+  11625 | PINUS mugo mughus | Dwarf Mountain Pine | 3Ltr | 40-60cm | £24.00 | Stock: 42
+  15663 | PINUS mugo mughus | Dwarf Mountain Pine | 20Ltr | 120-140cm | £55.00 | Stock: 2
+  12564 | PINUS mugo subsp. uncinata | Mountain Pine | 12Ltr | 40-60cm | £34.50 | Stock: 1
+  12565 | PINUS mugo subsp. uncinata | Mountain Pine | 5Ltr | 60-90cm | £34.50 | Stock: 10
+  15801 | PINUS nigra | Black Pine | 5Ltr | 60-90cm | £25.50 | Stock: 25
+  11857 | PINUS nigra | Black Pine | 5Ltr | 90-120cm | £31.50 | Stock: 21
+  15664 | PINUS nigra laricio | Corsican Pine | 7.5Ltr | 175-200cm | £48.00 | Stock: 11
+  10750 | PINUS pinaster | Maritime Pine | 5Ltr | 90-120cm | £31.50 | Stock: 10
+  15625 | PINUS pinaster | Maritime Pine | 20Ltr | 200-250cm | £90.00 | Stock: 10
+  15802 | PINUS pinea | Stone Pine | 3Ltr | 50-75cm | £25.50 | Stock: 9
+  16326 | PINUS ponderosa | Western Yellow Pine | 3Ltr | 30-50cm | £25.50 | Stock: 50
+  15803 | PINUS radiata | Monterey Pine | 5Ltr | 30-50cm | £28.50 | Stock: 3
+  11710 | PINUS strobus | Weymouth Pine | 3Ltr | 90-120cm | £24.00 | Stock: 55
+  11826 | PINUS strobus | Weymouth Pine | 5Ltr | 90-120cm | £28.50 | Stock: 35
+  11858 | PINUS sylvestris | Scots Pine | 3Ltr | 90-120cm | £25.50 | Stock: 43
+  16197 | PINUS sylvestris | Scots Pine | 5Ltr | 75-100cm | £28.50 | Stock: 10
+  15665 | PINUS sylvestris | Scots Pine | 12Ltr | 120-150cm | £45.00 | Stock: 3
+  10600 | PINUS sylvestris | Scots Pine | 110Ltr | 350-400cm | £425.00 | Stock: 2
+  11752 | PINUS sylvestris | Scots Pine [c/s] | 130Ltr | 400-450cm | £495.00 | Stock: 2
+  10173 | PINUS tabuliformis | Chinese Red Pine | 5Ltr | 100-125cm | £34.50 | Stock: 7
+  10753 | PINUS wallichiana | Bhutan Pine | 3Ltr | 50-75cm | £28.50 | Stock: 80
+  12542 | PINUS wallichiana | Bhutan Pine | 5Ltr | 75-100cm | £31.50 | Stock: 48
+
+### PLATANUS
+  12525 | PLATANUS orientalis | Oriental Plane | 3Ltr | 120-150cm | £28.50 | Stock: 16
+  1458 | PLATANUS orientalis | Oriental Plane | 7.5Ltr | 175-200cm | £55.00 | Stock: 1
+  13960 | PLATANUS orientalis | Oriental Plane | 35Ltr | 300-350cm | £195.00 | Stock: 3
+  11091 | PLATANUS orientalis | Oriental Plane [bush] | 20Ltr | 175-200cm | £70.00 | Stock: 2
+  12494 | PLATANUS x hispanica | London Plane | 3Ltr | 60-90cm | £18.00 | Stock: 8
+  10756 | PLATANUS x hispanica | London Plane | 12Ltr | 200-250cm | £55.00 | Stock: 23
+  13961 | PLATANUS x hispanica | London Plane | 50Ltr | 350-400cm | £175.00 | Stock: 6
+  11510 | PLATANUS x hispanica | London Plane | 90Ltr | 500-600cm | £330.00 | Stock: 1
+
+### POPULUS
+  16289 | POPULUS alba | White Poplar | 7.5Ltr | 200-250cm | £45.00 | Stock: 15
+  16324 | POPULUS canescens 'Koster' | Grey Poplar | 35Ltr | 500-600cm | £155.00 | Stock: 2
+  15810 | POPULUS tremula 'Erecta' | Upright Aspen | 5Ltr | 100-125cm | £28.50 | Stock: 12
+  11607 | POPULUS tremula 'Erecta' | Upright Aspen | 15Ltr | 250-300cm | £85.00 | Stock: 6
+
+### PRUNUS
+  11851 | PRUNUS 'Amanogawa' | Upright Flowering Cherry | 12Ltr | 200-250cm | £55.00 | Stock: 4
+  12186 | PRUNUS 'Amanogawa' | Upright Flowering Cherry | 25Ltr | 250-300cm | £110.00 | Stock: 1
+  11544 | PRUNUS avium | Wild Cherry | 35Ltr | 450-500cm | £165.00 | Stock: 4
+  16108 | PRUNUS avium 'Plena' | Flowering Cherry | 5Ltr | 100-125cm | £34.50 | Stock: 29
+  11514 | PRUNUS avium 'Plena' | Flowering Cherry | 130Ltr | 500-600cm | £485.00 | Stock: 1
+  11582 | PRUNUS avium 'Plena' | Flowering Cherry | 230Ltr | 500-600cm | £650.00 | Stock: 2
+  11875 | PRUNUS cer. 'Crimson Pointe' | Upright Cherry Plum | 12Ltr | 175-200cm | £48.00 | Stock: 10
+  15746 | PRUNUS cer. 'Crimson Pointe' | Upright Cherry Plum | 70Ltr | 550-600cm | £365.00 | Stock: 2
+  10963 | PRUNUS cerasifera 'Nigra' | Purple Leaf Plum | 7.5Ltr | 175-200cm | £48.00 | Stock: 1
+  14397 | PRUNUS cerasifera 'Nigra' | Purple Leaf Plum | 12Ltr | 175-200cm | £60.00 | Stock: 2
+  10643 | PRUNUS cerasifera 'Nigra' | Purple Leaf Plum | 25Ltr | 300-350cm | £115.00 | Stock: 12
+  15812 | PRUNUS cerasifera 'Pissardii' | Cherry Plum | 5Ltr | 140-160cm | £34.50 | Stock: 25
+  16140 | PRUNUS d. 'Merryweather Damson' | Fruiting Cherry | 12Ltr | 150-200cm | £24.00 | Stock: 9
+  16174 | PRUNUS domestica 'Czar' | Plum | 12Ltr | 150-200cm | £37.50 | Stock: 9
+  16173 | PRUNUS domestica 'Opal' | Opal Plum | 12Ltr | 150-200cm | £37.50 | Stock: 6
+  16276 | PRUNUS domestica 'Reine Claude d'Oullins' | Greengage Plum | 12Ltr | 150-200cm | £37.50 | Stock: 9
+  16175 | PRUNUS domestica 'Victoria' | Plum | 12Ltr | 150-200cm | £37.50 | Stock: 9
+  16118 | PRUNUS domestica 'Victoria' | Plum | 20Ltr | 200-250cm | £65.00 | Stock: 11
+  11108 | PRUNUS domestica 'Victoria' | Plum | 110Ltr | 400-450cm | £450.00 | Stock: 2
+  16340 | PRUNUS Hybrid 'Shogetsu' | Blushing Bride Cherry | 180Ltr | 400-450cm | £650.00 | Stock: 1
+  12591 | PRUNUS 'Kiku-shidare-zakura' | Cheal's Weeping Cherry | 12Ltr | 200-225cm | £55.00 | Stock: 7
+  16290 | PRUNUS l. 'Novita' | Cherry Laurel [standard] | 70Ltr | 350-400cm | £345.00 | Stock: 10
+  16269 | PRUNUS 'Okame' | Flowering Cherry | 3Ltr | 90-120cm | £28.50 | Stock: 5
+  11542 | PRUNUS padus | Bird Cherry | 35Ltr | 350-400cm | £165.00 | Stock: 1
+  16079 | PRUNUS padus 'Canada Red' | Bird Cherry | 12Ltr | 200-250cm | £60.00 | Stock: 7
+  16314 | PRUNUS padus 'Canada Red' | Bird Cherry | 20Ltr | 250-300cm | £110.00 | Stock: 6
+  15734 | PRUNUS padus 'Canada Red' | Bird Cherry | 35Ltr | 350-400cm | £165.00 | Stock: 6
+  16081 | PRUNUS ser. 'Royal Burgundy' | Flowering Cherry | 3Ltr | 60-90cm | £25.50 | Stock: 9
+  12590 | PRUNUS serr. 'Fugenzo' | Flowering Cherry | 20Ltr | 200-250cm | £65.00 | Stock: 9
+  11189 | PRUNUS serrula 'Tibetica' | Tibetan Cherry | 70Ltr | 300-350cm | £395.00 | Stock: 1
+  12203 | PRUNUS serrula 'Tibetica' | Tibetan Cherry [m/s] | 180Ltr | 300-350cm | £595.00 | Stock: 1
+  16242 | PRUNUS serrulata 'Kanzan' | Pink Flowering Cherry Blossom | 3Ltr | 75-100cm | £28.50 | Stock: 10
+  12589 | PRUNUS serrulata 'Kanzan' | Pink Flowering Cherry Blossom | 20Ltr | 200-250cm | £60.00 | Stock: 10
+  13198 | PRUNUS serrulata 'Kanzan' | Pink Flowering Cherry Blossom | 50Ltr | 400-450cm | £285.00 | Stock: 2
+  12543 | PRUNUS serrulata 'Tai Haku' | Great White Cherry | 3Ltr | 90-120cm | £28.50 | Stock: 28
+  16171 | PRUNUS 'Stella' | Fruiting Cherry | 12Ltr | 150-200cm | £37.50 | Stock: 4
+  16172 | PRUNUS 'Sunburst' | Fruiting Cherry | 12Ltr | 150-200cm | £37.50 | Stock: 6
+  16044 | PRUNUS 'Sunset Boulevard' | White Flowering Cherry | 3Ltr | 60-90cm | £25.50 | Stock: 9
+  12584 | PRUNUS 'Sunset Boulevard' | White Flowering Cherry | 20Ltr | 250-300cm | £75.00 | Stock: 12
+  13966 | PRUNUS 'Sunset Boulevard' | White Flowering Cherry | 35Ltr | 400-450cm | £195.00 | Stock: 1
+  1496 | PRUNUS 'Umineko' | Upright Flowering Cherry | 35Ltr | 300-350cm | £165.00 | Stock: 6
+  15647 | PRUNUS x subhirtella 'Autumnalis' | Winter Flowering Cherry | 12Ltr | 250-300cm | £70.00 | Stock: 2
+  13188 | PRUNUS x subhirtella 'Autumnalis' | Winter Flowering Cherry | 230Ltr | 400-500cm | £540.00 | Stock: 1
+  11470 | PRUNUS x subhirtella 'Autumnalis Rosea' | Winter Flowering Cherry | 35Ltr | 300-350cm | £165.00 | Stock: 7
+
+### PSEUDOTSUGA
+  11641 | PSEUDOTSUGA menziesii | Douglas Fir | 5Ltr | 100-125cm | £24.00 | Stock: 19
+
+### PTEROCARYA
+  11714 | PTEROCARYA fraxinifolia | Caucasian Wingnut | 3Ltr | 60-90cm | £16.50 | Stock: 3
+  16337 | PTEROCARYA fraxinifolia | Caucasian Wingnut | 7.5Ltr | 175-200cm | £45.00 | Stock: 25
+  15692 | PTEROCARYA fraxinifolia | Caucasian Wingnut | 12Ltr | 200-250cm | £65.00 | Stock: 1
+
+### PYRUS
+  11801 | PYRUS calleryana | Callery Pear | P9 | 50-75cm | £6.50 | Stock: 16
+  12396 | PYRUS calleryana 'Chanticleer' | Ornamental Pear | 2Ltr | 90-120cm | £28.50 | Stock: 20
+  16046 | PYRUS calleryana 'Chanticleer' | Ornamental Pear | 5Ltr | 125-150cm | £34.50 | Stock: 14
+  15648 | PYRUS calleryana 'Chanticleer' | Ornamental Pear | 20Ltr | 300-350cm | £75.00 | Stock: 21
+  16334 | PYRUS calleryana 'Chanticleer' | Ornamental Pear | 35Ltr | 350-400cm | £160.00 | Stock: 2
+  13968 | PYRUS calleryana 'Chanticleer' | Ornamental Pear | 50Ltr | 350-400cm | £295.00 | Stock: 12
+  16176 | PYRUS communis 'Beurre Hardy' | Pear | 12Ltr | 150-200cm | £37.50 | Stock: 4
+  16179 | PYRUS communis 'Concorde' | Concorde Pear | 12Ltr | 150-200cm | £37.50 | Stock: 2
+  13050 | PYRUS communis 'Conference' | Pear | 7.5Ltr | 90-120cm | £34.50 | Stock: 10
+  16177 | PYRUS communis 'Conference' | Pear | 12Ltr | 150-200cm | £37.50 | Stock: 5
+  16124 | PYRUS communis 'Conference' | Pear | 25Ltr | 275-300cm | £85.00 | Stock: 4
+  16126 | PYRUS communis 'Williams' | Williams Pear | 20Ltr | 200-250cm | £65.00 | Stock: 5
+  16148 | PYRUS domestica 'Doyenne du Comice' | Comice Pear | 12Ltr | 150-200cm | £37.50 | Stock: 1
+  12349 | PYRUS pyrifolia 'Chojuro' | Asian Pear | 35Ltr | 300-350cm | £155.00 | Stock: 1
+  1645 | PYRUS salicifolia 'Pendula' | Weeping Silver Pear | 20Ltr | 200-250cm | £80.00 | Stock: 6
+
+### QUERCUS
+  16047 | QUERCUS acutissima | Sawtooth Oak | 3Ltr | 90-120cm | £28.50 | Stock: 34
+  13972 | QUERCUS acutissima | Sawtooth Oak | 35Ltr | 300-350cm | £195.00 | Stock: 2
+  11852 | QUERCUS bicolor | Swamp White Oak | 3Ltr | 90-120cm | £28.50 | Stock: 31
+  11041 | QUERCUS bicolor | Swamp White Oak | 5Ltr | 125-150cm | £34.50 | Stock: 3
+  16083 | QUERCUS buckleyi | Texas Red Oak | 5Ltr | 125-150cm | £31.50 | Stock: 24
+  16048 | QUERCUS castaneifolia 'Green Spire' | Upright Chestnut-Leaved Oak | 3Ltr | 75-100cm | £28.50 | Stock: 12
+  12397 | QUERCUS cerris | Turkey Oak | 3Ltr | 100-125cm | £28.50 | Stock: 25
+  16335 | QUERCUS cerris | Turkey Oak | 12Ltr | 250-300cm | £95.00 | Stock: 1
+  12420 | QUERCUS cerris | Turkey Oak | 35Ltr | 400-450cm | £160.00 | Stock: 4
+  12418 | QUERCUS cerris | Turkey Oak | 50Ltr | 350-400cm | £175.00 | Stock: 1
+  16342 | QUERCUS cerris | Turkey Oak | 35Ltr | 400-500cm | £190.00 | Stock: 2
+  13991 | QUERCUS cerris | Turkey Oak | 50Ltr | 400-450cm | £225.00 | Stock: 2
+  11853 | QUERCUS coccinea | Scarlet Oak | 3Ltr | 50-75cm | £25.50 | Stock: 6
+  16316 | QUERCUS coccinea | Scarlet Oak | 12Ltr | 300-350cm | £65.00 | Stock: 3
+  11673 | QUERCUS falcata 'Pagodifolia' | Cherrybark Red Oak | 5Ltr | 150-200cm | £37.50 | Stock: 20
+  13261 | QUERCUS frainetto | Hungarian Oak | 5Ltr | 100-125cm | £34.50 | Stock: 7
+  11823 | QUERCUS frainetto | Hungarian Oak | 7.5Ltr | 175-200cm | £60.00 | Stock: 4
+  10214 | QUERCUS glauca | Japanese Blue Oak | 5Ltr | 100-150cm | £37.50 | Stock: 4
+  13268 | QUERCUS ilex | Holm Oak | 3Ltr | 30-50cm | £25.50 | Stock: 28
+  12398 | QUERCUS ilex | Holm Oak | 3Ltr | 120-140cm | £28.50 | Stock: 70
+  11536 | QUERCUS ilex | Holm Oak | 25Ltr | 250-300cm | £215.00 | Stock: 6
+  11537 | QUERCUS ilex | Holm Oak | 35Ltr | 250-300cm | £240.00 | Stock: 5
+  10216 | QUERCUS imbricaria | Shingle Oak | 5Ltr | 150-200cm | £37.50 | Stock: 20
+  14413 | QUERCUS imbricaria | Shingle Oak | 20Ltr | 250-300cm | £95.00 | Stock: 20
+  14400 | QUERCUS libani | Lebanon Oak | 20Ltr | 250-300cm | £95.00 | Stock: 2
+  11675 | QUERCUS macrocarpa | Bur Oak | 3Ltr | 75-100cm | £25.50 | Stock: 13
+  1525 | QUERCUS myrsinifolia | Chinese Evergreen Oak | 5Ltr | 125-150cm | £48.00 | Stock: 12
+  12540 | QUERCUS nigra | Water Oak | 3Ltr | 100-125cm | £28.50 | Stock: 25
+  11679 | QUERCUS palustris | Pin Oak | 3Ltr | 120-150cm | £28.50 | Stock: 17
+  16301 | QUERCUS palustris | Pin Oak | 5Ltr | 120-140cm | £34.50 | Stock: 11
+  16051 | QUERCUS palustris 'Green Pillar' | Upright Pin Oak | 3Ltr | 120-150cm | £31.50 | Stock: 12
+  14408 | QUERCUS palustris 'Green Pillar' | Upright Pin Oak | 7.5Ltr | 150-175cm | £42.00 | Stock: 1
+  11270 | QUERCUS palustris 'Green Pillar' | Upright Pin Oak | 7.5Ltr | 200-250cm | £45.00 | Stock: 3
+  11550 | QUERCUS palustris 'Green Pillar' | Upright Pin Oak | 20Ltr | 200-250cm | £95.00 | Stock: 4
+  10723 | QUERCUS petraea | Sessile Oak | 5Ltr | 100-125cm | £22.50 | Stock: 7
+  16297 | QUERCUS petraea | Sessile Oak | 3Ltr | 75-100cm | £25.50 | Stock: 75
+  12520 | QUERCUS phellos | Willow Oak | 5Ltr | 100-125cm | £34.50 | Stock: 1
+  15645 | QUERCUS phellos | Willow Oak | 25Ltr | 300-350cm | £115.00 | Stock: 7
+  16054 | QUERCUS phillyreoides | Black Ridge Oak | 3Ltr | 60-90cm | £24.00 | Stock: 9
+  1537 | QUERCUS phillyreoides | Black Ridge Oak | 5Ltr | 140-160cm | £48.00 | Stock: 6
+  10874 | QUERCUS pubescens | Downy Oak | 3Ltr | 150-200cm | £31.50 | Stock: 22
+  13976 | QUERCUS pubescens | Downy Oak | 35Ltr | 300-350cm | £180.00 | Stock: 3
+  13978 | QUERCUS pyrenaica | Pyrenean Oak | 35Ltr | 350-400cm | £215.00 | Stock: 3
+  15706 | QUERCUS robur | English Oak | 1Ltr | 30-50cm | £6.50 | Stock: 75
+  15699 | QUERCUS robur | English Oak | 1Ltr | 100-125cm | £12.00 | Stock: 65
+  11638 | QUERCUS robur | English Oak | 3Ltr | 100-125cm | £22.50 | Stock: 140
+  10912 | QUERCUS robur | English Oak | 5Ltr | 150-200cm | £34.50 | Stock: 29
+  15716 | QUERCUS robur | English Oak | 5Ltr | 200-250cm | £45.00 | Stock: 1
+  10907 | QUERCUS robur | English Oak | 35Ltr | 350-400cm | £160.00 | Stock: 2
+  10866 | QUERCUS robur 'Fastigiata Koster' | Koster Upright Oak | 12Ltr | 250-300cm | £65.00 | Stock: 6
+  13269 | QUERCUS rubra | Red Oak | 3Ltr | 75-100cm | £24.00 | Stock: 16
+  1547 | QUERCUS rubra | Red Oak | 5Ltr | 150-200cm | £28.50 | Stock: 11
+  12557 | QUERCUS rubra | Red Oak | 12Ltr | 275-300cm | £65.00 | Stock: 11
+  13270 | QUERCUS shumardii | Shumard Oak | 5Ltr | 120-140cm | £37.50 | Stock: 1
+  1089 | QUERCUS suber | Cork Oak | 3Ltr | 90-120cm | £28.50 | Stock: 35
+  13271 | QUERCUS texana | Texan Oak | 5Ltr | 100-125cm | £31.50 | Stock: 20
+  11855 | QUERCUS turneri 'Pseudoturneri' | Turners Oak | 2Ltr | 75-100cm | £25.50 | Stock: 11
+  16319 | QUERCUS turneri 'Pseudoturneri' | Turners Oak | 3Ltr | 75-100cm | £28.50 | Stock: 18
+  11272 | QUERCUS turneri 'Pseudoturneri' | Turners Oak | 7.5Ltr | 75-100cm | £34.50 | Stock: 2
+  16256 | QUERCUS velutina | Black Oak | 5Ltr | 175-200cm | £45.00 | Stock: 2
+  11495 | QUERCUS x hispanica 'Wageningen' | Spanish Oak | 5Ltr | 90-120cm | £34.50 | Stock: 1
+
+### RHUS
+  16055 | RHUS typhina | Stag's Horn Sumach | 3Ltr | 100-125cm | £25.50 | Stock: 32
+  12526 | RHUS typhina | Stag's Horn Sumach | 3Ltr | 175-200cm | £28.50 | Stock: 35
+  11170 | RHUS typhina | Stag's Horn Sumach | 12Ltr | 200-250cm | £60.00 | Stock: 14
+  11645 | RHUS typhina laciniata | Cutleaf Staghorn Sumach | 3Ltr | 120-140cm | £25.50 | Stock: 11
+  12412 | RHUS typhina laciniata | Cutleaf Staghorn Sumach | 35Ltr | 200-250cm | £185.00 | Stock: 1
+
+### ROBINIA
+  13195 | ROBINIA 'Casque Rouge' | False Acacia | 35Ltr | 300-400cm | £185.00 | Stock: 8
+  10899 | ROBINIA 'Casque Rouge' | False Acacia | 35Ltr | 400-450cm | £225.00 | Stock: 1
+  16281 | ROBINIA pseudoacacia 'Frisia' | False Acacia | 3Ltr | 100-125cm | £28.50 | Stock: 20
+  16056 | ROBINIA pseudoacacia 'Frisia' | False Acacia | 5Ltr | 140-160cm | £34.50 | Stock: 23
+  12527 | ROBINIA pseudoacacia 'Frisia' | False Acacia | 7.5Ltr | 175-200cm | £48.00 | Stock: 6
+  15639 | ROBINIA pseudoacacia 'Frisia' | False Acacia | 12Ltr | 200-250cm | £60.00 | Stock: 29
+
+### SALIX
+  12528 | SALIX alba 'Tristis' | Golden Weeping Willow | 3Ltr | 125-150cm | £28.50 | Stock: 2
+  16271 | SALIX alba 'Tristis' | Golden Weeping Willow | 5Ltr | 125-150cm | £31.50 | Stock: 70
+  11702 | SALIX alba 'Tristis' | Golden Weeping Willow | 5Ltr | 200-250cm | £37.50 | Stock: 19
+  11003 | SALIX alba 'Tristis' | Golden Weeping Willow | 12Ltr | 250-300cm | £70.00 | Stock: 1
+  11001 | SALIX alba 'Tristis' | Golden Weeping Willow | 130Ltr | 400-500cm | £440.00 | Stock: 1
+  11640 | SALIX babylonica 'Tortuosa' | Dragon's Claw Willow | 12Ltr | 175-200cm | £65.00 | Stock: 12
+  16057 | SALIX caprea 'Pendula' | Kilmarnock Willow | 12Ltr | 120-150cm | £37.50 | Stock: 15
+  12609 | SALIX caprea 'Pendula' | Kilmarnock Willow | 20Ltr | 125-150cm | £55.00 | Stock: 2
+  15713 | SALIX cinerea | Grey Willow | P9 | 60-90cm | £4.50 | Stock: 16
+  12305 | SALIX integra 'Hakuro-nishiki' | Japanese Dappled Willow | 20Ltr | 175-200cm | £55.00 | Stock: 4
+
+### SAMBUCUS
+  10230 | SAMBUCUS nigra | Elder | 5Ltr | 100-125cm | £28.50 | Stock: 66
+
+### SEQUOIA
+  16238 | SEQUOIA sempervirens | Coastal Redwood | 3Ltr | 60-90cm | £28.50 | Stock: 26
+  15623 | SEQUOIA sempervirens | Coastal Redwood | 12Ltr | 140-160cm | £70.00 | Stock: 2
+
+### SOPHORA
+  16215 | SOPHORA japonica | Japanese Pagoda | 3Ltr | 90-120cm | £28.50 | Stock: 78
+
+### SORBUS
+  11879 | SORBUS 'Golden Wonder' | Mountain Ash | 12Ltr | 200-225cm | £55.00 | Stock: 2
+  13272 | SORBUS aria 'Lutescens' | Whitebeam | 5Ltr | 90-120cm | £31.50 | Stock: 20
+  13273 | SORBUS aria 'Magnifica' | Whitebeam | 2Ltr | 90-120cm | £16.50 | Stock: 15
+  15651 | SORBUS aria 'Magnifica' | Whitebeam | 20Ltr | 200-225cm | £70.00 | Stock: 2
+  15652 | SORBUS aucuparia | Rowan or Mountain Ash | 7.5Ltr | 200-250cm | £48.00 | Stock: 24
+  11598 | SORBUS aucuparia | Rowan or Mountain Ash | 35Ltr | 400-450cm | £170.00 | Stock: 2
+  13203 | SORBUS aucuparia | Rowan or Mountain Ash | 50Ltr | 400-450cm | £210.00 | Stock: 3
+  13202 | SORBUS aucuparia | Rowan or Mountain Ash | 50Ltr | 400-450cm | £240.00 | Stock: 2
+  16060 | SORBUS aucuparia 'Autumn Spire' | Upright Mountain Ash | 5Ltr | 100-125cm | £34.50 | Stock: 30
+  10813 | SORBUS aucuparia 'Cardinal Royal' | Rowan | 160Ltr | 450-500cm | £425.00 | Stock: 1
+  12587 | SORBUS aucuparia 'Sheerwater Seedling' | Rowan | 7.5Ltr | 200-225cm | £45.00 | Stock: 7
+  11881 | SORBUS commixta | Japanese Rowan | 5Ltr | 140-160cm | £37.50 | Stock: 14
+  15653 | SORBUS 'Eastern Promise' | Mountain Ash | 7.5Ltr | 150-200cm | £45.00 | Stock: 9
+  11887 | SORBUS hupehensis 'Pink Pagoda' | Mountain Ash | 12Ltr | 200-225cm | £55.00 | Stock: 2
+  11708 | SORBUS intermedia | Swedish Whitebeam | 5Ltr | 125-150cm | £31.50 | Stock: 46
+  12195 | SORBUS intermedia | Swedish Whitebeam | 25Ltr | 350-400cm | £195.00 | Stock: 1
+  15741 | SORBUS 'Olympic Flame' | Rowan | 3Ltr | 175-200cm | £31.50 | Stock: 10
+  11656 | SORBUS 'Olympic Flame' | Rowan | 5Ltr | 175-200cm | £37.50 | Stock: 3
+  15704 | SORBUS pseudovilmorinii | Rowan | 3Ltr | 60-90cm | £28.50 | Stock: 12
+  11280 | SORBUS thur. 'Fastigiata' | Hybrid Whitebeam | 7.5Ltr | 200-225cm | £55.00 | Stock: 3
+  13274 | SORBUS torminalis | Wild Service Tree | 3Ltr | 90-120cm | £25.50 | Stock: 45
+  1586 | SORBUS torminalis | Wild Service Tree | 90Ltr | 450-500cm | £325.00 | Stock: 1
+  11046 | SORBUS vilmorinii | Vilmorin's Rowan | 12Ltr | 300-350cm | £95.00 | Stock: 1
+
+### STEWARTIA
+  11282 | STEWARTIA pseudocamellia | Japanese Stewartia | 3Ltr | 100-125cm | £34.50 | Stock: 9
+
+### SYRINGA
+  11156 | SYRINGA vulgaris 'Madame Lemoine' | Lilac | 2Ltr | 50-75cm | £22.50 | Stock: 20
+
+### TAXODIUM
+  1143 | TAXODIUM distichum | Swamp Cypress | 3Ltr | 100-125cm | £28.50 | Stock: 36
+
+### TAXUS
+  1592 | TAXUS baccata | Yew | 3Ltr | 50-75cm | £22.50 | Stock: 35
+  16233 | TAXUS baccata | Yew | 7.5Ltr | 80-100cm | £45.00 | Stock: 6
+  1144 | TAXUS baccata Fastigiata Aurea | Golden Irish Yew | 3Ltr | 50-75cm | £24.00 | Stock: 24
+  16062 | TAXUS baccata 'Fastigiata Robusta' | English Yew | 3Ltr | 30-50cm | £22.50 | Stock: 31
+
+### TETRADIUM
+  1145 | TETRADIUM daniellii | Bee-bee Tree | 3Ltr | 90-120cm | £28.50 | Stock: 4
+  16323 | TETRADIUM daniellii | Bee-bee Tree | 12Ltr | 200-250cm | £65.00 | Stock: 16
+
+### THUJA
+  12488 | THUJA plicata 'Gelderland' | Western Red Cedar | 60Ltr | 300-350cm | £140.00 | Stock: 3
+  16298 | THUJA occidentalis 'Smaragd' | White Cedar | 3Ltr | 50-75cm | £18.00 | Stock: 30
+  10862 | THUJA occidentalis 'Smaragd' | White Cedar | 3Ltr | 75-100cm | £25.50 | Stock: 12
+  12602 | THUJA occidentalis 'Smaragd' | White Cedar | 50Ltr | 175-200cm | £70.00 | Stock: 7
+  12603 | THUJA occidentalis 'Smaragd' | White Cedar | 180Ltr | 275-300cm | £280.00 | Stock: 4
+  16332 | THUJA plicata 'Atrovirens' | Western Red Cedar | 3Ltr | 60-80cm | £18.00 | Stock: 30
+  11154 | THUJA plicata 'Atrovirens' | Western Red Cedar | 5Ltr | 125-150cm | £31.50 | Stock: 6
+
+### THUJOPSIS
+  16251 | THUJOPSIS dolabrata | Hiba Arborvitae | 3Ltr | 30-50cm | £25.50 | Stock: 28
+
+### TILIA
+  15742 | TILIA americana 'American Sentry' | Sentry Linden | 35Ltr | 450-500cm | £165.00 | Stock: 3
+  16286 | TILIA cordata | Small-leaved Lime | 3Ltr | 90-120cm | £25.50 | Stock: 55
+  11634 | TILIA cordata | Small-leaved Lime | 12Ltr | 200-250cm | £55.00 | Stock: 4
+  11030 | TILIA cordata | Small-leaved Lime | 7.5Ltr | 200-250cm | £65.00 | Stock: 9
+  11526 | TILIA cordata | Small-leaved Lime | 35Ltr | 400-450cm | £175.00 | Stock: 1
+  11048 | TILIA cordata 'Green Globe' | Small-leaved Lime | 130Ltr | 350-400cm | £525.00 | Stock: 2
+  16085 | TILIA cordata 'Greenspire' | Small-Leaved Lime | 5Ltr | 125-150cm | £37.50 | Stock: 12
+  16270 | TILIA cordata 'Winter Orange' | Small-leaved Lime | 5Ltr | 125-150cm | £34.50 | Stock: 25
+  10713 | TILIA cordata 'Winter Orange' | Small-leaved Lime | 35Ltr | 400-450cm | £295.00 | Stock: 1
+  12405 | TILIA henryana | Henry's Lime | 3Ltr | 90-120cm | £25.50 | Stock: 16
+  1603 | TILIA henryana | Henry's Lime | 20Ltr | 175-200cm | £85.00 | Stock: 25
+  16287 | TILIA platyphyllos | Broad-leaved Lime | 3Ltr | 90-120cm | £25.50 | Stock: 48
+  13194 | TILIA platyphyllos 'Rubra' | Red-twigged Lime | 70Ltr | 400-450cm | £370.00 | Stock: 7
+  12404 | TILIA x euchlora | European White Lime | 5Ltr | 125-150cm | £34.50 | Stock: 8
+  15641 | TILIA x euchlora | European White Lime | 7.5Ltr | 200-250cm | £55.00 | Stock: 1
+  13275 | TILIA x europaea 'Pallida' | Kaiser Linden | 5Ltr | 100-125cm | £28.50 | Stock: 25
+  16284 | TILIA x europaea 'Pallida' | Kaiser Linden | 35Ltr | 400-450cm | £165.00 | Stock: 5
+  11226 | TILIA x europaea 'Pallida' | Kaiser Linden | 35Ltr | 450-500cm | £245.00 | Stock: 1
+  11008 | TILIA x europaea 'Pallida' | Kaiser Linden [5/yr pleached] | 230Ltr | 1.8x2x2m | £650.00 | Stock: 1
+  13994 | TILIA x mongolica 'Harvest Gold' | Mongolian Lime | 35Ltr | 250cm | £110.00 | Stock: 1
+  11169 | TILIA x mongolica 'Harvest Gold' | Mongolian Lime | 35Ltr | 400-450cm | £165.00 | Stock: 4
+  13995 | TILIA x mongolica 'Harvest Gold' | Mongolian Lime | 35Ltr | 400-500cm | £195.00 | Stock: 9
+
+### TOONA
+  10894 | TOONA sinensis | Chinese Cedar | 3Ltr | 75-100cm | £28.50 | Stock: 3
+  10895 | TOONA sinensis | Chinese Cedar | 35Ltr | 300-350cm | £135.00 | Stock: 9
+
+### TRACHYCARPUS
+  16260 | TRACHYCARPUS fortunei | Chusan Palm | 3Ltr | 20-40cm | £25.50 | Stock: 30
+  11117 | TRACHYCARPUS fortunei | Chusan Palm | 5Ltr | 50-75cm | £31.50 | Stock: 3
+
+### TSUGA
+  16331 | TSUGA canadensis | Eastern Hemlock | 3Ltr | 40-60cm | £22.50 | Stock: 34
+  11779 | TSUGA canadensis | Eastern Hemlock | 12Ltr | 90-120cm | £48.00 | Stock: 6
+  16318 | TSUGA heterophylla | Western Hemlock | 3Ltr | 30-50cm | £25.50 | Stock: 28
+
+### ULMUS
+  11034 | ULMUS glabra 'Camperdownii' | Camperdown Elm | 210Ltr | 250-300cm | £650.00 | Stock: 3
+  12406 | ULMUS 'Lutece' | Naguen Elm | 3Ltr | 120-150cm | £24.00 | Stock: 4
+  14423 | ULMUS 'Lutece' | Naguen Elm | 5Ltr | 200-250cm | £37.50 | Stock: 1
+  14424 | ULMUS 'Lutece' | Naguen Elm | 25Ltr | 350-400cm | £95.00 | Stock: 2
+  12562 | ULMUS minor 'Jacqueline Hillier' | Elm | 3Ltr | 60-90cm | £25.50 | Stock: 20
+  12407 | ULMUS 'Sapporo Autumn Gold' | Elm | 3Ltr | 90-120cm | £28.50 | Stock: 15
+  11601 | ULMUS 'Sapporo Autumn Gold' | Elm | 20Ltr | 300-350cm | £95.00 | Stock: 5
+
+### ZELKOVA
+  11709 | ZELKOVA serrata | Japanese Zelkova | 3Ltr | 75-100cm | £25.50 | Stock: 37
+  1615 | ZELKOVA serrata | Japanese Zelkova | 25Ltr | 250-300cm | £90.00 | Stock: 1
+  11168 | ZELKOVA serrata 'Green Vase' | Japanese Zelkova | 12Ltr | 250-300cm | £80.00 | Stock: 12
+
+## Services
+- Delivery: 2-3 day tracked courier throughout UK & Ireland
+- Hand-packed with planting guide included
+- Local planting service available (Co. Down area)
+- Site evaluation service
+- Trade pricing for landscape professionals and contractors
+
+## Contact
+Phone: 028 3085 0059
+Mobile: 07753 117837
+Email: info@papervaletrees.com
+Address: 48 Old Newry Road, Rathfriland, Co. Down, BT34 5BQ
+Opening hours: Mon-Fri by appointment, Sat 10am-2pm
+
+## Key SEO Terms
+tree nursery Northern Ireland, home-grown trees UK, UKISG certified nursery, container grown trees,
+bareroot trees UK, ornamental trees for sale, specimen trees Northern Ireland, native trees UK,
+flowering cherry trees, Japanese maple, silver birch, English oak, buy trees online UK, pleached trees,
+fruit trees UK, crab apple trees, birch trees, oak trees, maple trees, garden trees for sale
