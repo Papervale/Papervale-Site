@@ -1,0 +1,16 @@
+{
+  "name": "Papervale Trees",
+  "short_name": "Papervale",
+  "description": "Homegrown, peat-free trees from our UKISG certified nursery in Co. Down, Northern Ireland.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#334832",
+  "icons": [
+    {
+      "src": "/assets/brand/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

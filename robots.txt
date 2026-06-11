@@ -3,9 +3,11 @@ User-agent: *
 Allow: /
 Disallow: /components/
 Disallow: /docs/
+Disallow: /scripts/
 Disallow: /ecwid-products.json
-Disallow: /ecwid-slugs.txt
+Disallow: /ecwid-real-products.json
 Disallow: /ecwid-placeholder-ids.json
+Disallow: /ecwid-slugs.txt
 Disallow: /thank-you.html
 
 # Point search engines to sitemap

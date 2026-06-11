@@ -23,10 +23,27 @@
   force = true
 
 [[redirects]]
+  from = "/scripts/*"
+  to = "/"
+  status = 404
+  force = true
+
+[[redirects]]
   from = "/ecwid-*.txt"
   to = "/"
   status = 404
   force = true
+
+# ── Security headers (all pages) ─────────────────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+    # Content-Security-Policy deliberately omitted — requires browser testing
+    # with the Ecwid shop widget before enabling. Add after verifying shop works.
 
 # Cache headers for optimal performance
 
