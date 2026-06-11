@@ -10,10 +10,40 @@ Ecwid dashboard: https://my.ecwid.com
 
 | Field | Value |
 |-------|-------|
-| Store ID | *(get from Ecwid dashboard → Settings → General)* |
+| Store ID | `73482057` |
 | Store owner | Papervale Trees |
 | Platform | Ecwid (Lightspeed Commerce) |
 | Currency | GBP |
+
+---
+
+## API Access
+
+| Field | Value |
+|-------|-------|
+| Public token | see Ecwid dashboard → Settings → API |
+| Secret token | see Ecwid dashboard → Settings → API (keep private — do not commit) |
+| Base URL | `https://app.ecwid.com/api/v3/73482057` |
+| Auth header | `Authorization: Bearer <secret_token>` |
+
+> **Important:** All API usage is read-only. Never use POST, PUT, or DELETE operations — the shop is managed exclusively through the Ecwid dashboard.
+
+> **Auth note:** The `?token=` query parameter does NOT work. Always use the `Authorization: Bearer` header.
+
+### Useful endpoints
+
+```
+GET /products            — list all products (paged)
+GET /products/{id}       — single product with full image URLs
+GET /categories          — all categories
+```
+
+### Placeholder image detection
+
+202 products have an "Image Coming Soon" placeholder. These are excluded from the static product pages.  
+Placeholder MD5 hash: `8E73739D2817EBCCBE6DE7F2F6DEA14D`  
+Excluded product IDs are listed in `ecwid-placeholder-ids.json` at the project root.  
+Cache files: `ecwid-products.json`, `ecwid-slugs.txt`
 
 ---
 
@@ -28,30 +58,36 @@ Ecwid dashboard: https://my.ecwid.com
 
 ## Full Store Embed
 
-This is what goes on `shop.html` to render the complete Ecwid storefront.  
-Get the exact code from your Ecwid dashboard: **Website → Embed Store → Get code**
+This is what goes on `shop.html` to render the complete Ecwid storefront.
 
 ```html
-<!-- Ecwid full store widget — paste your actual embed code here -->
-<div id="my-store-XXXXXXXX"></div>
+<div id="my-store-73482057"></div>
 <script>
   window.ecwid_script_defer = true;
   window.ecwid_dynamic_widgets = true;
   if (typeof Ecwid !== 'undefined') Ecwid.init();
 </script>
 <script data-cfasync="false" type="text/javascript"
-  src="https://app.ecwid.com/script.js?XXXXXXXX&data_platform=code"
+  src="https://app.business.shop/script.js?73482057&data_platform=code&data_date=2026-05-04"
   charset="utf-8">
 </script>
 ```
 
-Replace `XXXXXXXX` with your actual Store ID.
+---
+
+## Search Widget
+
+The search bar in the nav header uses:
+
+```html
+<div id="my-search-73482057"></div>
+```
+
+Loaded programmatically via `components/app-nav.js` using `xSearch('id=my-search-73482057')`.
 
 ---
 
 ## Category IDs
-
-These are used in homepage featured card links and any category-specific embeds.
 
 | Category | ID | URL fragment |
 |----------|----|-------------|
@@ -76,6 +112,11 @@ To link to a specific product:
 <a href="shop.html#!/Gift-card/p/759030857">Buy Gift Card</a>
 ```
 
+Product pages in `trees/` link to individual products using the deep-link format:
+```html
+<a href="shop.html#!/ACER-griseum-Paperbark-Maple/p/673684379">Buy from Shop</a>
+```
+
 ---
 
 ## Single Product Widget
@@ -92,25 +133,26 @@ Replace `PRODUCTID` with the product's numeric ID.
 
 ---
 
-## Search Widget
+## Static Product Pages (trees/)
 
-To embed a product search bar:
+228 individual product pages have been generated in the `trees/` folder — one per Ecwid product that has a real (non-placeholder) photo.
 
-```html
-<div class="ecwid ecwid-search"></div>
-```
+- Index page: `tree-catalogue.html` (root level)
+- Product pages: `trees/[slug].html`
+- Each page links to the shop via a direct product deep-link
+- Source data cached in: `ecwid-products.json`, `ecwid-slugs.txt`
 
-This is already on the homepage above the supporting section.
+These pages are static HTML — they do not update automatically when products change in Ecwid. If you add, remove, or update products, regenerate the affected pages.
 
 ---
 
 ## Important Notes
 
 - The Ecwid widget loads entirely via JavaScript — the shop page HTML will appear empty if JavaScript is disabled
-- Do **not** try to scrape or replicate product data in static HTML — always use the Ecwid embed
 - The Ecwid backend handles: stock levels, orders, customer accounts, payments, CRM
 - Delivery settings, pricing, and product management are all done in the Ecwid dashboard, not in the HTML
 - The embed script must be present on every page that shows shop content
+- All API calls are read-only — do not modify products via the API
 
 ---
 

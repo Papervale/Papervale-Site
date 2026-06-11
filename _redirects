@@ -1,0 +1,50 @@
+# Netlify _redirects
+# Old Weebly species pages → new trees/ product pages (301 permanent)
+# Format: /old-url   /new-url   301
+
+# ── Navigation utility ──────────────────────────────────────────────────────
+/search-trees-by-species.html           /tree-catalogue.html                                            301
+/past-present--future.html              /our-roots.html                                                 301
+
+# ── Acer (Maples) ───────────────────────────────────────────────────────────
+/acer-griseum.html                      /trees/acer-griseum-paperbark-maple.html                        301
+/acer-pseudoplatanus-brilliantissimum.html  /trees/acer-pseudoplatanus-sycamore.html                    301
+
+# ── Alnus (Alders) ──────────────────────────────────────────────────────────
+/alnus-glutinosa.html                   /trees/alnus-glutinosa-common-alder.html                        301
+/alnus-glutinosa-imperialis.html        /trees/alnus-glutinosa-imperialis-cutleaf-alder.html             301
+
+# ── Betula (Birches) ────────────────────────────────────────────────────────
+/betula-papyrifera.html                 /trees/betula-papyrifera-paper-birch.html                       301
+/betula-pendula-fastigiata.html         /trees/betula-pendula-fastigiata-upright-silver-birch.html      301
+/betula-pendula-purpurea.html           /trees/betula-pendula-silver-birch.html                         301
+/betula-pendula-tristis.html            /trees/betula-pendula-tristis-weeping-silver-birch.html         301
+
+# ── Carpinus (Hornbeams) ─────────────────────────────────────────────────────
+/carpinus-betulus-fransfs-fontaine.html /trees/carpinus-bet-fastigiata-upright-hornbeam.html            301
+/carpinus-betulus-fransfontatine.html   /trees/carpinus-bet-fastigiata-upright-hornbeam.html            301
+/carpinus-betulus-frans-fontaine.html   /trees/carpinus-bet-fastigiata-upright-hornbeam.html            301
+
+# ── Liquidambar (Sweet Gums) ─────────────────────────────────────────────────
+/liquidambar-styraciflua.html           /trees/liquidambar-styraciflua-sweet-gum.html                   301
+
+# ── Malus (Crab Apples) ──────────────────────────────────────────────────────
+/malus-evereste.html                    /trees/malus-evereste-flowering-crab-apple.html                 301
+
+# ── Parrotia ─────────────────────────────────────────────────────────────────
+/parrotia-persica-vanessa.html          /trees/parrotia-persica-vanessa-persian-ironwood.html           301
+
+# ── Pinus (Pines) ────────────────────────────────────────────────────────────
+/pinus-pinea.html                       /trees/pinus-pinea-stone-pine.html                              301
+/pinus-sylvestris.html                  /trees/pinus-sylvestris-scots-pine.html                         301
+/pinus-wallichiana.html                 /trees/pinus-wallichiana-bhutan-pine.html                       301
+/pinus-radiata.html                     /tree-catalogue.html                                            301
+
+# ── Prunus ───────────────────────────────────────────────────────────────────
+/prunus-avium.html                      /trees/prunus-avium-wild-cherry.html                            301
+
+# ── Quercus (Oaks) ───────────────────────────────────────────────────────────
+/quercus-palustris.html                 /trees/quercus-palustris-pin-oak.html                           301
+
+# ── Tilia (Limes) ────────────────────────────────────────────────────────────
+/tilia-cordata.html                     /trees/tilia-cordata-smallleaved-lime.html                      301

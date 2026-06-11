@@ -2,6 +2,10 @@
 User-agent: *
 Allow: /
 Disallow: /components/
+Disallow: /docs/
+Disallow: /ecwid-products.json
+Disallow: /ecwid-slugs.txt
+Disallow: /ecwid-placeholder-ids.json
 
 # Point search engines to sitemap
 Sitemap: https://www.papervaletrees.com/sitemap.xml
@@ -9,7 +13,6 @@ Sitemap: https://www.papervaletrees.com/sitemap.xml
 # Specific rules for common crawlers
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 0
 
 User-agent: Bingbot
 Allow: /

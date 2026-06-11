@@ -9,38 +9,78 @@
 [build.processing.images]
   compress = true
 
-# Cache headers for optimal performance
-[[headers]]
-  # Images — aggressive caching (1 year)
-  for = "/assets/images/**"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+# ── Block internal folders from public access ────────────────────────────────
+[[redirects]]
+  from = "/docs/*"
+  to = "/"
+  status = 404
+  force = true
 
+[[redirects]]
+  from = "/ecwid-*.json"
+  to = "/"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/ecwid-*.txt"
+  to = "/"
+  status = 404
+  force = true
+
+# Cache headers for optimal performance
+
+# ── Stylesheets (1 year) ─────────────────────────────────────────────────────
 [[headers]]
-  # Stylesheets — 1 year cache
   for = "/styles.css"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
-  # JavaScript components — 1 year cache
+  for = "/trees/product.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ── JavaScript components (1 year) ───────────────────────────────────────────
+[[headers]]
   for = "/components/**"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# ── Images and brand assets (1 year) ─────────────────────────────────────────
 [[headers]]
-  # HTML files — cache for 1 hour (allows updates)
+  for = "/assets/images/**"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/brand/**"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ── Downloadable docs (1 day — updated each season) ──────────────────────────
+[[headers]]
+  for = "/assets/docs/**"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# ── HTML pages (1 hour — allows content updates to propagate) ────────────────
+[[headers]]
   for = "/*.html"
   [headers.values]
     Cache-Control = "public, max-age=3600"
 
 [[headers]]
-  # Default fallback — 5 minute cache
+  for = "/trees/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
   for = "/"
   [headers.values]
-    Cache-Control = "public, max-age=300"
+    Cache-Control = "public, max-age=3600"
 
-# Enable gzip compression
+# ── Vary header (encoding negotiation) ───────────────────────────────────────
 [[headers]]
   for = "/*"
   [headers.values]

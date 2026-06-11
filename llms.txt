@@ -1,10 +1,10 @@
-# Papervale Trees — AI-Readable Product Catalogue
+﻿# Papervale Trees — AI-Readable Product Catalogue
 # Northern Ireland's first UKISG Certified tree nursery
 # 48 Old Newry Road, Rathfriland, Co. Down, BT34 5BQ
 # Tel: 028 3085 0059 | Email: info@papervaletrees.com
 # Delivering throughout the UK & Ireland | 2-3 Day Tracked Delivery
 # EU Plant Passport: UK/NI 8943 | VAT Reg No. 326849373
-# Last updated: September 2025
+# Last updated: June 2026
 
 ## About
 Papervale Trees is Northern Ireland's first UKISG Certified tree nursery, supplying over 300 varieties
@@ -15,7 +15,7 @@ across the UK and Ireland. Container-grown stock available all year round. Barer
 URL: https://www.papervaletrees.com/shop.html
 Availability list: https://www.papervaletrees.com/availability.html
 
-## Product Catalogue (758 lines, 263 species)
+## Product Catalogue (758 lines, 430 species pages)
 Format: Code | Latin Name | Common Name | Pot Size | Height | Price (inc. VAT) | Stock
 
 ### ABIES

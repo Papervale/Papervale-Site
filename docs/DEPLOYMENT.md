@@ -8,21 +8,25 @@
 - **Destination:** `papervaletrees.com/llms.txt`
 - **Purpose:** Helps AI search engines (Claude, ChatGPT, Gemini) understand your catalogue and business
 - **Status:** Growing standard — submit now before competitors do
-- **Action:** Place in website root or Netlify public folder
+- **Action:** Place in website root (already present in repo)
 
 #### `sitemap.xml`
 - **Destination:** `papervaletrees.com/sitemap.xml`
 - **Purpose:** Maps all pages to search engines, indicates priority and update frequency
-- **Action:** 
-  1. Place in website root or Netlify public folder
+- **Current coverage:** 244 URLs — 11 core pages + `tree-catalogue.html` + 228 `trees/*.html` product pages
+- **Action:**
+  1. File is already in repo root — auto-deployed via Netlify
   2. Submit to Google Search Console (see section below)
   3. Submit to Bing Webmaster Tools
 
 ### Files NOT to Upload
 
-#### `papervale_products.csv`
-- **Purpose:** Internal use only — product export for imports, Google Merchant feeds, or developer handoff
-- **Action:** Keep locally, add to `.gitignore`
+| File | Reason |
+|------|--------|
+| `papervale_products.csv` | Internal use only — add to `.gitignore` |
+| `ecwid-products.json` | API cache — large, internal only |
+| `ecwid-slugs.txt` | Internal slug list |
+| `ecwid-placeholder-ids.json` | Internal placeholder filter list |
 
 ## Git Configuration
 
@@ -31,6 +35,8 @@ Update `.gitignore` to exclude internal files:
 ```gitignore
 # Internal/sensitive files
 papervale_products.csv
+ecwid-products.json
+ecwid-placeholder-ids.json
 
 # Dependencies
 node_modules/
@@ -50,26 +56,25 @@ Thumbs.db
 
 ## Deployment Workflow
 
-### For Netlify Setup
+### Current setup: GitHub → Netlify auto-deploy
 
-1. **Determine publish directory:**
-   - Check Netlify dashboard: Settings → Build & Deploy → Publish directory
-   - Usually `public/`, `dist/`, or root
+The site is live on Netlify connected to this GitHub repository. Every push to `main` triggers an automatic redeploy within ~30 seconds.
 
-2. **Place files:**
-   - `llms.txt` → root of publish directory
-   - `sitemap.xml` → root of publish directory
+```
+git add <changed files>
+git commit -m "your message"
+git push
+# Netlify deploys automatically
+```
 
-3. **Deploy:**
-   - Commit files to Git: `git add llms.txt sitemap.xml`
-   - Push to main branch
-   - Netlify automatically builds and deploys
-   - Files live at `papervaletrees.com/llms.txt` and `papervaletrees.com/sitemap.xml`
+### To regenerate tree product pages
 
-4. **Regenerate on updates:**
-   - After updating product stock list or site content
-   - Regenerate `sitemap.xml` and `papervale_products.csv`
-   - Push changes — Netlify redeploys automatically
+If products are added/removed/updated in Ecwid:
+1. Re-run the PowerShell generation script (fetches Ecwid API, generates `trees/*.html`)
+2. Update `sitemap.xml` with new page count and URLs
+3. Commit and push — Netlify redeploys
+
+---
 
 ## Google Search Console Setup
 
@@ -102,6 +107,9 @@ Thumbs.db
 - Mobile usability issues
 - Core Web Vitals (page speed)
 - Crawl errors or warnings
+- Impressions for tree-specific queries (e.g. "buy silver birch tree UK")
+
+---
 
 ## Bing Webmaster Tools
 
@@ -110,36 +118,52 @@ Thumbs.db
 3. Submit sitemap: `https://www.papervaletrees.com/sitemap.xml`
 4. **Note:** Bing index powers DuckDuckGo — worth 5 minutes of setup
 
-## Important Notes
+---
 
-### SEO Gap: Product Pages
+## Sitemap Details
 
-⚠️ **Current limitation:** The sitemap covers main site pages only, not individual products
-- **Why:** Lightspeed Shop loads products dynamically (no dedicated URLs)
-- **Impact:** Searches like "buy Silver Birch tree Northern Ireland" hit generic shop page, not specific product page
-- **Long-term consideration:** Evaluate dedicated product page URLs for better SEO
+Current `sitemap.xml` covers 244 URLs:
 
-### Sitemap Frequency
+| Section | Count | Priority | Changefreq |
+|---------|-------|----------|-----------|
+| Core pages (inc. homepage) | 11 | 0.5–1.0 | weekly/monthly |
+| Tree catalogue | 1 | 0.8 | weekly |
+| Tree product pages (`trees/*.html`) | 228 | 0.7 | weekly |
+| Homepage | 1 | 1.0 | weekly |
 
-Current configuration:
-- Homepage: `weekly` priority 1.0
-- Content pages: `weekly` priority 0.8-1.0
-- Last modified: Updated when files regenerated
+Last modified: 2026-06-11
 
 Update `sitemap.xml` whenever:
 - Adding/removing pages
+- Adding/removing tree product pages
 - Major content updates
-- Product availability changes
+
+---
+
+## SEO Notes
+
+### Product pages
+228 dedicated tree product pages (`trees/*.html`) are now indexed individually. Each has:
+- Unique title: `Buy [Common Name] Trees | UK Nursery | Papervale Trees`
+- Unique meta description with species, price, and categories
+- Schema.org Product + BreadcrumbList structured data
+- `robots: index, follow`
+- Canonical URL
+- Geo tags for Rathfriland, Co. Down
+
+This resolves the earlier limitation where searches like "buy Silver Birch tree Northern Ireland" only found the generic shop page.
+
+---
 
 ## Checklist
 
-- [ ] Determine Netlify publish directory
-- [ ] Place `llms.txt` in publish directory
-- [ ] Place `sitemap.xml` in publish directory
-- [ ] Commit and push to Git
-- [ ] Verify deployment at `papervaletrees.com/llms.txt` and `.com/sitemap.xml`
+- [x] Netlify connected to GitHub — auto-deploys on push
+- [x] `sitemap.xml` in repo root (244 URLs)
+- [x] `trees/*.html` — 228 SEO-optimised product pages
+- [x] Schema.org structured data on all product pages
+- [x] Canonical URLs on all product pages
 - [ ] Verify domain in Google Search Console
 - [ ] Submit sitemap to Google Search Console
 - [ ] Submit sitemap to Bing Webmaster Tools
 - [ ] Monitor Search Console for indexing and search performance
-- [ ] Add `papervale_products.csv` to `.gitignore`
+- [ ] Add `ecwid-products.json` and cache files to `.gitignore`

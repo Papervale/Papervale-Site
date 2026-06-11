@@ -1,6 +1,6 @@
 # Design System — Papervale Trees
 
-Based on: [Clay design system](https://getdesign.md) (`npx getdesign@latest add clay`)  
+Based on: Clay design system (`npx getdesign@latest add clay`)  
 Adapted for: Papervale Trees brand colours and typography
 
 ---
@@ -11,29 +11,32 @@ All pages use a **shared stylesheet** (`styles.css`) that contains:
 - Design tokens (colours, typography, spacing, border-radius)
 - Reset & base styles
 - Reusable components (nav, footer, buttons, forms, badges)
+- Tree Catalogue page styles (`.cat-header`, `.ci-*` classes)
 - Responsive breakpoints
 
-**Each HTML page** includes the shared stylesheet + page-specific styles:
+**Tree product pages** (`trees/*.html`) additionally load a shared subfolder stylesheet:
 ```html
 <link rel="stylesheet" href="styles.css">
-<style>
-  /* Page-specific styles only */
-</style>
+<link rel="stylesheet" href="trees/product.css">
 ```
+
+`trees/product.css` contains all product page layout styles: `.product-hero`, `.product-image-wrap`, `.product-main-img`, `.product-thumbs`, `.product-thumb`, `.product-info`, `.product-latin`, `.product-title`, `.product-award`, `.product-price-row`, `.stock-badge`, `.product-tags`, `.product-tag`, `.product-options`, `.btn-buy`, `.product-description`, `.back-link`, `.schema-note`.
+
+**All other pages** use only `styles.css` — no inline `<style>` blocks.
 
 This means:
 - ✅ Single source of truth for design tokens (change once, applies everywhere)
-- ✅ Consistent nav, footer, buttons across all pages
+- ✅ Consistent nav, footer, buttons across all pages (12 core + 228 product pages)
 - ✅ Smaller HTML file sizes
 - ✅ Better browser caching (shared CSS is cached)
 - ✅ Easier to update brand colours, spacing, or responsive rules
 
 To update the **entire site** (e.g. change button color):
-1. Edit `styles.css` 
-2. All 8 pages update automatically
+1. Edit `styles.css`
+2. All pages update automatically
 
-To update a **single page** (e.g. hero section):
-1. Edit the `<style>` block in that HTML file
+To update **all product pages** (e.g. change product layout):
+1. Edit `trees/product.css`
 
 ---
 
@@ -111,12 +114,12 @@ To update a **single page** (e.g. hero section):
 
 | Token | Value | Usage |
 |-------|-------|-------|
-| `--radius-xs` | 6px | Small badges |
+| `--radius-xs` | 6px | Small badges, thumbnails |
 | `--radius-sm` | 8px | Small buttons |
-| `--radius-md` | 12px | Buttons, inputs |
-| `--radius-lg` | 16px | Cards |
+| `--radius-md` | 12px | Buttons, inputs, product options block |
+| `--radius-lg` | 16px | Cards, product main image |
 | `--radius-xl` | 24px | Feature cards, tiles |
-| `--radius-pill` | 9999px | Tags, badges |
+| `--radius-pill` | 9999px | Tags, badges, filter buttons |
 
 ---
 
@@ -127,28 +130,64 @@ To update a **single page** (e.g. hero section):
 | `--sp-xs` | 8px | Tight gaps |
 | `--sp-sm` | 12px | Small gaps |
 | `--sp-md` | 16px | Default gap |
-| `--sp-lg` | 24px | Card padding |
-| `--sp-xl` | 32px | Section padding |
-| `--sp-xxl` | 48px | Large gaps |
+| `--sp-lg` | 24px | Card padding, nav gap |
+| `--sp-xl` | 32px | Section padding, nav margin-left |
+| `--sp-xxl` | 48px | Large gaps, product hero gap |
 | `--sp-section` | 96px | Between major page bands |
 
 ---
 
 ## Web Components
 
-The site uses custom HTML elements (Web Components) for reusable UI patterns:
+The site uses custom HTML elements (Web Components) for reusable UI:
 
 | Component | File | Usage |
 |-----------|------|-------|
-| `<ukisg-banner>` | `components/ukisg-banner.js` | Top banner with UKISG certification message |
+| `<app-nav>` | `components/app-nav.js` | Main navigation — all pages |
+| `<app-footer>` | `components/app-footer.js` | Footer — all pages |
+| `<ukisg-banner>` | `components/ukisg-banner.js` | Top banner — all pages |
 
 To use a component on a page:
-1. Add `<script src="components/component-name.js"></script>` to the page `<head>` (before closing `</head>`)
+1. Add `<script src="components/component-name.js"></script>` near the closing `</body>`
 2. Use the element in the HTML: `<component-name></component-name>`
 
-Components use Shadow DOM for style encapsulation — their internal CSS does not affect the page, and page CSS does not affect the component (unless explicitly set via CSS custom properties).
+Tree product pages in `trees/` use `<base href="../">` so component paths resolve correctly from the subfolder without any changes to the component files.
 
-**All existing pages already include the UKISG banner component.** This is centralized in the component file, so to update the banner message across all pages at once, edit `components/ukisg-banner.js` instead of updating individual HTML files.
+---
+
+## Nav Pattern
+
+Nav is rendered by the `<app-nav>` web component (`components/app-nav.js`). To change any nav links, edit that file once — all pages update automatically.
+
+### Current nav links (desktop + mobile)
+
+```
+Home → index.html
+Shop → shop.html
+Trees → tree-catalogue.html        ← added 2026-06
+Availability → availability.html
+Our Roots → our-roots.html         ← has dropdown
+  └── Life at Papervale → gallery.html
+  └── Services We Provide → services-we-provide.html
+Grow Strong → grow-strong.html
+Contact Us → contact.html          ← .nav-cta style
+```
+
+### CSS gotcha — breadcrumb `<nav>` vs sticky nav
+
+The bare `nav` selector in `styles.css` applies `position: sticky; z-index: 100; height: 64px` to all `<nav>` elements. Any semantic `<nav aria-label="...">` (e.g. breadcrumbs) must be overridden with:
+
+```css
+nav[aria-label] {
+  position: static;
+  z-index: auto;
+  height: auto;
+  background: none;
+  border-bottom: none;
+}
+```
+
+This override is already in `styles.css` and prevents the breadcrumb from creating a competing stacking context that would hide the Our Roots dropdown.
 
 ---
 
@@ -166,21 +205,7 @@ All inner pages (not homepage) use this dark green header:
 </div>
 ```
 
-```css
-.page-header {
-  background: var(--brand-forest);
-  padding: 64px 0 56px;
-  position: relative;
-  overflow: hidden;
-}
-.page-header::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(160deg, rgba(51,72,50,0.85) 0%, rgba(51,72,50,0.4) 100%);
-}
-.page-header h1 em { color: var(--brand-fern); }
-```
+Tree catalogue uses `.cat-header` (dark forest background with centred copy) instead of `.page-header`.
 
 ---
 
@@ -193,61 +218,19 @@ All inner pages (not homepage) use this dark green header:
   <svg ...arrow icon.../>
 </a>
 ```
-```css
-.btn-primary {
-  background: var(--primary);
-  color: var(--on-primary);
-  padding: 13px 24px;
-  border-radius: var(--radius-md);
-  font-size: 14px;
-  font-weight: 600;
-}
-```
 
 ### Ghost button (on dark backgrounds)
 ```html
 <a href="#" class="btn-ghost">Label</a>
 ```
-```css
-.btn-ghost {
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.3);
-  color: #fff;
-  border-radius: var(--radius-md);
-}
-```
 
----
-
-## Nav Pattern
-
-All pages share identical nav HTML:
-
+### Buy button (product pages)
 ```html
-<ukisg-banner></ukisg-banner>
-
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="assets/brand/white_bk_logo.png" ...>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="/shop.html">Shop</a></li>
-      <li><a href="/availability.html">Availability</a></li>
-      <li><a href="our-roots.html">Our Roots</a></li>
-      <li><a href="grow-strong.html">Grow Strong</a></li>
-      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
-    </ul>
-    <button class="nav-hamburger" id="hamburger">...</button>
-  </div>
-</nav>
-<div class="mobile-menu" id="mobileMenu">...</div>
+<a class="btn-buy" href="shop.html#!/PRODUCT-NAME/p/PRODUCTID">
+  Buy from Shop
+  <svg ...arrow icon.../>
+</a>
 ```
-
-**The UKISG banner is now a custom web component.** Include `<script src="components/ukisg-banner.js"></script>` in the `<head>` of all pages, then use the `<ukisg-banner></ukisg-banner>` element to render it. This provides encapsulated styling (Shadow DOM) and ensures consistent appearance across all pages.
-
-Add `class="active"` to the link matching the current page.
 
 ---
 
@@ -255,10 +238,12 @@ Add `class="active"` to the link matching the current page.
 
 | Breakpoint | Width | Key changes |
 |------------|-------|-------------|
-| Desktop | > 1024px | Full nav, multi-column grids |
-| Tablet | ≤ 1024px | 2-column grids, stacked about sections |
-| Mobile | ≤ 768px | Hamburger nav, single column, reduced spacing |
-| Small mobile | ≤ 400px | Further reductions for 360px phones |
+| Desktop | > 1100px | Full nav, 4-col product grid |
+| Tablet | ≤ 1100px | 3-col product grid |
+| Tablet small | ≤ 1024px | 2-col grids, stacked about sections |
+| Mobile | ≤ 768px | Hamburger nav, product hero stacks |
+| Mobile small | ≤ 720px | 2-col product grid |
+| Small mobile | ≤ 460px | Single-col product grid |
 
 ---
 
@@ -269,6 +254,7 @@ Add `class="active"` to the link matching the current page.
 - Use `object-fit: cover` on all photography
 - Keep section rhythm at `--sp-section` (96px) between major bands
 - Use `clamp()` for all display font sizes
+- Use `<base href="../">` for all `trees/` subpages to resolve root-level paths
 
 ## Don'ts
 
@@ -276,3 +262,4 @@ Add `class="active"` to the link matching the current page.
 - Don't use `font-weight` heavier than 400 on Fraunces display headings
 - Don't use the dark footer pattern (stays as `--surface-soft`)
 - Don't inline hex values — always use tokens
+- Don't put page-specific CSS inline in `trees/*.html` — use `trees/product.css`

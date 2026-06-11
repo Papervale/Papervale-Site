@@ -1,84 +1,85 @@
 # Deployment Guide — Netlify
 
 Hosting: [Netlify](https://netlify.com)  
-Method: Drag-and-drop or GitHub auto-deploy  
-Current live site: https://www.papervaletrees.com (Weebly — being replaced)
+Method: GitHub auto-deploy (connected to `main` branch)  
+Live site: https://www.papervaletrees.com  
+Status: ✅ Live — previously on Weebly, migrated to static HTML on Netlify
+
+---
+
+## Current Deployment Setup
+
+The site is already live on Netlify connected to this GitHub repository. Deployment is automatic:
+
+1. Make changes locally
+2. `git add` the changed files
+3. `git commit -m "description"`
+4. `git push`
+5. Netlify detects the push and redeploys within ~30 seconds
+
+No build command is needed — the site is plain HTML/CSS/JS.
 
 ---
 
 ## Why Netlify
 
 - Free tier is more than sufficient for this site
-- Drag-and-drop deploy — no command line needed
+- Auto-deploy from GitHub — push a change, site updates within 30 seconds
 - Free SSL certificate (HTTPS) included automatically
 - Handles contact form submissions natively (no backend needed)
-- Custom domain connection is straightforward
-- If using GitHub: push a change → site updates automatically within seconds
 
 ---
 
-## Option A — Drag and Drop (Simplest)
+## Re-Deploying (Manual Drag-and-Drop)
 
-1. Go to https://netlify.com and sign up for a free account
-2. From the dashboard click **"Add new site → Deploy manually"**
-3. Drag your entire `papervale-site` folder onto the upload area
-   - **Important:** Include the `components/` directory (contains required web components like `ukisg-banner.js`)
-4. Netlify gives you a random URL like `https://random-name-123.netlify.app`
-5. Test everything works on that URL before switching your domain
+If you ever need to deploy without GitHub:
 
-**To update the site:** drag the folder again. Netlify replaces the previous version.
-
----
-
-## Option B — GitHub Auto-Deploy (Recommended)
-
-### One-time setup
-
-1. Create a free account at https://github.com
-2. Create a new repository called `papervale-site` (can be private)
-3. Upload your project files to the repository
-4. Go to https://netlify.com → **"Add new site → Import from Git"**
-5. Connect your GitHub account and select the `papervale-site` repository
-6. Leave build settings blank (no build command needed for plain HTML)
-7. Click **Deploy site**
-
-### After setup
-
-Every time you push a change to GitHub, Netlify redeploys automatically within ~30 seconds. No manual uploading needed.
+1. Go to https://netlify.com and log in
+2. From the dashboard click the site → **Deploys → Deploy manually**
+3. Drag your entire project folder onto the upload area
+   - **Important:** Include `components/`, `trees/`, `assets/` directories
+4. Netlify replaces the previous version
 
 ---
 
-## Connecting Your Domain
-
-Once the site is working on the Netlify URL:
-
-1. In Netlify: **Site settings → Domain management → Add custom domain**
-2. Enter `papervaletrees.com`
-3. Netlify shows you DNS records to add
-
-### DNS Changes (do this at your domain registrar)
-
-You need to update two DNS records wherever your domain is registered:
+## Folder Structure to Deploy
 
 ```
-Type: A
-Name: @
-Value: 75.2.60.5
-
-Type: CNAME
-Name: www
-Value: [your-site-name].netlify.app
+papervale-site/
+├── index.html
+├── shop.html
+├── tree-catalogue.html
+├── availability.html
+├── grow-strong.html
+├── how-we-grow-our-trees.html
+├── selecting-a-tree.html
+├── planting-aftercare.html
+├── our-roots.html
+├── services-we-provide.html
+├── gallery.html
+├── contact.html
+├── styles.css
+├── sitemap.xml
+├── llms.txt
+├── assets/
+│   └── brand/, images/, docs/
+├── components/
+│   ├── app-nav.js
+│   ├── app-footer.js
+│   ├── ukisg-banner.js
+│   └── shared.js
+└── trees/
+    ├── product.css
+    └── [228 product pages].html
 ```
 
-DNS changes can take up to 48 hours to propagate worldwide.
-
-> ⚠️ **Important:** Change your DNS *after* you are happy the new site is working on the Netlify URL. Once DNS is pointed at Netlify, the Weebly site is no longer live.
+Do **not** deploy: `ecwid-products.json`, `ecwid-slugs.txt`, `ecwid-placeholder-ids.json`, `docs/`, `papervale_products.csv`.
 
 ---
 
 ## Contact Form Setup (Netlify Forms)
 
-The contact form on `contact.html` currently has a JavaScript placeholder. To make it work with Netlify's built-in form handling:
+The contact form on `contact.html` needs Netlify Forms wiring to submit to email.
 
 ### 1. Add the `netlify` attribute to the form tag
 
@@ -109,32 +110,32 @@ Create `thank-you.html` and add to the form:
 
 In Netlify dashboard: **Forms → contact → Form notifications → Add notification → Email**
 
-Submissions go directly to your email inbox.
+---
+
+## Domain & DNS
+
+Domain is already connected to Netlify. DNS records point at Netlify:
+
+```
+Type: A     Name: @    Value: 75.2.60.5
+Type: CNAME Name: www  Value: [site-name].netlify.app
+```
+
+If the domain ever needs to be reconnected: **Netlify → Site settings → Domain management**.
 
 ---
 
-## Environment Notes
+## Pre-Launch Checklist (for reference)
 
-| Item | Current | Target |
-|------|---------|--------|
-| Domain registrar | *(check with Jonathan)* | Keep same registrar, update DNS |
-| Email hosting | *(check — likely separate from Weebly)* | Unaffected by move |
-| Hero video | Weebly CDN | Move to `assets/video/` or use Vimeo/YouTube embed |
-| Availability PDFs | Weebly uploads | Move to `assets/docs/` |
-| Shop | Ecwid (stays) | Stays — just re-embed the widget |
-
----
-
-## Pre-Launch Checklist
-
-- [ ] All pages tested on desktop Chrome, Safari, Firefox
-- [ ] All pages tested on iOS Safari and Android Chrome
-- [ ] All internal links work correctly
-- [ ] Contact form tested and submits to correct email
-- [ ] Shop embed loads correctly (test with real Ecwid store ID)
-- [ ] All images load (check browser console for 404 errors)
-- [ ] Hero video loads and autoplays on mobile
-- [ ] Availability PDF links work
-- [ ] Custom domain connected and HTTPS shows green padlock
-- [ ] Old Weebly site confirmed offline (or redirected)
-- [ ] Google Search Console updated with new sitemap
+- [x] All core pages built and deployed
+- [x] Tree catalogue page (tree-catalogue.html) live
+- [x] 228 tree product pages (trees/*.html) live
+- [x] Nav updated — Trees link added
+- [x] Sitemap (244 URLs) deployed
+- [x] HTTPS / SSL — green padlock
+- [x] Custom domain connected (papervaletrees.com)
+- [x] Ecwid shop embed loads correctly
+- [ ] Contact form wired to Netlify Forms
+- [ ] Google Analytics added
+- [ ] Google Search Console — sitemap submitted
+- [ ] Test on iOS Safari, Android Chrome, Firefox
