@@ -1,0 +1,3417 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tree Catalogue — Papervale Trees</title>
+<meta name="description" content="Browse our full collection of homegrown trees — 233 varieties available from our UKISG certified nursery in Co. Down.">
+<meta property="og:title" content="Tree Catalogue — Papervale Trees">
+<meta property="og:description" content="Browse 233 varieties of homegrown, peat-free trees. Native species, ornamentals, fruit trees and more. UK & Ireland delivery.">
+<meta property="og:image" content="https://www.papervaletrees.com/assets/images/nursery-stock-trees.jpg">
+<meta property="og:url" content="https://www.papervaletrees.com/tree-catalogue.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Papervale Trees">
+<link rel="icon" type="image/x-icon" href="assets/brand/favicon-dark.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* ── Catalogue header ── */
+.cat-header {
+  background: var(--brand-forest);
+  color: #fff;
+  padding: 64px var(--sp-xl) 48px;
+  text-align: center;
+}
+.cat-header .page-eyebrow {
+  color: var(--brand-fern);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: var(--sp-md);
+}
+.cat-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  color: #fff;
+  margin-bottom: var(--sp-md);
+}
+.cat-header h1 em { font-style: italic; color: var(--brand-fern); }
+.cat-header p {
+  color: rgba(255,255,255,0.75);
+  font-size: 16px;
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ── Filter bar ── */
+.ci-toolbar {
+  background: var(--surface-soft);
+  border-bottom: 1px solid var(--hairline);
+  padding: var(--sp-lg) var(--sp-xl);
+  position: sticky;
+  top: 64px;
+  z-index: 50;
+}
+.ci-toolbar-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-xs);
+}
+.ci-toolbar-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  flex-shrink: 0;
+  margin-right: 4px;
+}
+.ci-filter {
+  background: #fff;
+  border: 1px solid var(--hairline);
+  color: var(--body);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.ci-filter:hover { border-color: var(--brand-fern); color: var(--brand-forest); }
+.ci-filter.active {
+  background: var(--brand-forest);
+  border-color: var(--brand-forest);
+  color: #fff;
+}
+.ci-filter-clear {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 8px;
+  margin-left: 4px;
+  display: none;
+  font-family: var(--font-body);
+}
+.ci-filter-clear:hover { color: var(--ink); }
+
+/* ── Results count ── */
+.ci-results-bar {
+  max-width: 1240px;
+  margin: var(--sp-lg) auto 0;
+  padding: 0 var(--sp-xl);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ci-count {
+  font-size: 13px;
+  color: var(--muted);
+}
+.ci-count strong { color: var(--ink); }
+
+/* ── Search ── */
+.ci-search-wrap {
+  position: relative;
+}
+.ci-search {
+  border: 1px solid var(--hairline);
+  background: #fff;
+  border-radius: var(--radius-pill);
+  padding: 7px 14px 7px 34px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--ink);
+  width: 220px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.ci-search:focus { border-color: var(--brand-fern); }
+.ci-search-icon {
+  position: absolute;
+  left: 11px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted-soft);
+  pointer-events: none;
+}
+
+/* ── Grid ── */
+.ci-grid {
+  max-width: 1240px;
+  margin: var(--sp-xl) auto var(--sp-section);
+  padding: 0 var(--sp-xl);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-lg);
+}
+@media (max-width: 1100px) { .ci-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 720px)  { .ci-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 460px)  { .ci-grid { grid-template-columns: 1fr; } }
+
+/* ── Card ── */
+.ci-card {
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.ci-card:hover {
+  box-shadow: 0 8px 32px rgba(51,72,50,0.12);
+  transform: translateY(-2px);
+}
+.ci-card.hidden { display: none; }
+
+.ci-img-wrap {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: var(--surface-card);
+}
+.ci-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s;
+}
+.ci-card:hover .ci-img-wrap img { transform: scale(1.04); }
+
+.ci-body {
+  padding: var(--sp-md);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.ci-latin {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--muted);
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ci-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: var(--sp-sm);
+}
+.ci-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: auto;
+  padding-bottom: var(--sp-sm);
+}
+.ci-tag {
+  font-size: 10px;
+  font-weight: 500;
+  background: var(--surface-card);
+  color: var(--muted);
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--hairline);
+}
+.ci-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--sp-sm);
+  border-top: 1px solid var(--hairline);
+  margin-top: var(--sp-sm);
+}
+.ci-price {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--ink);
+}
+.ci-out {
+  font-size: 10px;
+  font-weight: 500;
+  color: #8b4a2a;
+  background: #f5ece8;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+}
+
+/* ── Empty state ── */
+.ci-empty {
+  grid-column: 1/-1;
+  text-align: center;
+  padding: 80px 0;
+  display: none;
+}
+.ci-empty.show { display: block; }
+.ci-empty p { color: var(--muted); font-size: 15px; margin-top: var(--sp-md); }
+</style>
+</head>
+<body>
+
+<ukisg-banner></ukisg-banner>
+<app-nav></app-nav>
+
+<!-- HEADER -->
+<div class="cat-header">
+  <p class="page-eyebrow">Full Catalogue</p>
+  <h1>Browse Our<br><em>Tree Collection</em></h1>
+  <p>233 homegrown varieties from our UKISG certified nursery. Peat-free, traceable, UK &amp; Ireland delivery.</p>
+</div>
+
+<!-- FILTER TOOLBAR -->
+<div class="ci-toolbar">
+  <div class="ci-toolbar-inner">
+    <span class="ci-toolbar-label">Filter</span>
+    <button class="ci-filter active" data-cat="all">All Trees</button>
+      <button class="ci-filter" data-cat="Autumn-Colour">Autumn Colour</button>
+      <button class="ci-filter" data-cat="Bark-Interest">Bark Interest</button>
+      <button class="ci-filter" data-cat="Coastal">Coastal</button>
+      <button class="ci-filter" data-cat="Evergreen-Trees">Evergreen Trees</button>
+      <button class="ci-filter" data-cat="Flowering-Trees">Flowering Trees</button>
+      <button class="ci-filter" data-cat="Fruiting">Fruiting</button>
+      <button class="ci-filter" data-cat="Multistem">Multistem</button>
+      <button class="ci-filter" data-cat="Narrow-Trees">Narrow Trees</button>
+      <button class="ci-filter" data-cat="Native">Native</button>
+      <button class="ci-filter" data-cat="Screening-Trees">Screening Trees</button>
+      <button class="ci-filter" data-cat="Small-Garden">Small Garden</button>
+      <button class="ci-filter" data-cat="Stately-Large-Avenue-Parklands">Stately Large Avenue Parklands</button>
+      <button class="ci-filter" data-cat="Urban">Urban</button>
+      <button class="ci-filter" data-cat="Wet-Soils">Wet Soils</button>
+      <button class="ci-filter" data-cat="Wildlife-Friendly">Wildlife Friendly</button>
+      <button class="ci-filter" data-cat="Year-Round-Interest">Year Round Interest</button>
+    <button class="ci-filter-clear" id="clearBtn">&#x2715; Clear</button>
+  </div>
+</div>
+
+<!-- RESULTS BAR -->
+<div class="ci-results-bar">
+  <p class="ci-count"><strong id="visibleCount">233</strong> trees shown</p>
+  <div class="ci-search-wrap">
+    <svg class="ci-search-icon" width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.3"/>
+      <path d="M9.5 9.5L13 13" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+    </svg>
+    <input class="ci-search" id="searchInput" type="search" placeholder="Search trees…" autocomplete="off">
+  </div>
+</div>
+
+<!-- GRID -->
+<div class="ci-grid" id="treeGrid">
+    <a class="ci-card" href="trees/ficus-brown-turkey-fig.html" data-cats="Fruiting">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4485385967.jpg" alt="Fig" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">FICUS &#39;Brown Turkey&#39;</p>
+        <h3 class="ci-name">Fig</h3>
+        <div class="ci-tags"><span class="ci-tag">Fruiting</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £24</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/sorbus-eastern-promise-mountain-ash.html" data-cats="Small-Garden Autumn-Colour Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093528517.jpg" alt="Mountain Ash" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">SORBUS &#39;Eastern Promise&#39;</p>
+        <h3 class="ci-name">Mountain Ash</h3>
+        <div class="ci-tags"><span class="ci-tag">Small Garden</span><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £45</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/malus-evereste-flowering-crab-apple.html" data-cats="Small-Garden Fruiting Flowering-Trees Autumn-Colour Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4485357742.jpg" alt="Flowering Crab Apple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">MALUS &#39;Evereste&#39;</p>
+        <h3 class="ci-name">Flowering Crab Apple</h3>
+        <div class="ci-tags"><span class="ci-tag">Small Garden</span><span class="ci-tag">Fruiting</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/magnolia-galaxy-magnolia.html" data-cats="Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4787082176.jpg" alt="Magnolia" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">MAGNOLIA ‘Galaxy’</p>
+        <h3 class="ci-name">Magnolia</h3>
+        <div class="ci-tags"><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £145</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/malus-golden-hornet-flowering-crab-apple.html" data-cats="Fruiting Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425390929.jpg" alt="Flowering Crab Apple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">MALUS &#39;Golden Hornet&#39;</p>
+        <h3 class="ci-name">Flowering Crab Apple</h3>
+        <div class="ci-tags"><span class="ci-tag">Fruiting</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £34.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/ilex-golden-king-variegated-holly.html" data-cats="Evergreen-Trees Fruiting Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093334359.jpg" alt="Variegated Holly" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ILEX &#39;Golden King&#39;</p>
+        <h3 class="ci-name">Variegated Holly</h3>
+        <div class="ci-tags"><span class="ci-tag">Evergreen Trees</span><span class="ci-tag">Fruiting</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £75</span>
+          <span class="ci-out">Currently unavailable</span>
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/sorbus-golden-wonder-mountain-ash.html" data-cats="Fruiting Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4485627857.jpg" alt="Mountain Ash" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">SORBUS  &#39;Golden Wonder&#39;</p>
+        <h3 class="ci-name">Mountain Ash</h3>
+        <div class="ci-tags"><span class="ci-tag">Fruiting</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £55</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/malus-john-downie-flowering-crab-apple.html" data-cats="Fruiting Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093504024.jpg" alt="Flowering Crab Apple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">MALUS &#39;John Downie&#39;</p>
+        <h3 class="ci-name">Flowering Crab Apple</h3>
+        <div class="ci-tags"><span class="ci-tag">Fruiting</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £36</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/prunus-kikushidarezakura-cheals-weeping-cherry.html" data-cats="Autumn-Colour Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4787105025.jpg" alt="Cheal’s Weeping Cherry" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PRUNUS &#39;Kiku-shidare-zakura’</p>
+        <h3 class="ci-name">Cheal’s Weeping Cherry</h3>
+        <div class="ci-tags"><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £55</span>
+          <span class="ci-out">Currently unavailable</span>
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/sorbus-olympic-flame-rowan.html" data-cats="Small-Garden Fruiting Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040611753.jpg" alt="Rowan" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">SORBUS &#39;Olympic Flame&#39;</p>
+        <h3 class="ci-name">Rowan</h3>
+        <div class="ci-tags"><span class="ci-tag">Small Garden</span><span class="ci-tag">Fruiting</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £22.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/crataegus-pauls-scarlet-midland-hawthorn.html" data-cats="Urban Fruiting Flowering-Trees Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040565346.jpg" alt="Midland Hawthorn" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CRATAEGUS ‘Paul’s Scarlet’</p>
+        <h3 class="ci-name">Midland Hawthorn</h3>
+        <div class="ci-tags"><span class="ci-tag">Urban</span><span class="ci-tag">Fruiting</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £34.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/malus-profusion-flowering-crab-apple.html" data-cats="Small-Garden">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040707997.jpg" alt="Flowering Crab Apple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">MALUS &#39;Profusion&#39;</p>
+        <h3 class="ci-name">Flowering Crab Apple</h3>
+        <div class="ci-tags"><span class="ci-tag">Small Garden</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £34.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/malus-red-sentinel-flowering-crab-apple.html" data-cats="Fruiting Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093528640.jpg" alt="Flowering Crab Apple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">MALUS &#39;Red sentinel&#39;</p>
+        <h3 class="ci-name">Flowering Crab Apple</h3>
+        <div class="ci-tags"><span class="ci-tag">Fruiting</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £55</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/malus-royalty-flowering-crab-apple.html" data-cats="Urban Flowering-Trees Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093548030.jpg" alt="Flowering Crab Apple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">MALUS &#39;Royalty&#39;</p>
+        <h3 class="ci-name">Flowering Crab Apple</h3>
+        <div class="ci-tags"><span class="ci-tag">Urban</span><span class="ci-tag">Flowering Trees</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £125</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/malus-rudolph-flowering-crab-apple.html" data-cats="Small-Garden Fruiting Narrow-Trees Flowering-Trees Autumn-Colour Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4485610027.jpg" alt="Flowering Crab Apple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">MALUS &#39;Rudolph&#39;</p>
+        <h3 class="ci-name">Flowering Crab Apple</h3>
+        <div class="ci-tags"><span class="ci-tag">Small Garden</span><span class="ci-tag">Fruiting</span><span class="ci-tag">Narrow Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £31.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/prunus-stella-fruiting-cherry.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5103223631.jpg" alt="Fruiting Cherry" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PRUNUS &#39;Stella&#39;</p>
+        <h3 class="ci-name">Fruiting Cherry</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/prunus-sunburst-fruiting-cherry.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5103226507.jpg" alt="Fruiting Cherry" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PRUNUS &#39;Sunburst&#39;</p>
+        <h3 class="ci-name">Fruiting Cherry</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/elaeagnus-ebbingei-elaeagnus.html" data-cats="Evergreen-Trees Coastal Wildlife-Friendly Screening-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4633034825.jpg" alt="Elaeagnus" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ELAEAGNUS &#215; ebbingei</p>
+        <h3 class="ci-name">Elaeagnus</h3>
+        <div class="ci-tags"><span class="ci-tag">Evergreen Trees</span><span class="ci-tag">Coastal</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £70</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/picea-abies-norway-spruce.html" data-cats="Evergreen-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040750506.jpg" alt="Norway Spruce" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PICEA abies</p>
+        <h3 class="ci-name">Norway Spruce</h3>
+        <div class="ci-tags"><span class="ci-tag">Evergreen Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/quercus-acutissima-sawtooth-oak.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5013580222.jpg" alt="Sawtooth Oak" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">QUERCUS acutissima</p>
+        <h3 class="ci-name">Sawtooth Oak</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/morus-alba-fruitless-syn-kagayamae-fruitless-white-mulberry.html" data-cats="Wildlife-Friendly Bark-Interest Fruiting">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/products/724471277/5796294295.jpg" alt="Fruitless White Mulberry" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">MORUS alba ‘Fruitless’ syn. kagayamae</p>
+        <h3 class="ci-name">Fruitless White Mulberry</h3>
+        <div class="ci-tags"><span class="ci-tag">Wildlife Friendly</span><span class="ci-tag">Bark Interest</span><span class="ci-tag">Fruiting</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/salix-alba-tristis-golden-weeping-willow.html" data-cats="Wet-Soils Bark-Interest">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4454974652.jpg" alt="Golden Weeping Willow" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">SALIX alba &#39;Tristis&#39;</p>
+        <h3 class="ci-name">Golden Weeping Willow</h3>
+        <div class="ci-tags"><span class="ci-tag">Wet Soils</span><span class="ci-tag">Bark Interest</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/abies-alba-european-silver-fir.html" data-cats="Evergreen-Trees Bark-Interest Stately-Large-Avenue-Parklands">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4836333457.jpg" alt="European Silver Fir" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ABIES alba</p>
+        <h3 class="ci-name">European Silver Fir</h3>
+        <div class="ci-tags"><span class="ci-tag">Evergreen Trees</span><span class="ci-tag">Bark Interest</span><span class="ci-tag">Stately Large Avenue Parklands</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £24</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/betula-albosinensis-fascination-chinese-red-birch.html" data-cats="Urban Bark-Interest Narrow-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425199792.jpg" alt="Chinese Red Birch" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">BETULA albosinensis &#39;Fascination&#39;</p>
+        <h3 class="ci-name">Chinese Red Birch</h3>
+        <div class="ci-tags"><span class="ci-tag">Urban</span><span class="ci-tag">Bark Interest</span><span class="ci-tag">Narrow Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £95</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/phellodendron-amurense-amur-cork-tree.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4832803091.jpg" alt="Amur cork tree" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PHELLODENDRON amurense</p>
+        <h3 class="ci-name">Amur cork tree</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £24</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/nothofagus-antarctica-antarctic-beech.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4836368884.jpg" alt="Antarctic Beech" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">NOTHOFAGUS antarctica</p>
+        <h3 class="ci-name">Antarctic Beech</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/ilex-aquifolium-alaska-holly.html" data-cats="Fruiting Evergreen-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5041196757.jpg" alt="Holly" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ILEX aquifolium ‘Alaska’</p>
+        <h3 class="ci-name">Holly</h3>
+        <div class="ci-tags"><span class="ci-tag">Fruiting</span><span class="ci-tag">Evergreen Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £22.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/ilex-aquifolium-holly.html" data-cats="Evergreen-Trees Native Fruiting Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5041201268.jpg" alt="Holly" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ILEX aquifolium</p>
+        <h3 class="ci-name">Holly</h3>
+        <div class="ci-tags"><span class="ci-tag">Evergreen Trees</span><span class="ci-tag">Native</span><span class="ci-tag">Fruiting</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £55</span>
+          <span class="ci-out">Currently unavailable</span>
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/araucaria-araucana-monkey-puzzle.html" data-cats="Evergreen-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425199757.jpg" alt="Monkey Puzzle" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ARAUCARIA araucana</p>
+        <h3 class="ci-name">Monkey Puzzle</h3>
+        <div class="ci-tags"><span class="ci-tag">Evergreen Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/sorbus-aria-lutescens-whitebeam.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425588846.jpg" alt="Whitebeam" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">SORBUS aria &#39;Lutescens&#39;</p>
+        <h3 class="ci-name">Whitebeam</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £31.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/sorbus-aria-magnifica-whitebeam.html" data-cats="Fruiting Flowering-Trees Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093528615.jpg" alt="Whitebeam" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">SORBUS aria &#39;Magnifica&#39;</p>
+        <h3 class="ci-name">Whitebeam</h3>
+        <div class="ci-tags"><span class="ci-tag">Fruiting</span><span class="ci-tag">Flowering Trees</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £34.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/pinus-armandii-chinese-white-pine.html" data-cats="Stately-Large-Avenue-Parklands Bark-Interest Evergreen-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040827605.jpg" alt="Chinese White Pine" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PINUS armandii</p>
+        <h3 class="ci-name">Chinese White Pine</h3>
+        <div class="ci-tags"><span class="ci-tag">Stately Large Avenue Parklands</span><span class="ci-tag">Bark Interest</span><span class="ci-tag">Evergreen Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £22.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/cedrus-atlantica-glauca-blue-atlas-cedar.html" data-cats="Stately-Large-Avenue-Parklands Evergreen-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040766741.jpg" alt="Blue Atlas Cedar" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CEDRUS atlantica ‘Glauca’</p>
+        <h3 class="ci-name">Blue Atlas Cedar</h3>
+        <div class="ci-tags"><span class="ci-tag">Stately Large Avenue Parklands</span><span class="ci-tag">Evergreen Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/cedrus-atlantica-atlas-cedar.html" data-cats="Evergreen-Trees Stately-Large-Avenue-Parklands">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5041079461.jpg" alt="Atlas cedar" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CEDRUS atlantica</p>
+        <h3 class="ci-name">Atlas cedar</h3>
+        <div class="ci-tags"><span class="ci-tag">Evergreen Trees</span><span class="ci-tag">Stately Large Avenue Parklands</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/sorbus-aucuparia-sheerwater-seedling-rowan.html" data-cats="Autumn-Colour Urban Fruiting Flowering-Trees Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093472657.jpg" alt="Rowan" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">SORBUS aucuparia &#39;Sheerwater Seedling&#39;</p>
+        <h3 class="ci-name">Rowan</h3>
+        <div class="ci-tags"><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Urban</span><span class="ci-tag">Fruiting</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £45</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/corylus-avellana-contorta-contorted-hazel.html" data-cats="Small-Garden Narrow-Trees Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4485357377.jpg" alt="Contorted Hazel" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CORYLUS avellana &#39;Contorta&#39;</p>
+        <h3 class="ci-name">Contorted Hazel</h3>
+        <div class="ci-tags"><span class="ci-tag">Small Garden</span><span class="ci-tag">Narrow Trees</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £24</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/malus-baccata-columnaris-red-columnar-crabapple.html" data-cats="Small-Garden Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040631930.jpg" alt="Columnar Crabapple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">MALUS baccata ‘Columnaris Red’</p>
+        <h3 class="ci-name">Columnar Crabapple</h3>
+        <div class="ci-tags"><span class="ci-tag">Small Garden</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/taxus-baccata-yew.html" data-cats="Urban Native Evergreen-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093176776.jpg" alt="Yew" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">TAXUS baccata</p>
+        <h3 class="ci-name">Yew</h3>
+        <div class="ci-tags"><span class="ci-tag">Urban</span><span class="ci-tag">Native</span><span class="ci-tag">Evergreen Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £22.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/taxus-baccata-fastigiata-aurea-golden-irish-yew.html" data-cats="Urban">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5041152910.jpg" alt="Golden Irish Yew" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">TAXUS baccata Fastigiata Aurea</p>
+        <h3 class="ci-name">Golden Irish Yew</h3>
+        <div class="ci-tags"><span class="ci-tag">Urban</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £24</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/carpinus-bet-fastigiata-upright-hornbeam.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425199967.jpg" alt="Upright Hornbeam" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CARPINUS bet. &#39;Fastigiata&#39;</p>
+        <h3 class="ci-name">Upright Hornbeam</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/carpinus-bet-lucas-fastigate-hornbeam.html" data-cats="Autumn-Colour Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5441190796.jpg" alt="Fastigate Hornbeam" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CARPINUS bet. &#39;Lucas&#39;</p>
+        <h3 class="ci-name">Fastigate Hornbeam</h3>
+        <div class="ci-tags"><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £22.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/carpinus-bet-rockhampton-red-hornbeam.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5441192937.jpg" alt="Hornbeam" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CARPINUS bet. &#39;Rockhampton Red&#39;</p>
+        <h3 class="ci-name">Hornbeam</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £22.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/carpinus-betulus-common-hornbeam.html" data-cats="Native Autumn-Colour Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425199972.jpg" alt="Common Hornbeam" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CARPINUS betulus</p>
+        <h3 class="ci-name">Common Hornbeam</h3>
+        <div class="ci-tags"><span class="ci-tag">Native</span><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/carpinus-betulus-hornbeam.html" data-cats="Screening-Trees Wildlife-Friendly Autumn-Colour">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425201406.jpg" alt="Hornbeam" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CARPINUS betulus</p>
+        <h3 class="ci-name">Hornbeam</h3>
+        <div class="ci-tags"><span class="ci-tag">Screening Trees</span><span class="ci-tag">Wildlife Friendly</span><span class="ci-tag">Autumn Colour</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £595</span>
+          <span class="ci-out">Currently unavailable</span>
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/catalpa-bignonioides-aurea-golden-indian-bean-tree.html" data-cats="Flowering-Trees Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5039291303.jpg" alt="Golden Indian Bean Tree" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CATALPA bignonioides &#39;Aurea&#39;</p>
+        <h3 class="ci-name">Golden Indian Bean Tree</h3>
+        <div class="ci-tags"><span class="ci-tag">Flowering Trees</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £60</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/catalpa-bignonioides-indian-bean-tree.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425335502.jpg" alt="Indian Bean Tree" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CATALPA bignonioides</p>
+        <h3 class="ci-name">Indian Bean Tree</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £34.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/ginkgo-biloba-blagon-maidenhair-tree.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5039291499.jpg" alt="Maidenhair Tree" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">GINKGO biloba ‘Blagon’</p>
+        <h3 class="ci-name">Maidenhair Tree</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/ginkgo-biloba-brivingtetun-maidenhair-tree.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4785423864.jpg" alt="Maidenhair Tree" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">GINKGO biloba &#39;Brivingtetun&#39;</p>
+        <h3 class="ci-name">Maidenhair Tree</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/ginkgo-biloba-menhir-maidenhair-tree.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5039336465.jpg" alt="Maidenhair Tree" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">GINKGO biloba &#39;Menhir&#39;</p>
+        <h3 class="ci-name">Maidenhair Tree</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/ginkgo-biloba-princeton-sentry-maidenhair-tree.html" data-cats="Autumn-Colour Narrow-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4485357642.jpg" alt="Maidenhair Tree" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">GINKGO biloba &#39;Princeton Sentry&#39;</p>
+        <h3 class="ci-name">Maidenhair Tree</h3>
+        <div class="ci-tags"><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Narrow Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/ginkgo-biloba-maidenhair-tree.html" data-cats="Bark-Interest">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5038829245.jpg" alt="Maidenhair Tree" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">GINKGO biloba</p>
+        <h3 class="ci-name">Maidenhair Tree</h3>
+        <div class="ci-tags"><span class="ci-tag">Bark Interest</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/acer-buergerianum-trident-maple.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5038632600.jpg" alt="Trident Maple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ACER buergerianum</p>
+        <h3 class="ci-name">Trident Maple</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £34.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/pyrus-calleryana-chanticleer-ornamental-pear.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425535461.jpg" alt="Ornamental Pear" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PYRUS calleryana &#39;Chanticleer&#39;</p>
+        <h3 class="ci-name">Ornamental Pear</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/acer-campestre-field-maple.html" data-cats="Autumn-Colour Wildlife-Friendly Urban Native">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4834644232.jpg" alt="Field Maple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ACER campestre</p>
+        <h3 class="ci-name">Field Maple</h3>
+        <div class="ci-tags"><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Wildlife Friendly</span><span class="ci-tag">Urban</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £6.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/cercis-canadensis-forest-pansy-american-redbud.html" data-cats="Small-Garden Wildlife-Friendly Flowering-Trees Autumn-Colour">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5406118242.jpg" alt="American Redbud" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CERCIS canadensis &#39;Forest Pansy&#39;</p>
+        <h3 class="ci-name">American Redbud</h3>
+        <div class="ci-tags"><span class="ci-tag">Small Garden</span><span class="ci-tag">Wildlife Friendly</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £160</span>
+          <span class="ci-out">Currently unavailable</span>
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/amelanchier-canadensis-prince-william-canadian-serviceberry.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040592262.jpg" alt="Canadian Serviceberry" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">AMELANCHIER canadensis &#39;Prince William&#39;</p>
+        <h3 class="ci-name">Canadian Serviceberry</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/tsuga-canadensis-eastern-hemlock.html" data-cats="Stately-Large-Avenue-Parklands Bark-Interest Evergreen-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040794267.jpg" alt="Eastern Hemlock" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">TSUGA canadensis</p>
+        <h3 class="ci-name">Eastern Hemlock</h3>
+        <div class="ci-tags"><span class="ci-tag">Stately Large Avenue Parklands</span><span class="ci-tag">Bark Interest</span><span class="ci-tag">Evergreen Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £22.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/amelanchier-canadensis-serviceberry.html" data-cats="Autumn-Colour Fruiting Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093504047.jpg" alt="Serviceberry" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">AMELANCHIER canadensis</p>
+        <h3 class="ci-name">Serviceberry</h3>
+        <div class="ci-tags"><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Fruiting</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £60</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/acer-cappadocicum-aureum-golden-maple.html" data-cats="Urban Bark-Interest Autumn-Colour">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4485627782.jpg" alt="Golden Maple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ACER cappadocicum &#39;Aureum&#39;</p>
+        <h3 class="ci-name">Golden Maple</h3>
+        <div class="ci-tags"><span class="ci-tag">Urban</span><span class="ci-tag">Bark Interest</span><span class="ci-tag">Autumn Colour</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £34.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/acer-cappadocicum-rubrum-red-maple.html" data-cats="Urban Autumn-Colour">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4476030387.jpg" alt="Red Maple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ACER cappadocicum &#39;Rubrum&#39;</p>
+        <h3 class="ci-name">Red Maple</h3>
+        <div class="ci-tags"><span class="ci-tag">Urban</span><span class="ci-tag">Autumn Colour</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £34.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/salix-caprea-pendula-kilmarnock-willow.html" data-cats="Small-Garden">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4613444792.jpg" alt="Kilmarnock Willow" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">SALIX caprea &#39;Pendula&#39;</p>
+        <h3 class="ci-name">Kilmarnock Willow</h3>
+        <div class="ci-tags"><span class="ci-tag">Small Garden</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/halesia-carolina-snowdrop-tree.html" data-cats="Wildlife-Friendly Fruiting Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5041102073.jpg" alt="Snowdrop Tree" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">HALESIA carolina</p>
+        <h3 class="ci-name">Snowdrop Tree</h3>
+        <div class="ci-tags"><span class="ci-tag">Wildlife Friendly</span><span class="ci-tag">Fruiting</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £24</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/pyrus-communis-beurre-hardy-beurre-hardy-pear.html" data-cats="Wildlife-Friendly Small-Garden Fruiting">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093385395.jpg" alt="Beurre Hardy Pear" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PYRUS communis ‘Beurre Hardy’</p>
+        <h3 class="ci-name">Beurre Hardy Pear</h3>
+        <div class="ci-tags"><span class="ci-tag">Wildlife Friendly</span><span class="ci-tag">Small Garden</span><span class="ci-tag">Fruiting</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/pyrus-communis-concorde-concorde-pear.html" data-cats="Narrow-Trees Small-Garden">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093472505.jpg" alt="Concorde Pear" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">Pyrus communis ‘Concorde’</p>
+        <h3 class="ci-name">Concorde Pear</h3>
+        <div class="ci-tags"><span class="ci-tag">Narrow Trees</span><span class="ci-tag">Small Garden</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/pyrus-communis-conference-pear.html" data-cats="Small-Garden Flowering-Trees Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093385416.jpg" alt="Pear" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PYRUS communis &#39;Conference&#39;</p>
+        <h3 class="ci-name">Pear</h3>
+        <div class="ci-tags"><span class="ci-tag">Small Garden</span><span class="ci-tag">Flowering Trees</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £34.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/pyrus-communis-williams-williams-pear.html" data-cats="Wildlife-Friendly Small-Garden Fruiting">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093382086.jpg" alt="Williams Pear" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PYRUS communis &#39;Williams&#39;</p>
+        <h3 class="ci-name">Williams Pear</h3>
+        <div class="ci-tags"><span class="ci-tag">Wildlife Friendly</span><span class="ci-tag">Small Garden</span><span class="ci-tag">Fruiting</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £65</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/abies-concolor-colorado-white-fir.html" data-cats="Evergreen-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5041054099.jpg" alt="Colorado White Fir" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ABIES concolor</p>
+        <h3 class="ci-name">Colorado White Fir</h3>
+        <div class="ci-tags"><span class="ci-tag">Evergreen Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/cornus-controversa-variegata-wedding-cake-tree.html" data-cats="Fruiting Flowering-Trees Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425345620.jpg" alt="Wedding Cake Tree" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CORNUS controversa &#39;Variegata&#39;</p>
+        <h3 class="ci-name">Wedding Cake Tree</h3>
+        <div class="ci-tags"><span class="ci-tag">Fruiting</span><span class="ci-tag">Flowering Trees</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £34.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/alnus-cordata-italian-alder.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4787042375.jpg" alt="Italian Alder" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ALNUS cordata</p>
+        <h3 class="ci-name">Italian Alder</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/tilia-cordata-smallleaved-lime.html" data-cats="Native Wildlife-Friendly Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425595197.jpg" alt="Small-leaved Lime" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">TILIA cordata</p>
+        <h3 class="ci-name">Small-leaved Lime</h3>
+        <div class="ci-tags"><span class="ci-tag">Native</span><span class="ci-tag">Wildlife Friendly</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £24</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/prunus-d-merryweather-damson-fruiting-cherry.html" data-cats="Wildlife-Friendly Flowering-Trees Small-Garden Fruiting">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093385313.jpg" alt="Fruiting Cherry" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PRUNUS d. &#39;Merryweather Damson&#39;</p>
+        <h3 class="ci-name">Fruiting Cherry</h3>
+        <div class="ci-tags"><span class="ci-tag">Wildlife Friendly</span><span class="ci-tag">Flowering Trees</span><span class="ci-tag">Small Garden</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/acer-davidii-snakebark-maple.html" data-cats="Fruiting Bark-Interest Autumn-Colour Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040654120.jpg" alt="Snakebark Maple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ACER davidii</p>
+        <h3 class="ci-name">Snakebark Maple</h3>
+        <div class="ci-tags"><span class="ci-tag">Fruiting</span><span class="ci-tag">Bark Interest</span><span class="ci-tag">Autumn Colour</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £34.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/acacia-dealbata-blue-wattle.html" data-cats="Small-Garden Evergreen-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4485627752.jpg" alt="Blue Wattle" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ACACIA dealbata</p>
+        <h3 class="ci-name">Blue Wattle</h3>
+        <div class="ci-tags"><span class="ci-tag">Small Garden</span><span class="ci-tag">Evergreen Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £60</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/larix-decidua-european-larch.html" data-cats="Stately-Large-Avenue-Parklands">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5041103702.jpg" alt="European Larch" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">LARIX decidua</p>
+        <h3 class="ci-name">European Larch</h3>
+        <div class="ci-tags"><span class="ci-tag">Stately Large Avenue Parklands</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/cedrus-deodara-deodar-cedar.html" data-cats="Evergreen-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040773361.jpg" alt="Deodar Cedar" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CEDRUS deodara</p>
+        <h3 class="ci-name">Deodar Cedar</h3>
+        <div class="ci-tags"><span class="ci-tag">Evergreen Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/taxodium-distichum-swamp-cypress.html" data-cats="Wet-Soils Autumn-Colour">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4727410767.jpg" alt="Swamp Cypress" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">TAXODIUM distichum</p>
+        <h3 class="ci-name">Swamp Cypress</h3>
+        <div class="ci-tags"><span class="ci-tag">Wet Soils</span><span class="ci-tag">Autumn Colour</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/thujopsis-dolabrata-hiba-arborvitae.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4836368817.jpg" alt="Hiba Arborvitae" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">THUJOPSIS dolabrata</p>
+        <h3 class="ci-name">Hiba Arborvitae</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/malus-domestica-bramleys-seedling-apple.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5103203251.jpg" alt="Apple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">MALUS domestica &#39;Bramley&#39;s Seedling&#39;</p>
+        <h3 class="ci-name">Apple</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/malus-domestica-charles-ross-apple.html" data-cats="Wildlife-Friendly Small-Garden Fruiting">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093472500.jpg" alt="Apple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">MALUS domestica &#39;Charles Ross&#39;</p>
+        <h3 class="ci-name">Apple</h3>
+        <div class="ci-tags"><span class="ci-tag">Wildlife Friendly</span><span class="ci-tag">Small Garden</span><span class="ci-tag">Fruiting</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/prunus-domestica-czar-plum.html" data-cats="Wildlife-Friendly Small-Garden Fruiting">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093385347.jpg" alt="Plum" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PRUNUS domestica &#39;Czar&#39;</p>
+        <h3 class="ci-name">Plum</h3>
+        <div class="ci-tags"><span class="ci-tag">Wildlife Friendly</span><span class="ci-tag">Small Garden</span><span class="ci-tag">Fruiting</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/pyrus-domestica-doyenne-du-comice-comice-pear.html" data-cats="Wildlife-Friendly Small-Garden">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093385462.jpg" alt="Comice Pear" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PYRUS domestica &#39;Doyenne du Comice&#39;</p>
+        <h3 class="ci-name">Comice Pear</h3>
+        <div class="ci-tags"><span class="ci-tag">Wildlife Friendly</span><span class="ci-tag">Small Garden</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/malus-domestica-elstar-apple.html" data-cats="Small-Garden Fruiting Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093472572.jpg" alt="Apple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">MALUS domestica &#39;Elstar&#39;</p>
+        <h3 class="ci-name">Apple</h3>
+        <div class="ci-tags"><span class="ci-tag">Small Garden</span><span class="ci-tag">Fruiting</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/malus-domestica-james-grieve-apple.html" data-cats="Wildlife-Friendly Fruiting">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093469529.jpg" alt="Apple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">MALUS domestica &#39;James Grieve&#39;</p>
+        <h3 class="ci-name">Apple</h3>
+        <div class="ci-tags"><span class="ci-tag">Wildlife Friendly</span><span class="ci-tag">Fruiting</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/malus-domestica-jonagold-apple.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5103203311.jpg" alt="Apple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">MALUS domestica &#39;Jonagold&#39;</p>
+        <h3 class="ci-name">Apple</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £24</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/malus-domestica-laxtons-superb-apple.html" data-cats="Small-Garden Fruiting Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093450178.jpg" alt="Apple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">MALUS domestica &#39;Laxton&#39;s Superb&#39;</p>
+        <h3 class="ci-name">Apple</h3>
+        <div class="ci-tags"><span class="ci-tag">Small Garden</span><span class="ci-tag">Fruiting</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/prunus-domestica-opal-opal-plum.html" data-cats="Wildlife-Friendly Small-Garden Fruiting">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093334384.jpg" alt="Opal Plum" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PRUNUS domestica &#39;Opal&#39;</p>
+        <h3 class="ci-name">Opal Plum</h3>
+        <div class="ci-tags"><span class="ci-tag">Wildlife Friendly</span><span class="ci-tag">Small Garden</span><span class="ci-tag">Fruiting</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/malus-domestica-red-devil-apple.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5103201640.jpg" alt="Apple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">MALUS domestica &#39;Red Devil&#39;</p>
+        <h3 class="ci-name">Apple</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/prunus-domestica-reine-claude-doullins-greengage-plum.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093296462.jpg" alt="Greengage Plum" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PRUNUS domestica &#39;Reine Claude d&#39;Oullins&#39;</p>
+        <h3 class="ci-name">Greengage Plum</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/malus-domestica-scrumptious-apple.html" data-cats="Wildlife-Friendly Fruiting">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093450202.jpg" alt="Apple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">MALUS domestica &#39;Scrumptious&#39;</p>
+        <h3 class="ci-name">Apple</h3>
+        <div class="ci-tags"><span class="ci-tag">Wildlife Friendly</span><span class="ci-tag">Fruiting</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/malus-domestica-spartan-apple.html" data-cats="Small-Garden Fruiting Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093472539.jpg" alt="Apple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">MALUS domestica &#39;Spartan&#39;</p>
+        <h3 class="ci-name">Apple</h3>
+        <div class="ci-tags"><span class="ci-tag">Small Garden</span><span class="ci-tag">Fruiting</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/malus-domestica-summerred-apple.html" data-cats="Wildlife-Friendly Small-Garden Fruiting">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093382225.jpg" alt="Apple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">MALUS domestica &#39;Summerred&#39;</p>
+        <h3 class="ci-name">Apple</h3>
+        <div class="ci-tags"><span class="ci-tag">Wildlife Friendly</span><span class="ci-tag">Small Garden</span><span class="ci-tag">Fruiting</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/prunus-domestica-victoria-plum.html" data-cats="Small-Garden Fruiting Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093334379.jpg" alt="Plum" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PRUNUS domestica &#39;Victoria&#39;</p>
+        <h3 class="ci-name">Plum</h3>
+        <div class="ci-tags"><span class="ci-tag">Small Garden</span><span class="ci-tag">Fruiting</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/malus-domestica-worcester-pearmain-apple.html" data-cats="Wildlife-Friendly Fruiting">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093472582.jpg" alt="Apple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">MALUS domestica &#39;Worcester Pearmain&#39;</p>
+        <h3 class="ci-name">Apple</h3>
+        <div class="ci-tags"><span class="ci-tag">Wildlife Friendly</span><span class="ci-tag">Fruiting</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/malus-domestica-katja-katy-apple.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5103203225.jpg" alt="Katy Apple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">MALUS domestica Katja</p>
+        <h3 class="ci-name">Katy Apple</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/aralia-elata-angelica-tree.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4476736252.jpg" alt="Angelica Tree" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ARALIA elata</p>
+        <h3 class="ci-name">Angelica Tree</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/betula-ermanii-ermans-birch.html" data-cats="Bark-Interest Narrow-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040650665.jpg" alt="Erman&#39;s Birch" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">BETULA ermanii</p>
+        <h3 class="ci-name">Erman&#39;s Birch</h3>
+        <div class="ci-tags"><span class="ci-tag">Bark Interest</span><span class="ci-tag">Narrow Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £6.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/euonymus-europaeus-red-cascade-spindleberry.html" data-cats="Native Fruiting Autumn-Colour">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5039391643.jpg" alt="Spindleberry" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">EUONYMUS europaeus &#39;Red Cascade&#39;</p>
+        <h3 class="ci-name">Spindleberry</h3>
+        <div class="ci-tags"><span class="ci-tag">Native</span><span class="ci-tag">Fruiting</span><span class="ci-tag">Autumn Colour</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/cornus-florida-cherokee-chief-flowering-dogwood.html" data-cats="Bark-Interest Flowering-Trees Wildlife-Friendly Autumn-Colour">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5038917987.jpg" alt="Flowering Dogwood" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CORNUS florida &#39;Cherokee Chief&#39;</p>
+        <h3 class="ci-name">Flowering Dogwood</h3>
+        <div class="ci-tags"><span class="ci-tag">Bark Interest</span><span class="ci-tag">Flowering Trees</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/cornus-florida-flowering-dogwood.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5038815021.jpg" alt="Flowering Dogwood" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CORNUS florida</p>
+        <h3 class="ci-name">Flowering Dogwood</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/abies-fraseri-fraser-fir.html" data-cats="Evergreen-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4485610142.jpg" alt="Fraser Fir" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ABIES fraseri</p>
+        <h3 class="ci-name">Fraser Fir</h3>
+        <div class="ci-tags"><span class="ci-tag">Evergreen Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/acer-freemanii-autumn-blaze-jeffersred-maple.html" data-cats="Bark-Interest Autumn-Colour">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4424825845.jpg" alt="Maple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ACER freemanii &#39;Autumn Blaze&#39; (&#39;Jeffersred&#39;)</p>
+        <h3 class="ci-name">Maple</h3>
+        <div class="ci-tags"><span class="ci-tag">Bark Interest</span><span class="ci-tag">Autumn Colour</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/acer-freemanii-celebration-scarlet-maple.html" data-cats="Autumn-Colour">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5038680802.jpg" alt="Scarlet Maple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ACER freemanii &#39;Celebration&#39;</p>
+        <h3 class="ci-name">Scarlet Maple</h3>
+        <div class="ci-tags"><span class="ci-tag">Autumn Colour</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/acer-ginnala-amur-maple.html" data-cats="Small-Garden Flowering-Trees Autumn-Colour">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4476713287.jpg" alt="Amur Maple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ACER ginnala</p>
+        <h3 class="ci-name">Amur Maple</h3>
+        <div class="ci-tags"><span class="ci-tag">Small Garden</span><span class="ci-tag">Flowering Trees</span><span class="ci-tag">Autumn Colour</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £34.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/picea-glauca-var-albertiana-conica-dwarf-alberta-spruce.html" data-cats="Evergreen-Trees Urban Small-Garden">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5041146861.jpg" alt="Dwarf Alberta Spruce" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PICEA glauca var. albertiana &#39;Conica&#39;</p>
+        <h3 class="ci-name">Dwarf Alberta Spruce</h3>
+        <div class="ci-tags"><span class="ci-tag">Evergreen Trees</span><span class="ci-tag">Urban</span><span class="ci-tag">Small Garden</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/alnus-glutinosa-imperialis-cutleaf-alder.html" data-cats="Wet-Soils">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4424825900.jpg" alt="Cut-Leaf Alder" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ALNUS glutinosa ‘Imperialis’</p>
+        <h3 class="ci-name">Cut-Leaf Alder</h3>
+        <div class="ci-tags"><span class="ci-tag">Wet Soils</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/alnus-glutinosa-common-alder.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4424825910.jpg" alt="Common Alder" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ALNUS glutinosa</p>
+        <h3 class="ci-name">Common Alder</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £18</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/metasequoia-glytostroboides-dawn-redwood.html" data-cats="Autumn-Colour Bark-Interest">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425390949.jpg" alt="Dawn Redwood" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">METASEQUOIA glytostroboides</p>
+        <h3 class="ci-name">Dawn Redwood</h3>
+        <div class="ci-tags"><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Bark Interest</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £65</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/magnolia-grandiflora-evergreen-magnolia.html" data-cats="Evergreen-Trees Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425426592.jpg" alt="Evergreen Magnolia" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">MAGNOLIA grandiflora</p>
+        <h3 class="ci-name">Evergreen Magnolia</h3>
+        <div class="ci-tags"><span class="ci-tag">Evergreen Trees</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £34.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/abies-grandis-grand-fir.html" data-cats="Evergreen-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5041091727.jpg" alt="Grand Fir" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ABIES grandis</p>
+        <h3 class="ci-name">Grand Fir</h3>
+        <div class="ci-tags"><span class="ci-tag">Evergreen Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £24</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/acer-griseum-paperbark-maple.html" data-cats="Bark-Interest Autumn-Colour Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4424825850.jpg" alt="Paperbark Maple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ACER griseum</p>
+        <h3 class="ci-name">Paperbark Maple</h3>
+        <div class="ci-tags"><span class="ci-tag">Bark Interest</span><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/eucalyptus-gunnii-cider-gum.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4829779026.jpg" alt="Cider Gum" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">EUCALYPTUS gunnii</p>
+        <h3 class="ci-name">Cider Gum</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/pinus-halepensis-aleppo-pine.html" data-cats="Bark-Interest Evergreen-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5041230470.jpg" alt="Aleppo Pine" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PINUS halepensis</p>
+        <h3 class="ci-name">Aleppo Pine</h3>
+        <div class="ci-tags"><span class="ci-tag">Bark Interest</span><span class="ci-tag">Evergreen Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/tsuga-heterophylla-western-hemlock.html" data-cats="Evergreen-Trees Bark-Interest Stately-Large-Avenue-Parklands">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5013501406.jpg" alt="Western Hemlock" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">TSUGA heterophylla</p>
+        <h3 class="ci-name">Western Hemlock</h3>
+        <div class="ci-tags"><span class="ci-tag">Evergreen Trees</span><span class="ci-tag">Bark Interest</span><span class="ci-tag">Stately Large Avenue Parklands</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/aesculus-hippocastanum-laciniata-cut-leaf-horse-chestnut.html" data-cats="Urban Stately-Large-Avenue-Parklands">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4485627552.jpg" alt="Cut Leaf Horse Chestnut" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">AESCULUS hippocastanum &#39;Laciniata&#39;</p>
+        <h3 class="ci-name">Cut Leaf Horse Chestnut</h3>
+        <div class="ci-tags"><span class="ci-tag">Urban</span><span class="ci-tag">Stately Large Avenue Parklands</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £45</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/aesculus-hippocastanum-horse-chestnut.html" data-cats="Bark-Interest Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4424801941.jpg" alt="Horse Chestnut" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">AESCULUS hippocastanum</p>
+        <h3 class="ci-name">Horse Chestnut</h3>
+        <div class="ci-tags"><span class="ci-tag">Bark Interest</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £24</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/sorbus-hupehensis-pink-pagoda-mountain-ash.html" data-cats="Urban Year-Round-Interest Fruiting">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093472718.jpg" alt="Mountain Ash" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">SORBUS hupehensis &#39;Pink Pagoda&#39;</p>
+        <h3 class="ci-name">Mountain Ash</h3>
+        <div class="ci-tags"><span class="ci-tag">Urban</span><span class="ci-tag">Year Round Interest</span><span class="ci-tag">Fruiting</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £55</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/quercus-ilex-holm-oak.html" data-cats="Evergreen-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5041193005.jpg" alt="Holm Oak" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">QUERCUS ilex</p>
+        <h3 class="ci-name">Holm Oak</h3>
+        <div class="ci-tags"><span class="ci-tag">Evergreen Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/carya-illinoinensis-pecan.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4829607828.jpg" alt="Pecan" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CARYA illinoinensis</p>
+        <h3 class="ci-name">Pecan</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/alnus-incana-aurea-golden-alder.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4476713277.jpg" alt="Golden Alder" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ALNUS incana &#39;Aurea&#39;</p>
+        <h3 class="ci-name">Golden Alder</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £34.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/lagerstroemia-indica-rosea-crape-myrtle.html" data-cats="Urban Bark-Interest Flowering-Trees Narrow-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5039344437.jpg" alt="Crape Myrtle" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">LAGERSTROEMIA indica &#39;Rosea&#39;</p>
+        <h3 class="ci-name">Crape Myrtle</h3>
+        <div class="ci-tags"><span class="ci-tag">Urban</span><span class="ci-tag">Bark Interest</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £48</span>
+          <span class="ci-out">Currently unavailable</span>
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/aesculus-indica-indian-horse-chestnut.html" data-cats="Stately-Large-Avenue-Parklands Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4485627542.jpg" alt="Indian Horse Chestnut" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">AESCULUS indica</p>
+        <h3 class="ci-name">Indian Horse Chestnut</h3>
+        <div class="ci-tags"><span class="ci-tag">Stately Large Avenue Parklands</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/davidia-involucrata-handkerchief-tree.html" data-cats="Autumn-Colour Bark-Interest Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4485542792.jpg" alt="Handkerchief Tree" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">DAVIDIA involucrata</p>
+        <h3 class="ci-name">Handkerchief Tree</h3>
+        <div class="ci-tags"><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Bark Interest</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/carpinus-japonica-japanese-hornbeam.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425218865.jpg" alt="Japanese Hornbeam" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CARPINUS japonica</p>
+        <h3 class="ci-name">Japanese Hornbeam</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/cercidiphyllum-japonicum-katsura.html" data-cats="Stately-Large-Avenue-Parklands Autumn-Colour">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425335592.jpg" alt="Katsura" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CERCIDIPHYLLUM japonicum</p>
+        <h3 class="ci-name">Katsura</h3>
+        <div class="ci-tags"><span class="ci-tag">Stately Large Avenue Parklands</span><span class="ci-tag">Autumn Colour</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £12</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/albizia-julibrissin-silk-tree.html" data-cats="Flowering-Trees Bark-Interest">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5038709610.jpg" alt="Silk Tree" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ALBIZIA julibrissin</p>
+        <h3 class="ci-name">Silk Tree</h3>
+        <div class="ci-tags"><span class="ci-tag">Flowering Trees</span><span class="ci-tag">Bark Interest</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £12</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/larix-kaempferi-japanese-larch.html" data-cats="Bark-Interest">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040786883.jpg" alt="Japanese Larch" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">LARIX kaempferi</p>
+        <h3 class="ci-name">Japanese Larch</h3>
+        <div class="ci-tags"><span class="ci-tag">Bark Interest</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/cladrastis-kentukea-kentucky-yellowwood.html" data-cats="Stately-Large-Avenue-Parklands Wildlife-Friendly Bark-Interest">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5038928157.jpg" alt="Kentucky Yellow-Wood" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CLADRASTIS kentukea</p>
+        <h3 class="ci-name">Kentucky Yellow-Wood</h3>
+        <div class="ci-tags"><span class="ci-tag">Stately Large Avenue Parklands</span><span class="ci-tag">Wildlife Friendly</span><span class="ci-tag">Bark Interest</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/abies-koreana-korean-fir.html" data-cats="Evergreen-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5041062453.jpg" alt="Korean Fir" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ABIES koreana</p>
+        <h3 class="ci-name">Korean Fir</h3>
+        <div class="ci-tags"><span class="ci-tag">Evergreen Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £24</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/cornus-kousa-china-girl-flowering-dogwood.html" data-cats="Fruiting Autumn-Colour Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040647288.jpg" alt="Flowering Dogwood" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CORNUS kousa &#39;China Girl&#39;</p>
+        <h3 class="ci-name">Flowering Dogwood</h3>
+        <div class="ci-tags"><span class="ci-tag">Fruiting</span><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £31.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/cornus-kousa-milky-way-chinese-dogwood.html" data-cats="Autumn-Colour Flowering-Trees Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040703584.jpg" alt="Chinese Dogwood" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CORNUS kousa ‘Milky Way’</p>
+        <h3 class="ci-name">Chinese Dogwood</h3>
+        <div class="ci-tags"><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Flowering Trees</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £135</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/cornus-kousa-chinensis-chinese-dogwood.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425346921.jpg" alt="Chinese Dogwood" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CORNUS kousa chinensis</p>
+        <h3 class="ci-name">Chinese Dogwood</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/crataegus-laevigata-crimson-cloud-midland-hawthorn.html" data-cats="Urban Small-Garden Fruiting Flowering-Trees Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040631572.jpg" alt="Midland Hawthorn" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CRATAEGUS laevigata &#39;Crimson Cloud&#39;</p>
+        <h3 class="ci-name">Midland Hawthorn</h3>
+        <div class="ci-tags"><span class="ci-tag">Urban</span><span class="ci-tag">Small Garden</span><span class="ci-tag">Fruiting</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £34.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/crataegus-laevigata-rosea-flore-pleno-english-hawthorn.html" data-cats="Urban Small-Garden Fruiting Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4485796032.jpg" alt="English Hawthorn" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CRATAEGUS laevigata &#39;Rosea Flore Pleno&#39;</p>
+        <h3 class="ci-name">English Hawthorn</h3>
+        <div class="ci-tags"><span class="ci-tag">Urban</span><span class="ci-tag">Small Garden</span><span class="ci-tag">Fruiting</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £31.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/amelanchier-lamarckii-snowy-mespilus.html" data-cats="Small-Garden Flowering-Trees Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/products/673647342/5733136239.jpg" alt="Snowy Mespilus" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">AMELANCHIER lamarckii</p>
+        <h3 class="ci-name">Snowy Mespilus</h3>
+        <div class="ci-tags"><span class="ci-tag">Small Garden</span><span class="ci-tag">Flowering Trees</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £31.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/amelanchier-lamarckii-snowy-mespilus.html" data-cats="Multistem">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/products/673684418/5733118206.jpg" alt="Snowy Mespilus" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">AMELANCHIER lamarckii</p>
+        <h3 class="ci-name">Snowy Mespilus</h3>
+        <div class="ci-tags"><span class="ci-tag">Multistem</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/abies-lasiocarpa-subalpine-fir.html" data-cats="Evergreen-Trees Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4424801816.jpg" alt="Subalpine fir" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ABIES lasiocarpa</p>
+        <h3 class="ci-name">Subalpine fir</h3>
+        <div class="ci-tags"><span class="ci-tag">Evergreen Trees</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/chamaecyparis-lawonsonia-lawsons-cypress.html" data-cats="Evergreen-Trees Year-Round-Interest Urban Stately-Large-Avenue-Parklands Bark-Interest">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4787045398.jpg" alt="Lawsons Cypress" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CHAMAECYPARIS lawonsonia</p>
+        <h3 class="ci-name">Lawsons Cypress</h3>
+        <div class="ci-tags"><span class="ci-tag">Evergreen Trees</span><span class="ci-tag">Year Round Interest</span><span class="ci-tag">Urban</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £65</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/cedrus-libani-cedar-of-lebanon.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040810263.jpg" alt="Cedar of Lebanon" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CEDRUS libani</p>
+        <h3 class="ci-name">Cedar of Lebanon</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/quercus-macrocarpa-bur-oak.html" data-cats="Stately-Large-Avenue-Parklands Autumn-Colour Bark-Interest Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5013580166.jpg" alt="Bur Oak" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">QUERCUS macrocarpa</p>
+        <h3 class="ci-name">Bur Oak</h3>
+        <div class="ci-tags"><span class="ci-tag">Stately Large Avenue Parklands</span><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Bark Interest</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/cupressus-macrocarpa-monterey-cypress.html" data-cats="Bark-Interest Autumn-Colour Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040777551.jpg" alt="Monterey Cypress" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CUPRESSUS macrocarpa</p>
+        <h3 class="ci-name">Monterey Cypress</h3>
+        <div class="ci-tags"><span class="ci-tag">Bark Interest</span><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £24</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/cornus-mas-cornealian-cherry.html" data-cats="Fruiting Autumn-Colour Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425345679.jpg" alt="Cornealian Cherry" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CORNUS mas</p>
+        <h3 class="ci-name">Cornealian Cherry</h3>
+        <div class="ci-tags"><span class="ci-tag">Fruiting</span><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £65</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/acacia-melanoxylon-australian-blackwood.html" data-cats="Evergreen-Trees Flowering-Trees Coastal">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4424802632.jpg" alt="Australian Blackwood" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ACACIA melanoxylon</p>
+        <h3 class="ci-name">Australian Blackwood</h3>
+        <div class="ci-tags"><span class="ci-tag">Evergreen Trees</span><span class="ci-tag">Flowering Trees</span><span class="ci-tag">Coastal</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £90</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/pseudotsuga-menziesii-douglas-fir.html" data-cats="Stately-Large-Avenue-Parklands Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4832799509.jpg" alt="Douglas Fir" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PSEUDOTSUGA menziesii</p>
+        <h3 class="ci-name">Douglas Fir</h3>
+        <div class="ci-tags"><span class="ci-tag">Stately Large Avenue Parklands</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £24</span>
+          <span class="ci-out">Currently unavailable</span>
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/heptacodium-miconioides-seven-son-flower-of-zhejiang.html" data-cats="Flowering-Trees Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4787086630.jpg" alt="Seven Son Flower of Zhejiang" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">HEPTACODIUM miconioides</p>
+        <h3 class="ci-name">Seven Son Flower of Zhejiang</h3>
+        <div class="ci-tags"><span class="ci-tag">Flowering Trees</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/acer-monspessulanum-montpelier-maple.html" data-cats="Fruiting Autumn-Colour Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425100252.jpg" alt="Montpelier maple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ACER monspessulanum</p>
+        <h3 class="ci-name">Montpelier maple</h3>
+        <div class="ci-tags"><span class="ci-tag">Fruiting</span><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £55</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/pinus-mugo-mughus-dwarf-mountain-pine.html" data-cats="Small-Garden Evergreen-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5041262544.jpg" alt="Dwarf Mountain Pine" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PINUS mugo mughus</p>
+        <h3 class="ci-name">Dwarf Mountain Pine</h3>
+        <div class="ci-tags"><span class="ci-tag">Small Garden</span><span class="ci-tag">Evergreen Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £24</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/acer-negundo-flamingo-box-elder.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5103111362.jpg" alt="Box Elder" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ACER negundo &#39;Flamingo&#39;</p>
+        <h3 class="ci-name">Box Elder</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/pinus-nigra-austrian-black-pine.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040829032.jpg" alt="Austrian/Black Pine" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PINUS nigra</p>
+        <h3 class="ci-name">Austrian/Black Pine</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/sambucus-nigra-elder.html" data-cats="Native Fruiting Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425569316.jpg" alt="Elder" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">SAMBUCUS nigra</p>
+        <h3 class="ci-name">Elder</h3>
+        <div class="ci-tags"><span class="ci-tag">Native</span><span class="ci-tag">Fruiting</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/betula-nigra-river-birch.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5038811443.jpg" alt="River Birch" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">BETULA nigra</p>
+        <h3 class="ci-name">River Birch</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/laurus-nobilis-bay.html" data-cats="Evergreen-Trees Small-Garden Fruiting Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5041210002.jpg" alt="Bay" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">LAURUS nobilis</p>
+        <h3 class="ci-name">Bay</h3>
+        <div class="ci-tags"><span class="ci-tag">Evergreen Trees</span><span class="ci-tag">Small Garden</span><span class="ci-tag">Fruiting</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/abies-nobilis-noble-fir.html" data-cats="Evergreen-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040784558.jpg" alt="Noble Fir" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ABIES nobilis</p>
+        <h3 class="ci-name">Noble Fir</h3>
+        <div class="ci-tags"><span class="ci-tag">Evergreen Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £22.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/abies-nordmanniana-nordmann-fir.html" data-cats="Evergreen-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040799573.jpg" alt="Nordmann Fir" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ABIES nordmanniana</p>
+        <h3 class="ci-name">Nordmann Fir</h3>
+        <div class="ci-tags"><span class="ci-tag">Evergreen Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/cydonia-oblonga-vranja-edible-quince.html" data-cats="Wildlife-Friendly Flowering-Trees Small-Garden Fruiting">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093469537.jpg" alt="Edible Quince" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CYDONIA oblonga &#39;Vranja&#39;</p>
+        <h3 class="ci-name">Edible Quince</h3>
+        <div class="ci-tags"><span class="ci-tag">Wildlife Friendly</span><span class="ci-tag">Flowering Trees</span><span class="ci-tag">Small Garden</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/thuja-occidentalis-smaragd-white-cedar.html" data-cats="Narrow-Trees Evergreen-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040788131.jpg" alt="White Cedar" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">THUJA occidentalis &#39;Smaragd&#39;</p>
+        <h3 class="ci-name">White Cedar</h3>
+        <div class="ci-tags"><span class="ci-tag">Narrow Trees</span><span class="ci-tag">Evergreen Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £18</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/picea-omorika-serbian-spruce.html" data-cats="Evergreen-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5041134322.jpg" alt="Serbian Spruce" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PICEA omorika</p>
+        <h3 class="ci-name">Serbian Spruce</h3>
+        <div class="ci-tags"><span class="ci-tag">Evergreen Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £24</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/carya-ovata-shagbark-hickory.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040693179.jpg" alt="Shagbark Hickory" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CARYA ovata</p>
+        <h3 class="ci-name">Shagbark Hickory</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/prunus-padus-colorata-purple-bird-cherry.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4787104969.jpg" alt="Purple Bird Cherry" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PRUNUS padus ‘Colorata’</p>
+        <h3 class="ci-name">Purple Bird Cherry</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £75</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/acer-palmatum-aureum-japanese-maple.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4649991228.jpg" alt="Japanese Maple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ACER palmatum &#39;Aureum&#39;</p>
+        <h3 class="ci-name">Japanese Maple</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £42</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/acer-palmatum-bloodgood-japanese-maple.html" data-cats="Small-Garden">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5038680858.jpg" alt="Japanese Maple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ACER palmatum ‘Bloodgood’</p>
+        <h3 class="ci-name">Japanese Maple</h3>
+        <div class="ci-tags"><span class="ci-tag">Small Garden</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/acer-palmatum-crimson-queen-japanese-maple.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5038632745.jpg" alt="Japanese Maple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ACER palmatum &#39;Crimson Queen&#39;</p>
+        <h3 class="ci-name">Japanese Maple</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/acer-palmatum-fireglow-dwarf-japanese-maple.html" data-cats="Small-Garden Bark-Interest">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5038680959.jpg" alt="Dwarf Japanese Maple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ACER palmatum ‘Fireglow’</p>
+        <h3 class="ci-name">Dwarf Japanese Maple</h3>
+        <div class="ci-tags"><span class="ci-tag">Small Garden</span><span class="ci-tag">Bark Interest</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/acer-palmatum-orange-dream-japanese-maple.html" data-cats="Small-Garden Bark-Interest Autumn-Colour">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4476028912.jpg" alt="Japanese Maple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ACER palmatum ‘Orange Dream’</p>
+        <h3 class="ci-name">Japanese Maple</h3>
+        <div class="ci-tags"><span class="ci-tag">Small Garden</span><span class="ci-tag">Bark Interest</span><span class="ci-tag">Autumn Colour</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          <span class="ci-out">Currently unavailable</span>
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/acer-palmatum-skeeters-broom-japanese-maple.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5038632695.jpg" alt="Japanese Maple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ACER palmatum &#39;Skeeter&#39;s Broom&#39;</p>
+        <h3 class="ci-name">Japanese Maple</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/quercus-palustris-pin-oak.html" data-cats="Stately-Large-Avenue-Parklands Wet-Soils Autumn-Colour">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425547768.jpg" alt="Pin Oak" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">QUERCUS palustris</p>
+        <h3 class="ci-name">Pin Oak</h3>
+        <div class="ci-tags"><span class="ci-tag">Stately Large Avenue Parklands</span><span class="ci-tag">Wet Soils</span><span class="ci-tag">Autumn Colour</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £24</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/koelreuteria-paniculata-pride-of-india.html" data-cats="Urban Small-Garden Autumn-Colour Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5039264980.jpg" alt="Pride of India" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">KOELREUTERIA paniculata</p>
+        <h3 class="ci-name">Pride of India</h3>
+        <div class="ci-tags"><span class="ci-tag">Urban</span><span class="ci-tag">Small Garden</span><span class="ci-tag">Autumn Colour</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £24</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/betula-papyrifera-paper-birch.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425201321.jpg" alt="Paper Birch" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">BETULA papyrifera</p>
+        <h3 class="ci-name">Paper Birch</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/betula-papyrifera-paper-birch.html" data-cats="Multistem Bark-Interest">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425201341.jpg" alt="Paper Birch" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">BETULA papyrifera</p>
+        <h3 class="ci-name">Paper Birch</h3>
+        <div class="ci-tags"><span class="ci-tag">Multistem</span><span class="ci-tag">Bark Interest</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £285</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/betula-pendula-fastigiata-joes-silver-birch.html" data-cats="Small-Garden Flowering-Trees Narrow-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5038750722.jpg" alt="Silver Birch" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">BETULA pendula &#39;Fastigiata Joes&#39;</p>
+        <h3 class="ci-name">Silver Birch</h3>
+        <div class="ci-tags"><span class="ci-tag">Small Garden</span><span class="ci-tag">Flowering Trees</span><span class="ci-tag">Narrow Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/betula-pendula-fastigiata-upright-silver-birch.html" data-cats="Narrow-Trees Bark-Interest">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5038757047.jpg" alt="Upright Silver Birch" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">BETULA pendula &#39;Fastigiata&#39;</p>
+        <h3 class="ci-name">Upright Silver Birch</h3>
+        <div class="ci-tags"><span class="ci-tag">Narrow Trees</span><span class="ci-tag">Bark Interest</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £42</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/betula-pendula-tristis-weeping-silver-birch.html" data-cats="Stately-Large-Avenue-Parklands Bark-Interest">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425201346.jpg" alt="Weeping Silver Birch" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">BETULA pendula ‘Tristis’</p>
+        <h3 class="ci-name">Weeping Silver Birch</h3>
+        <div class="ci-tags"><span class="ci-tag">Stately Large Avenue Parklands</span><span class="ci-tag">Bark Interest</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £31.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/betula-pendula-youngii-youngs-weeping-birch.html" data-cats="Bark-Interest Autumn-Colour">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4485357657.jpg" alt="Young&#39;s Weeping Birch" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">BETULA pendula &#39;Youngii&#39;</p>
+        <h3 class="ci-name">Young&#39;s Weeping Birch</h3>
+        <div class="ci-tags"><span class="ci-tag">Bark Interest</span><span class="ci-tag">Autumn Colour</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/betula-pendula-silver-birch.html" data-cats="Native Bark-Interest Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425201366.jpg" alt="Silver Birch" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">BETULA pendula</p>
+        <h3 class="ci-name">Silver Birch</h3>
+        <div class="ci-tags"><span class="ci-tag">Native</span><span class="ci-tag">Bark Interest</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £22.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/betula-pendula-silver-birch.html" data-cats="Native Multistem Bark-Interest Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425199917.jpg" alt="Silver Birch" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">BETULA pendula</p>
+        <h3 class="ci-name">Silver Birch</h3>
+        <div class="ci-tags"><span class="ci-tag">Native</span><span class="ci-tag">Multistem</span><span class="ci-tag">Bark Interest</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £625</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/parrotia-persica-vanessa-persian-ironwood.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4836258513.jpg" alt="Persian Ironwood" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PARROTIA persica &#39;Vanessa&#39;</p>
+        <h3 class="ci-name">Persian Ironwood</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/quercus-phellos-willow-oak.html" data-cats="Autumn-Colour Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4790393452.jpg" alt="Willow Oak" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">QUERCUS phellos</p>
+        <h3 class="ci-name">Willow Oak</h3>
+        <div class="ci-tags"><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £34.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/pinus-pinea-stone-pine.html" data-cats="Evergreen-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5041237668.jpg" alt="Stone Pine" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PINUS pinea</p>
+        <h3 class="ci-name">Stone Pine</h3>
+        <div class="ci-tags"><span class="ci-tag">Evergreen Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/abies-pinsapo-spanish-fir.html" data-cats="Evergreen-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5041145199.jpg" alt="Spanish Fir" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ABIES pinsapo</p>
+        <h3 class="ci-name">Spanish Fir</h3>
+        <div class="ci-tags"><span class="ci-tag">Evergreen Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £16.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/acer-plat-crimson-king-purple-norway-maple.html" data-cats="Stately-Large-Avenue-Parklands">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4476498802.jpg" alt="Purple Norway Maple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ACER plat. &#39;Crimson King&#39;</p>
+        <h3 class="ci-name">Purple Norway Maple</h3>
+        <div class="ci-tags"><span class="ci-tag">Stately Large Avenue Parklands</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/acer-plat-drummondii-norway-maple.html" data-cats="Stately-Large-Avenue-Parklands">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4424825880.jpg" alt="Norway Maple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ACER plat. &#39;Drummondii&#39;</p>
+        <h3 class="ci-name">Norway Maple</h3>
+        <div class="ci-tags"><span class="ci-tag">Stately Large Avenue Parklands</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £95</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/thuja-plicata-atrovirens-western-red-cedar.html" data-cats="Evergreen-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040827557.jpg" alt="Western Red Cedar" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">THUJA plicata &#39;Atrovirens&#39;</p>
+        <h3 class="ci-name">Western Red Cedar</h3>
+        <div class="ci-tags"><span class="ci-tag">Evergreen Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £31.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/robinia-pseudoacacia-frisia-false-acacia.html" data-cats="Urban Flowering-Trees Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425553592.jpg" alt="False Acacia" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ROBINIA pseudoacacia &#39;Frisia&#39;</p>
+        <h3 class="ci-name">False Acacia</h3>
+        <div class="ci-tags"><span class="ci-tag">Urban</span><span class="ci-tag">Flowering Trees</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/acer-pseudoplatanus-leopoldii-variegated-sycamore.html" data-cats="Bark-Interest Autumn-Colour Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4485627792.jpg" alt="Variegated Sycamore" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ACER pseudoplatanus ‘Leopoldii’</p>
+        <h3 class="ci-name">Variegated Sycamore</h3>
+        <div class="ci-tags"><span class="ci-tag">Bark Interest</span><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/acer-pseudoplatanus-spaethii-spaethii-sycamore.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4424801936.jpg" alt="Spaethii Sycamore" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ACER pseudoplatanus &#39;Spaethii&#39;</p>
+        <h3 class="ci-name">Spaethii Sycamore</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £70</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/acer-pseudoplatanus-sycamore.html" data-cats="Autumn-Colour Bark-Interest Flowering-Trees Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040826644.jpg" alt="Sycamore" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ACER pseudoplatanus</p>
+        <h3 class="ci-name">Sycamore</h3>
+        <div class="ci-tags"><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Bark Interest</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/betula-pubescens-downy-birch.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040638820.jpg" alt="Downy Birch" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">BETULA pubescens</p>
+        <h3 class="ci-name">Downy Birch</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £18</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/picea-pungens-glauca-colorado-blue-spruce.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4836350336.jpg" alt="Colorado Blue Spruce" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PICEA pungens glauca</p>
+        <h3 class="ci-name">Colorado Blue Spruce</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £24</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/juglans-regia-walnut.html" data-cats="Stately-Large-Avenue-Parklands Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5441200001.jpg" alt="Walnut" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">JUGLANS regia</p>
+        <h3 class="ci-name">Walnut</h3>
+        <div class="ci-tags"><span class="ci-tag">Stately Large Avenue Parklands</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £31.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/quercus-robur-english-oak.html" data-cats="Native Stately-Large-Avenue-Parklands Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5013635252.jpg" alt="English Oak" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">QUERCUS robur</p>
+        <h3 class="ci-name">English Oak</h3>
+        <div class="ci-tags"><span class="ci-tag">Native</span><span class="ci-tag">Stately Large Avenue Parklands</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £12</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/fargesia-robusta-formidable-mountain-bamboo.html" data-cats="Year-Round-Interest Narrow-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5041169895.jpg" alt="Mountain Bamboo" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">FARGESIA robusta formidable</p>
+        <h3 class="ci-name">Mountain Bamboo</h3>
+        <div class="ci-tags"><span class="ci-tag">Year Round Interest</span><span class="ci-tag">Narrow Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £31.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/quercus-rubra-red-oak.html" data-cats="Autumn-Colour">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425547466.jpg" alt="Red Oak" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">QUERCUS rubra</p>
+        <h3 class="ci-name">Red Oak</h3>
+        <div class="ci-tags"><span class="ci-tag">Autumn Colour</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £24</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/acer-rubrum-october-glory-canadian-red-maple.html" data-cats="Autumn-Colour Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5422052595.jpg" alt="Canadian Red Maple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ACER rubrum &#39;October Glory&#39;</p>
+        <h3 class="ci-name">Canadian Red Maple</h3>
+        <div class="ci-tags"><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/acer-saccharinum-pyramidale-silver-maple.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5038746310.jpg" alt="Silver Maple" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ACER saccharinum Pyramidale</p>
+        <h3 class="ci-name">Silver Maple</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £31.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/castanea-sativa-sweet-chestnut.html" data-cats="Stately-Large-Avenue-Parklands Coastal Autumn-Colour">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4485631787.jpg" alt="Sweet Chestnut" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CASTANEA sativa</p>
+        <h3 class="ci-name">Sweet Chestnut</h3>
+        <div class="ci-tags"><span class="ci-tag">Stately Large Avenue Parklands</span><span class="ci-tag">Coastal</span><span class="ci-tag">Autumn Colour</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £34.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/juniperus-scopulorum-blue-arrow-rocky-mountain-juniper.html" data-cats="Year-Round-Interest Evergreen-Trees Narrow-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5041180609.jpg" alt="Rocky Mountain Juniper" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">JUNIPERUS scopulorum &#39;Blue Arrow&#39;</p>
+        <h3 class="ci-name">Rocky Mountain Juniper</h3>
+        <div class="ci-tags"><span class="ci-tag">Year Round Interest</span><span class="ci-tag">Evergreen Trees</span><span class="ci-tag">Narrow Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £22.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/sequoia-sempervirens-coastal-redwood.html" data-cats="Bark-Interest Coastal">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5041134301.jpg" alt="Coastal Redwood" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">SEQUOIA sempervirens</p>
+        <h3 class="ci-name">Coastal Redwood</h3>
+        <div class="ci-tags"><span class="ci-tag">Bark Interest</span><span class="ci-tag">Coastal</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/prunus-serrula-tibetica-tibetan-cherry.html" data-cats="Bark-Interest Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425535876.jpg" alt="Tibetan Cherry" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PRUNUS serrula &#39;Tibetica&#39;</p>
+        <h3 class="ci-name">Tibetan Cherry</h3>
+        <div class="ci-tags"><span class="ci-tag">Bark Interest</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £395</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/prunus-serrulata-tai-haku-great-white-cherry.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040742604.jpg" alt="Great White Cherry" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PRUNUS serrulata ‘Tai Haku’</p>
+        <h3 class="ci-name">Great White Cherry</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/quercus-shumardii-shumard-oak.html" data-cats="Urban Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4790398970.jpg" alt="Shumard Oak" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">QUERCUS shumardii</p>
+        <h3 class="ci-name">Shumard Oak</h3>
+        <div class="ci-tags"><span class="ci-tag">Urban</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          <span class="ci-out">Currently unavailable</span>
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/cercis-siliquastrum-judas-tree.html" data-cats="Autumn-Colour Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5039259912.jpg" alt="Judas Tree" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CERCIS siliquastrum</p>
+        <h3 class="ci-name">Judas Tree</h3>
+        <div class="ci-tags"><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £6.50</span>
+          <span class="ci-out">Currently unavailable</span>
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/picea-sitchensis-sitka-spruce.html" data-cats="Stately-Large-Avenue-Parklands Evergreen-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040809492.jpg" alt="Sitka spruce" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PICEA sitchensis</p>
+        <h3 class="ci-name">Sitka spruce</h3>
+        <div class="ci-tags"><span class="ci-tag">Stately Large Avenue Parklands</span><span class="ci-tag">Evergreen Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £24</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/pinus-strobus-weymouth-pine.html" data-cats="Stately-Large-Avenue-Parklands Evergreen-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5041091714.jpg" alt="Weymouth Pine" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PINUS strobus</p>
+        <h3 class="ci-name">Weymouth Pine</h3>
+        <div class="ci-tags"><span class="ci-tag">Stately Large Avenue Parklands</span><span class="ci-tag">Evergreen Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £24</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/liquidambar-styraciflua-worplesdon-sweet-gum.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040565448.jpg" alt="Sweet Gum" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">LIQUIDAMBAR styraciflua &#39;Worplesdon&#39;</p>
+        <h3 class="ci-name">Sweet Gum</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £34.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/liquidambar-styraciflua-sweet-gum.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425426572.jpg" alt="Sweet Gum" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">LIQUIDAMBAR styraciflua</p>
+        <h3 class="ci-name">Sweet Gum</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £145</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/quercus-suber-cork-oak.html" data-cats="Bark-Interest Evergreen-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5041145040.jpg" alt="Cork Oak" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">QUERCUS suber</p>
+        <h3 class="ci-name">Cork Oak</h3>
+        <div class="ci-tags"><span class="ci-tag">Bark Interest</span><span class="ci-tag">Evergreen Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/fagus-syl-asplenifolia-fern-leaved-beech.html" data-cats="Autumn-Colour">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4485357487.jpg" alt="Fern Leaved Beech" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">FAGUS syl. &#39;Asplenifolia&#39;</p>
+        <h3 class="ci-name">Fern Leaved Beech</h3>
+        <div class="ci-tags"><span class="ci-tag">Autumn Colour</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £31.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/fagus-syl-dawyck-purple-upright-purple-beech.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5041079456.jpg" alt="Upright Purple Beech" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">FAGUS syl. &#39;Dawyck Purple&#39;</p>
+        <h3 class="ci-name">Upright Purple Beech</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/fagus-syl-purpurea-pendula-weeping-purple-beech.html" data-cats="Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5039336297.jpg" alt="Weeping Purple Beech" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">FAGUS syl. ‘Purpurea Pendula’</p>
+        <h3 class="ci-name">Weeping Purple Beech</h3>
+        <div class="ci-tags"><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/fagus-syl-tricolor-variegated-beech.html" data-cats="Stately-Large-Avenue-Parklands Autumn-Colour Bark-Interest Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5039402462.jpg" alt="Variegated Beech" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">FAGUS syl. &#39;Tricolor&#39;</p>
+        <h3 class="ci-name">Variegated Beech</h3>
+        <div class="ci-tags"><span class="ci-tag">Stately Large Avenue Parklands</span><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Bark Interest</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £34.50</span>
+          <span class="ci-out">Currently unavailable</span>
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/nyssa-sylvatica-tupelo.html" data-cats="Autumn-Colour Flowering-Trees Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425505151.jpg" alt="Tupelo" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">NYSSA sylvatica</p>
+        <h3 class="ci-name">Tupelo</h3>
+        <div class="ci-tags"><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Flowering Trees</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £31.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/pinus-sylvestris-scots-pine.html" data-cats="Native Stately-Large-Avenue-Parklands Wildlife-Friendly Evergreen-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040763834.jpg" alt="Scots Pine" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PINUS sylvestris</p>
+        <h3 class="ci-name">Scots Pine</h3>
+        <div class="ci-tags"><span class="ci-tag">Native</span><span class="ci-tag">Stately Large Avenue Parklands</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/pinus-tabuliformis-chinese-red-pine.html" data-cats="Bark-Interest">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5041202710.jpg" alt="Chinese Red Pine" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PINUS tabuliformis</p>
+        <h3 class="ci-name">Chinese Red Pine</h3>
+        <div class="ci-tags"><span class="ci-tag">Bark Interest</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £34.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/chitalpa-tashkentensis-pink-dawn-summer-bells-desert-willow.html" data-cats="Small-Garden Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5038811378.jpg" alt="Summer Bells Desert Willow" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CHITALPA tashkentensis &#39;Pink Dawn&#39;</p>
+        <h3 class="ci-name">Summer Bells Desert Willow</h3>
+        <div class="ci-tags"><span class="ci-tag">Small Garden</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £24</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/sorbus-thur-fastigiata-hybrid-whitebeam-service-tree.html" data-cats="Urban Stately-Large-Avenue-Parklands Fruiting Flowering-Trees Narrow-Trees Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5093469739.jpg" alt="Hybrid Whitebeam, Service Tree" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">SORBUS thur. &#39;Fastigiata&#39;</p>
+        <h3 class="ci-name">Hybrid Whitebeam, Service Tree</h3>
+        <div class="ci-tags"><span class="ci-tag">Urban</span><span class="ci-tag">Stately Large Avenue Parklands</span><span class="ci-tag">Fruiting</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £55</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/gleditsia-triacanthos-sunburst-honey-locust.html" data-cats="Flowering-Trees Urban Autumn-Colour">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4394734293.jpg" alt="Honey Locust" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">GLEDITSIA triacanthos &#39;Sunburst&#39;</p>
+        <h3 class="ci-name">Honey Locust</h3>
+        <div class="ci-tags"><span class="ci-tag">Flowering Trees</span><span class="ci-tag">Urban</span><span class="ci-tag">Autumn Colour</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £31.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/malus-trilobata-flowering-crab.html" data-cats="Urban Autumn-Colour Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040628560.jpg" alt="Flowering Crab" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">MALUS trilobata</p>
+        <h3 class="ci-name">Flowering Crab</h3>
+        <div class="ci-tags"><span class="ci-tag">Urban</span><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/liriodendron-tulipifera-aureomarginatum-variegated-tulip-tree.html" data-cats="Autumn-Colour Flowering-Trees Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425410141.jpg" alt="Variegated Tulip Tree" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">LIRIODENDRON tulipifera &#39;Aureomarginatum&#39;</p>
+        <h3 class="ci-name">Variegated Tulip Tree</h3>
+        <div class="ci-tags"><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Flowering Trees</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/liriodendron-tulipifera-tulip-tree.html" data-cats="Bark-Interest Flowering-Trees Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040619762.jpg" alt="Tulip Tree" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">LIRIODENDRON tulipifera</p>
+        <h3 class="ci-name">Tulip Tree</h3>
+        <div class="ci-tags"><span class="ci-tag">Bark Interest</span><span class="ci-tag">Flowering Trees</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/carpinus-turczaninowii-korean-hornbeam.html" data-cats="Autumn-Colour">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425218880.jpg" alt="Korean Hornbeam" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">CARPINUS turczaninowii</p>
+        <h3 class="ci-name">Korean Hornbeam</h3>
+        <div class="ci-tags"><span class="ci-tag">Autumn Colour</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £45</span>
+          <span class="ci-out">Currently unavailable</span>
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/quercus-turneri-pseudoturneri-turners-oak.html" data-cats="Urban Stately-Large-Avenue-Parklands">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5422136235.jpg" alt="Turners Oak" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">QUERCUS turneri &#39;Pseudoturneri&#39;</p>
+        <h3 class="ci-name">Turners Oak</h3>
+        <div class="ci-tags"><span class="ci-tag">Urban</span><span class="ci-tag">Stately Large Avenue Parklands</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/arbutus-unedo-kilarney-strawberry-tree.html" data-cats="Evergreen-Trees Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425199772.jpg" alt="Kilarney Strawberry Tree" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ARBUTUS unedo</p>
+        <h3 class="ci-name">Kilarney Strawberry Tree</h3>
+        <div class="ci-tags"><span class="ci-tag">Evergreen Trees</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/betula-utilis-doorenbos-himalayan-birch.html" data-cats="Autumn-Colour Bark-Interest">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5038790860.jpg" alt="Himalayan Birch" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">BETULA utilis &#39;Doorenbos&#39;</p>
+        <h3 class="ci-name">Himalayan Birch</h3>
+        <div class="ci-tags"><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Bark Interest</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £25.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/betula-utilis-doorenbos-himalayan-birch.html" data-cats="Multistem Bark-Interest Autumn-Colour">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5038794731.jpg" alt="Himalayan Birch" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">BETULA utilis &#39;Doorenbos&#39;</p>
+        <h3 class="ci-name">Himalayan Birch</h3>
+        <div class="ci-tags"><span class="ci-tag">Multistem</span><span class="ci-tag">Bark Interest</span><span class="ci-tag">Autumn Colour</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £34.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/betula-utilis-edinburgh-himalayan-birch.html" data-cats="Bark-Interest Flowering-Trees Narrow-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4485631877.jpg" alt="Himalayan Birch" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">BETULA utilis &#39;Edinburgh&#39;</p>
+        <h3 class="ci-name">Himalayan Birch</h3>
+        <div class="ci-tags"><span class="ci-tag">Bark Interest</span><span class="ci-tag">Flowering Trees</span><span class="ci-tag">Narrow Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £31.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/betula-utilis-jacquemontii-himalayan-birch.html" data-cats="Autumn-Colour Bark-Interest">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4649997699.jpg" alt="Himalayan Birch" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">BETULA utilis jacquemontii</p>
+        <h3 class="ci-name">Himalayan Birch</h3>
+        <div class="ci-tags"><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Bark Interest</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/betula-utilis-jacquemontii-himalayan-birch.html" data-cats="">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5038889835.jpg" alt="Himalayan Birch" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">BETULA utilis jacquemontii</p>
+        <h3 class="ci-name">Himalayan Birch</h3>
+        <div class="ci-tags"></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £65</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/betula-utilis-jacquemontii-himalayan-birch.html" data-cats="Autumn-Colour Bark-Interest Multistem">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4649997876.jpg" alt="Himalayan Birch" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">BETULA utilis jacquemontii</p>
+        <h3 class="ci-name">Himalayan Birch</h3>
+        <div class="ci-tags"><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Bark Interest</span><span class="ci-tag">Multistem</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £37.50</span>
+          <span class="ci-out">Currently unavailable</span>
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/pinus-wallichiana-bhutan-pine.html" data-cats="Evergreen-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5040822112.jpg" alt="Bhutan pine" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">PINUS wallichiana</p>
+        <h3 class="ci-name">Bhutan pine</h3>
+        <div class="ci-tags"><span class="ci-tag">Evergreen Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/cotoneaster-watereri-cornubia-cotoneaster.html" data-cats="Autumn-Colour Fruiting Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4485627812.jpg" alt="Cotoneaster" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">COTONEASTER watereri &#39;Cornubia&#39;</p>
+        <h3 class="ci-name">Cotoneaster</h3>
+        <div class="ci-tags"><span class="ci-tag">Autumn Colour</span><span class="ci-tag">Fruiting</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/aesculus-x-carnea-briotii-red-horse-chestnut.html" data-cats="Wildlife-Friendly Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4476736262.jpg" alt="Red Horse Chestnut" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">AESCULUS x carnea &#39;Briotii&#39;</p>
+        <h3 class="ci-name">Red Horse Chestnut</h3>
+        <div class="ci-tags"><span class="ci-tag">Wildlife Friendly</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £31.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/magnolia-x-loebneri-leonard-messel-magnolia.html" data-cats="Small-Garden Flowering-Trees">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425426117.jpg" alt="Magnolia" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">MAGNOLIA x loebneri &#39;Leonard Messel&#39;</p>
+        <h3 class="ci-name">Magnolia</h3>
+        <div class="ci-tags"><span class="ci-tag">Small Garden</span><span class="ci-tag">Flowering Trees</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £42</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/alnus-x-spaethii-spaeths-alder.html" data-cats="Bark-Interest">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5038728214.jpg" alt="Spaeth&#39;s Alder" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">ALNUS x spaethii</p>
+        <h3 class="ci-name">Spaeth&#39;s Alder</h3>
+        <div class="ci-tags"><span class="ci-tag">Bark Interest</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £28.50</span>
+          
+        </div>
+      </div>
+    </a>    <a class="ci-card" href="trees/laburnum-x-watereri-vossii-laburnum.html" data-cats="Small-Garden Flowering-Trees Wildlife-Friendly">
+      <div class="ci-img-wrap">
+        <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/4425410071.jpg" alt="Laburnum" loading="lazy">
+      </div>
+      <div class="ci-body">
+        <p class="ci-latin">LABURNUM x watereri &#39;Vossii&#39;</p>
+        <h3 class="ci-name">Laburnum</h3>
+        <div class="ci-tags"><span class="ci-tag">Small Garden</span><span class="ci-tag">Flowering Trees</span><span class="ci-tag">Wildlife Friendly</span></div>
+        <div class="ci-footer">
+          <span class="ci-price">From £65</span>
+          
+        </div>
+      </div>
+    </a>
+  <div class="ci-empty" id="emptyState">
+    <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="#ddd9c8" stroke-width="2"/><path d="M16 24c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#9aaa9b" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="32" r="2" fill="#9aaa9b"/></svg>
+    <p>No trees match your search. Try a different filter or search term.</p>
+  </div>
+</div>
+
+<app-footer></app-footer>
+<script src="components/app-footer.js"></script>
+<script src="components/app-nav.js"></script>
+<script src="components/ukisg-banner.js"></script>
+<script src="components/shared.js"></script>
+
+<script>
+(function () {
+  const cards   = Array.from(document.querySelectorAll('.ci-card'));
+  const filters = Array.from(document.querySelectorAll('.ci-filter'));
+  const search  = document.getElementById('searchInput');
+  const count   = document.getElementById('visibleCount');
+  const empty   = document.getElementById('emptyState');
+  const clearBtn = document.getElementById('clearBtn');
+
+  let activeCat = 'all';
+
+  function refresh() {
+    const term = search.value.trim().toLowerCase();
+    let shown = 0;
+
+    cards.forEach(card => {
+      const cats    = card.dataset.cats || '';
+      const text    = card.textContent.toLowerCase();
+      const catOk   = activeCat === 'all' || cats.toLowerCase().includes(activeCat);
+      const termOk  = !term || text.includes(term);
+      const visible = catOk && termOk;
+      card.classList.toggle('hidden', !visible);
+      if (visible) shown++;
+    });
+
+    count.textContent = shown;
+    empty.classList.toggle('show', shown === 0);
+    clearBtn.style.display = (activeCat !== 'all' || term) ? 'inline-block' : 'none';
+  }
+
+  filters.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filters.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCat = btn.dataset.cat.toLowerCase();
+      refresh();
+    });
+  });
+
+  search.addEventListener('input', refresh);
+
+  clearBtn.addEventListener('click', () => {
+    activeCat = 'all';
+    search.value = '';
+    filters.forEach(b => b.classList.remove('active'));
+    document.querySelector('[data-cat="all"]').classList.add('active');
+    refresh();
+  });
+})();
+</script>
+
+</body>
+</html>

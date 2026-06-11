@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="../">
+<title>Wild Cherry (Prunus avium) — Papervale Trees</title>
+<meta name="description" content="Buy Prunus avium Wild Cherry trees from Papervale Trees. A native UK woodland tree with spectacular spring blossom, orange-red autumn colour, and wildlife value. Homegrown, peat-free, UK & Ireland delivery.">
+<meta property="og:title" content="Wild Cherry (Prunus avium) — Papervale Trees">
+<meta property="og:description" content="A native UK woodland tree with spectacular spring blossom, orange-red autumn colour, and brilliant wildlife value. Homegrown and peat-free.">
+<meta property="og:image" content="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5324341684.jpg">
+<meta property="og:url" content="https://www.papervaletrees.com/trees/prunus-avium-wild-cherry.html">
+<meta property="og:type" content="product">
+<meta property="og:site_name" content="Papervale Trees">
+<link rel="icon" type="image/x-icon" href="assets/brand/favicon-dark.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .product-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-xxl);
+    align-items: start;
+  }
+  @media (max-width: 768px) {
+    .product-hero { grid-template-columns: 1fr; }
+  }
+  .product-image-wrap {
+    position: sticky;
+    top: 80px;
+  }
+  .product-main-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    display: block;
+  }
+  .product-info { padding-top: var(--sp-xs); }
+  .product-latin {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--muted);
+    margin-bottom: var(--sp-sm);
+  }
+  .product-title {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    color: var(--ink);
+    margin-bottom: var(--sp-lg);
+  }
+  .product-price-row {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-md);
+    margin-bottom: var(--sp-lg);
+  }
+  .product-price {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--ink);
+  }
+  .product-price-note {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .stock-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #e8f4e8;
+    color: var(--brand-forest);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 5px 12px;
+    border-radius: var(--radius-pill);
+  }
+  .stock-badge::before { content: ''; width: 7px; height: 7px; background: #4caf50; border-radius: 50%; display: block; }
+  .product-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-xs);
+    margin-bottom: var(--sp-lg);
+  }
+  .product-tag {
+    background: var(--surface-card);
+    color: var(--body);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--hairline);
+  }
+  .product-options {
+    background: var(--surface-soft);
+    border-radius: var(--radius-md);
+    padding: var(--sp-lg);
+    margin-bottom: var(--sp-lg);
+  }
+  .product-options-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: var(--sp-sm);
+  }
+  .option-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--hairline);
+    font-size: 14px;
+  }
+  .option-row:last-child { border-bottom: none; }
+  .option-label { color: var(--muted); }
+  .option-values { color: var(--ink); font-weight: 500; }
+  .btn-buy {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--brand-forest);
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 14px 28px;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    width: 100%;
+    transition: background 0.2s;
+  }
+  .btn-buy:hover { background: var(--brand-sage); }
+  .btn-buy svg { flex-shrink: 0; }
+  .product-desc-section { padding: var(--sp-section) 0; }
+  .product-desc-section h2 {
+    font-family: var(--font-display);
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: var(--sp-xl);
+  }
+  .product-description p {
+    color: var(--body);
+    line-height: 1.75;
+    margin-bottom: var(--sp-lg);
+    max-width: 720px;
+  }
+  .product-description h2 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ink);
+    margin: var(--sp-xl) 0 var(--sp-md);
+  }
+  .product-description ul {
+    margin: 0 0 var(--sp-lg) var(--sp-lg);
+    color: var(--body);
+    line-height: 1.75;
+    max-width: 720px;
+  }
+  .product-description li { margin-bottom: 4px; }
+  .product-description strong { color: var(--ink); font-weight: 500; }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--muted);
+    font-size: 14px;
+    text-decoration: none;
+    margin-bottom: var(--sp-xl);
+  }
+  .back-link:hover { color: var(--ink); }
+  .schema-note {
+    background: var(--surface-soft);
+    border-left: 3px solid var(--brand-fern);
+    padding: var(--sp-md) var(--sp-lg);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: var(--sp-xxl);
+    max-width: 720px;
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Wild Cherry (Prunus avium)",
+  "description": "Prunus avium — a native UK woodland tree with spectacular spring blossom, orange-red autumn colour, and strong wildlife value. Homegrown peat-free from Papervale Trees nursery.",
+  "image": "https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5324341684.jpg",
+  "brand": {
+    "@type": "Brand",
+    "name": "Papervale Trees"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "GBP",
+    "price": "28.50",
+    "availability": "https://schema.org/InStock",
+    "url": "https://www.papervaletrees.com/shop.html#!/PRUNUS-avium-Wild-Cherry/p/673684277",
+    "seller": {
+      "@type": "Organization",
+      "name": "Papervale Trees"
+    }
+  }
+}
+</script>
+</head>
+<body>
+
+<ukisg-banner></ukisg-banner>
+<app-nav></app-nav>
+
+<!-- BREADCRUMB -->
+<div class="content-section" style="padding-bottom: 0;">
+  <div class="container">
+    <a class="back-link" href="shop.html">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 3L5 7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to Shop
+    </a>
+  </div>
+</div>
+
+<!-- PRODUCT HERO -->
+<section class="content-section">
+  <div class="container">
+    <div class="product-hero">
+
+      <!-- IMAGE -->
+      <div class="product-image-wrap">
+        <img
+          class="product-main-img"
+          src="https://d2j6dbq0eux0bg.cloudfront.net/images/73482057/5324341684.jpg"
+          alt="Prunus avium Wild Cherry tree in autumn colour"
+          loading="eager"
+        >
+      </div>
+
+      <!-- INFO -->
+      <div class="product-info">
+        <p class="product-latin">Prunus avium</p>
+        <h1 class="product-title">Wild Cherry</h1>
+
+        <div class="product-price-row">
+          <span class="product-price">From £28.50</span>
+          <span class="stock-badge">In Stock</span>
+        </div>
+
+        <div class="product-tags">
+          <span class="product-tag">Native</span>
+          <span class="product-tag">Flowering</span>
+          <span class="product-tag">Wildlife Friendly</span>
+          <span class="product-tag">Fruiting</span>
+          <span class="product-tag">Small Garden</span>
+        </div>
+
+        <div class="product-options">
+          <p class="product-options-title">Available Options</p>
+          <div class="option-row">
+            <span class="option-label">Pot Size</span>
+            <span class="option-values">5Ltr &middot; 35Ltr</span>
+          </div>
+          <div class="option-row">
+            <span class="option-label">Height</span>
+            <span class="option-values">125–150cm &middot; 450–500cm</span>
+          </div>
+          <div class="option-row">
+            <span class="option-label">Girth</span>
+            <span class="option-values">Various</span>
+          </div>
+        </div>
+
+        <a class="btn-buy" href="shop.html#!/PRUNUS-avium-Wild-Cherry/p/673684277">
+          Buy from Shop
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- DESCRIPTION -->
+<section class="content-section product-desc-section">
+  <div class="container">
+    <p class="section-label">About This Tree</p>
+    <div class="product-description">
+      <p>Prunus avium also known as the Wild Cherry is a native woodland tree to the UK. It is a very popular tree among parks and woodlands and is well known for its magnificent foliage and its beautiful spring flowers.</p>
+      <p>Wild Cherry can be found displaying light green foliage during the spring and summer periods which turn a magnificent orange-red colour during autumn providing a beautiful display during darker months of the year. Prunus avium also produces clusters of bright white flowers during spring months which allows it to stand out amongst other trees. During early autumn small cherries can be seen on the tree which will soon disappear before winter due to wind and birds. During early years, Prunus avium can be seen with a dark chestnut coloured bark which with age will turn to be a more silver colour making older trees look even more stunning throughout the year. The prunus avium will provide a beautiful range of colours throughout the year in any garden and with its rounded shape is very suitable for smaller gardens.</p>
+      <p>Wild Cherry is a very easy tree to grow with being full frost hardy and thriving in most, free draining soils. Best planted in a parkland or garden, not able to tolerate paving.</p>
+      <h2>Tree Specs</h2>
+      <ul>
+        <li><strong>Common Name:</strong> Wild Cherry</li>
+        <li><strong>Botanical Name:</strong> Prunus avium</li>
+        <li><strong>Mature Height:</strong> 12–17m</li>
+        <li><strong>Key Features:</strong>
+          <ul>
+            <li>Small Tree</li>
+            <li>Flowering</li>
+            <li>Wildlife friendly</li>
+            <li>Berries</li>
+            <li>Medium garden tree</li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="schema-note">
+        All trees are homegrown and peat-free at our UKISG certified nursery in Rathfriland, Co. Down. Select your size and options on the shop page. Questions? Call us on <a href="tel:02830850059" style="color: var(--brand-forest);">028 3085 0059</a> or <a href="mailto:info@papervaletrees.com" style="color: var(--brand-forest);">email us</a>.
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>
+<script src="components/app-footer.js"></script>
+<script src="components/app-nav.js"></script>
+<script src="components/ukisg-banner.js"></script>
+<script src="components/shared.js"></script>
+</body>
+</html>

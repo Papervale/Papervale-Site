@@ -19,6 +19,7 @@ class AppNav extends HTMLElement {
           <ul class="nav-links">
             <li><a href="index.html"${active('index.html') ? ' class="active"' : ''}>Home</a></li>
             <li><a href="shop.html"${active('shop.html') ? ' class="active"' : ''}>Shop</a></li>
+            <li><a href="tree-catalogue.html"${active('tree-catalogue.html') ? ' class="active"' : ''}>Trees</a></li>
             <li><a href="availability.html"${active('availability.html') ? ' class="active"' : ''}>Availability</a></li>
             <li class="nav-dropdown">
               <a href="our-roots.html"${rootsActive ? ' class="active"' : ''}>Our Roots</a>
@@ -38,6 +39,7 @@ class AppNav extends HTMLElement {
       <div class="mobile-menu" id="mobileMenu">
         <a href="index.html">Home</a>
         <a href="shop.html">Shop</a>
+        <a href="tree-catalogue.html">Trees</a>
         <a href="availability.html">Availability</a>
         <div class="mobile-submenu">
           <button class="mobile-submenu-toggle">Our Roots</button>
