@@ -240,6 +240,7 @@ class AppFooter extends HTMLElement {
                 <li><a href="selecting-a-tree.html">Selecting a Tree</a></li>
                 <li><a href="planting-aftercare.html">Aftercare Guide</a></li>
                 <li><a href="services-we-provide.html">Services Provided</a></li>
+                <li><a href="faq.html">FAQs</a></li>
               </ul>
             </div>
             <div class="footer-col">
