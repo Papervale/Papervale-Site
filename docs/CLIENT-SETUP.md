@@ -134,7 +134,22 @@ If no submissions appear, let us know and we will investigate.
 
 ---
 
-## 8. Ecwid — Add Product Photos for 202 Placeholder Pages
+## 8. Twitter / X — Verify Card Previews After Deployment
+
+**Status:** Done — `twitter:card` tags added to all 13 core pages  
+**Who:** Client checks after site goes live.
+
+All core pages now have `summary_large_image` Twitter card tags matching their OG images. Once the site is deployed, verify each share looks correct using the X Card Validator:
+
+1. Go to [cards-dev.twitter.com/validator](https://cards-dev.twitter.com/validator)
+2. Paste the live URL of any page (e.g. `https://www.papervaletrees.com/`)
+3. Click **Preview card** — you should see the page title, description, and nursery photo
+
+If the image doesn't appear, the image URL may not be publicly accessible yet — check that the asset is deployed alongside the HTML.
+
+---
+
+## 9. Ecwid — Add Product Photos for 202 Placeholder Pages
 
 **Status:** Ongoing as photos become available  
 **Who:** Client adds photos to Ecwid; we regenerate pages.
