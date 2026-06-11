@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — Papervale Trees</title>
 <meta name="description" content="Contact Papervale Trees — reach our expert team in Rathfriland, Co. Down. Hours, phone, email, and contact form available.">
+<link rel="canonical" href="https://www.papervaletrees.com/contact.html">
 <meta property="og:title" content="Contact Papervale Trees — Rathfriland, Co. Down">
 <meta property="og:description" content="Get in touch with our expert team. Visit our nursery, call, email, or use our contact form for tree sourcing queries.">
 <meta property="og:image" content="https://www.papervaletrees.com/assets/images/papervale-location-map.png">
@@ -211,9 +212,7 @@
         body: new URLSearchParams(data).toString(),
       });
       if (!res.ok) throw new Error('Request failed: ' + res.status);
-      btn.textContent = '✓ Message sent — we\'ll be in touch soon!';
-      btn.style.background = '#4c5f4b';
-      form.reset();
+      window.location.href = '/thank-you.html';
     } catch (err) {
       console.error(err);
       btn.disabled = false;

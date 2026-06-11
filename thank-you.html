@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, follow">
+<title>Message Received — Papervale Trees</title>
+<meta name="description" content="Thank you for contacting Papervale Trees. We will be in touch shortly.">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+<link rel="icon" type="image/x-icon" href="assets/brand/favicon-dark.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.thank-you {
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--sp-section) var(--sp-xl);
+}
+.thank-you-inner { max-width: 560px; }
+.thank-you-icon {
+  width: 72px;
+  height: 72px;
+  background: #eaf2ea;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--sp-xl);
+}
+.thank-you-icon svg { display: block; }
+.thank-you-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--brand-fern);
+  display: block;
+  margin-bottom: var(--sp-md);
+}
+.thank-you-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.15;
+  margin-bottom: var(--sp-lg);
+}
+.thank-you-title em { font-style: italic; color: var(--brand-forest); }
+.thank-you-body {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.65;
+  margin-bottom: var(--sp-xxl);
+}
+.thank-you-actions {
+  display: flex;
+  gap: var(--sp-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+</style>
+</head>
+<body>
+<ukisg-banner></ukisg-banner>
+<app-nav></app-nav>
+
+<div class="thank-you">
+  <div class="thank-you-inner">
+    <div class="thank-you-icon">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 16.5L12.5 23L26 9" stroke="#334832" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <span class="thank-you-eyebrow">Message received</span>
+    <h1 class="thank-you-title">We'll be in<br><em>touch shortly</em></h1>
+    <p class="thank-you-body">
+      Thanks for getting in touch with Papervale Trees.<br>
+      We aim to respond within one working day.<br>
+      In the meantime, feel free to browse our trees.
+    </p>
+    <div class="thank-you-actions">
+      <a href="tree-catalogue.html" class="btn-primary">
+        Browse the catalogue
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="index.html" class="btn-ghost" style="background:var(--surface-card);border:1px solid var(--hairline);color:var(--ink);padding:13px 24px;border-radius:var(--radius-md);font-size:14px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:8px;">
+        Back to home
+      </a>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
+<script src="components/app-footer.js"></script>
+<script src="components/app-nav.js"></script>
+<script src="components/ukisg-banner.js"></script>
+<script src="components/shared.js"></script>
+</body>
+</html>

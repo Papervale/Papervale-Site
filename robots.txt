@@ -6,6 +6,7 @@ Disallow: /docs/
 Disallow: /ecwid-products.json
 Disallow: /ecwid-slugs.txt
 Disallow: /ecwid-placeholder-ids.json
+Disallow: /thank-you.html
 
 # Point search engines to sitemap
 Sitemap: https://www.papervaletrees.com/sitemap.xml
