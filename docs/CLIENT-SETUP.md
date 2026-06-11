@@ -161,3 +161,92 @@ When the client adds a photo to a product in Ecwid:
 2. We will regenerate those pages with the real image and add them to `tree-catalogue.html`
 
 The placeholder page list is at `ecwid-placeholder-ids.json` in the repo root (blocked from public access).
+
+---
+
+## 10. LocalBusiness Schema — Verify After Deployment
+
+**Status:** Done — schema added to `index.html` and `contact.html`  
+**Who:** We verify after deploy; client confirms social handles.
+
+Three things to check once the site is live:
+
+1. **Rich Results Test** — paste `https://www.papervaletrees.com/contact.html` into [search.google.com/test/rich-results](https://search.google.com/test/rich-results). Should detect a LocalBusiness entity with no errors.
+
+2. **Geo coordinates** — the schema uses `54.1447, -6.1196` for 48 Old Newry Road. Client should verify this pin is accurate in Google Maps and let us know if it needs adjusting (edit `index.html` lines ~52–53 and the matching lines in `contact.html`).
+
+3. **Social handles** — the `sameAs` block references `facebook.com/papervaletrees`, `instagram.com/papervaletrees`, and `x.com/papervaletrees`. Client to confirm these are the correct, active handles — or send us the correct URLs.
+
+---
+
+## 11. Open Graph — Facebook Sharing Debugger
+
+**Status:** Post-deploy check  
+**Who:** Client (or us) checks after site goes live.
+
+All core pages have OG tags. Facebook caches previews aggressively — after first deploy, run the debugger to prime the cache:
+
+1. Go to [developers.facebook.com/tools/debug](https://developers.facebook.com/tools/debug)
+2. Paste each key URL: homepage, shop, tree-catalogue, contact
+3. Click **Scrape Again** if the preview looks stale
+4. Confirm title, description, and image appear correctly
+
+---
+
+## 12. Core Web Vitals — PageSpeed Insights
+
+**Status:** Post-deploy check  
+**Who:** Us, after first deploy.
+
+Once the site is live on Netlify, run PageSpeed Insights on the two most important pages:
+
+1. Go to [pagespeed.web.dev](https://pagespeed.web.dev)
+2. Test `https://www.papervaletrees.com/` (homepage with hero video)
+3. Test a tree page, e.g. `https://www.papervaletrees.com/trees/quercus-robur-english-oak.html`
+4. Address any red/orange issues, particularly LCP (hero image/video) and CLS
+
+The hero video autoplay is likely the biggest performance cost on mobile — worth checking.
+
+---
+
+## 13. Google Business Profile
+
+**Status:** Not started — high priority for local search  
+**Who:** Client claims/creates the profile.
+
+The LocalBusiness schema tells Google *about* the nursery. Google Business Profile (GBP) is what makes it appear in **Google Maps** and the **local pack** ("tree nurseries near me"). These are two different things and both are needed.
+
+Steps:
+1. Client goes to [business.google.com](https://business.google.com)
+2. Searches for "Papervale Trees" — if it exists as an unclaimed listing, claim it; otherwise create it
+3. Adds address, phone, hours, photos, and business category ("Plant nursery" or "Garden center")
+4. Verifies ownership (Google sends a postcard or offers video/phone verification)
+
+Once verified, the nursery appears on Google Maps and in local search results. Reviews collected here also count toward search ranking.
+
+---
+
+## 14. Trade / Wholesale Enquiry Page
+
+**Status:** Client decision needed  
+**Who:** Client confirms they want it; we build it.
+
+Several pages (availability, CTA bands) mention trade pricing for landscape architects and grounds maintenance companies, but there's no dedicated landing page for trade customers. A `/trade.html` page could:
+
+- Explain minimum order quantities, trade discount structure, and lead times
+- Have a separate contact form pre-labelled for trade enquiries (tracked separately in GA4)
+- Target keywords like "wholesale trees UK", "trade tree supplier Northern Ireland"
+
+Client to confirm if this is something they want and provide any specific trade terms or pricing structure to include.
+
+---
+
+## 15. BreadcrumbList Schema on Tree Pages
+
+**Status:** Done — all 430 tree pages already have BreadcrumbList JSON-LD.
+
+Google can show breadcrumb trails in search results for all tree pages:
+
+> Papervale Trees › Tree Catalogue › English Oak
+
+No further action needed.
