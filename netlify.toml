@@ -17,19 +17,13 @@
   force = true
 
 [[redirects]]
-  from = "/ecwid-*.json"
+  from = "/data/*"
   to = "/"
   status = 404
   force = true
 
 [[redirects]]
   from = "/scripts/*"
-  to = "/"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/ecwid-*.txt"
   to = "/"
   status = 404
   force = true

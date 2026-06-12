@@ -12,7 +12,7 @@ A plain static HTML site for [papervaletrees.com](https://www.papervaletrees.com
 | Design system | Clay (adapted) | See `docs/DESIGN.md` |
 | Shop | Ecwid embed | Lightspeed Commerce backend retained |
 | Hosting | Netlify | See `docs/DEPLOY.md` and `docs/DEPLOYMENT.md` |
-| Fonts | Google Fonts | Fraunces + DM Sans |
+| Fonts | Self-hosted | Fraunces + DM Sans woff2 files in `assets/fonts/` — no Google CDN |
 
 ---
 
@@ -37,6 +37,7 @@ papervale-site/
 ├── tree-catalogue.html           Full tree catalogue index
 ├── shop.html                     Ecwid shop embed
 ├── thank-you.html                Form submission confirmation
+├── privacy.html                  Privacy Policy (UK/EU GDPR)
 ├── 404.html                      404 error page
 │
 ├── trees/                        Auto-generated product pages (~430 files)
@@ -58,10 +59,11 @@ papervale-site/
 │
 ├── files/                        Downloadable files (PDFs, price lists, etc.)
 │
-├── ecwid-real-products.json      Live Ecwid product data
-├── ecwid-products.json           Ecwid product data (working copy)
-├── ecwid-placeholder-ids.json    Placeholder product IDs
-├── ecwid-slugs.txt               Product slug list
+├── data/                         Internal data files (blocked from public access)
+│   ├── ecwid-products.json       Ecwid product data cache (working copy)
+│   ├── ecwid-real-products.json  Live Ecwid product data
+│   ├── ecwid-placeholder-ids.json  Placeholder product IDs
+│   └── ecwid-slugs.txt           Product slug list
 │
 ├── netlify.toml                  Netlify build + redirect config
 ├── _redirects                    Netlify URL redirects

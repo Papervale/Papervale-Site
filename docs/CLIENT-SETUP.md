@@ -250,3 +250,49 @@ Google can show breadcrumb trails in search results for all tree pages:
 > Papervale Trees › Tree Catalogue › English Oak
 
 No further action needed.
+
+---
+
+## 16. GDPR / Legal Compliance
+
+**Status:** Done — Privacy Policy page live, fonts self-hosted  
+**Who:** Client is the data controller and must keep the policy up to date.
+
+### What is in place
+
+- **`privacy.html`** — a UK GDPR-compliant Privacy Policy is linked in the footer of every page. It covers:
+  - Contact form submissions (processed by Netlify Forms)
+  - Shop order data — name, address, email, order details (processed by Ecwid by Lightspeed)
+  - Ecwid cookies (functional/session cookies required for the shopping basket)
+  - Website hosting and server logs (Netlify)
+  - Visitor rights under UK GDPR and EU GDPR
+  - How to complain to the ICO (UK) or DPC (Ireland)
+
+- **Fonts self-hosted** — Fraunces and DM Sans woff2 files are served from `assets/fonts/` rather than Google's CDN. Visitor IP addresses are no longer sent to Google on every page load.
+
+- **No cookie consent banner required** — the only cookies set are Ecwid's functional session/basket cookies, which are exempt from consent requirements under UK PECR because they are strictly necessary.
+
+### Why a Privacy Policy is legally required
+
+The site collects personal data (contact form, orders, server logs). Under UK GDPR Articles 13 & 14 (the "right to be informed"), you must tell visitors what data you collect, why, who processes it, and what their rights are. A privacy policy page is the standard way to satisfy this. Without one, the site is in breach from the moment someone submits the contact form.
+
+### Client ongoing responsibilities
+
+1. **Respond to data subject requests within one calendar month.** Visitors can email `info@papervaletrees.com` to request access to, correction of, or deletion of their data. The ICO expects a response within 30 days.
+
+2. **Keep the policy up to date.** If any of the following change, update `privacy.html` and the "Last updated" date:
+   - A new third-party service is added (e.g. Mailchimp for newsletters — see item 5)
+   - Google Analytics is added — this adds tracking cookies and **will require a cookie consent banner** and a GDPR-compliant consent mechanism before GA fires. The privacy policy will also need updating. Do not add GA without addressing this first.
+   - Payment processor changes
+   - Data retention periods change
+
+3. **If a newsletter signup form is connected** (item 5 above), add a checkbox or clear notice at the point of signup stating what the subscriber is consenting to, and reference the Privacy Policy.
+
+### Note on Google Analytics (item 1)
+
+GA4 sets tracking cookies and transfers data to Google (USA). Adding it **requires**:
+- A cookie consent banner (e.g. Cookiebot, Civic Cookie Control, or a custom implementation)
+- Updating the Privacy Policy to cover GA cookies and the Google data transfer
+- Blocking GA from firing until consent is given
+
+This is a meaningful piece of work — factor it in before enabling GA.

@@ -3,7 +3,7 @@
 # Run from the repo root:  pwsh scripts/generate-availability.ps1
 #
 # To fetch FRESH data from Ecwid before generating, set $EcwidToken below.
-# Leave it empty to use the cached ecwid-products.json.
+# Leave it empty to use the cached data/ecwid-products.json.
 
 param(
     [string]$EcwidToken = ''
@@ -28,14 +28,14 @@ if ($EcwidToken) {
         Write-Host "  Fetched $($allProds.Count) / $($r.total)"
     } while ($allProds.Count -lt $r.total)
 
-    $allProds | ConvertTo-Json -Depth 20 | Set-Content "$root\ecwid-products.json" -Encoding UTF8
-    Write-Host "Cache updated: ecwid-products.json ($($allProds.Count) products)"
+    $allProds | ConvertTo-Json -Depth 20 | Set-Content "$root\data\ecwid-products.json" -Encoding UTF8
+    Write-Host "Cache updated: data/ecwid-products.json ($($allProds.Count) products)"
 } else {
-    Write-Host 'Using cached ecwid-products.json (pass -EcwidToken to refresh from API)'
+    Write-Host 'Using cached data/ecwid-products.json (pass -EcwidToken to refresh from API)'
 }
 
 # ── 2. Load data ──────────────────────────────────────────────────────────────
-$products = Get-Content "$root\ecwid-products.json" -Raw | ConvertFrom-Json
+$products = Get-Content "$root\data\ecwid-products.json" -Raw | ConvertFrom-Json
 
 # ── 3. Build rows ─────────────────────────────────────────────────────────────
 $rows = [System.Collections.Generic.List[PSCustomObject]]::new()

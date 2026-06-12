@@ -258,7 +258,7 @@ class AppFooter extends HTMLElement {
             </div>
           </div>
           <div class="footer-bottom">
-            <span>© 2026 Papervale Trees. All rights reserved.</span>
+            <span>© 2026 Papervale Trees. All rights reserved. &nbsp;·&nbsp; <a href="privacy.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Privacy Policy</a></span>
             <span>Grown with care in Northern Ireland 🌿</span>
           </div>
         </div>
