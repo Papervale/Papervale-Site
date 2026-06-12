@@ -1,6 +1,6 @@
-# Papervale Trees — Website Rebuild
+# Papervale Trees — Website
 
-A plain static HTML rebuild of [papervaletrees.com](https://www.papervaletrees.com), migrating away from Weebly/Block. The Ecwid shop (Lightspeed Commerce) is retained as an embedded widget, preserving existing stock control and CRM integration.
+A plain static HTML site for [papervaletrees.com](https://www.papervaletrees.com), migrating away from Weebly/Block. The Ecwid shop (Lightspeed Commerce) is retained as an embedded widget, preserving existing stock control and CRM integration.
 
 ---
 
@@ -11,7 +11,7 @@ A plain static HTML rebuild of [papervaletrees.com](https://www.papervaletrees.c
 | Pages | Plain HTML5 + CSS | No frameworks, no build step |
 | Design system | Clay (adapted) | See `docs/DESIGN.md` |
 | Shop | Ecwid embed | Lightspeed Commerce backend retained |
-| Hosting | Netlify (planned) | See `docs/DEPLOY.md` |
+| Hosting | Netlify | See `docs/DEPLOY.md` and `docs/DEPLOYMENT.md` |
 | Fonts | Google Fonts | Fraunces + DM Sans |
 
 ---
@@ -26,19 +26,49 @@ papervale-site/
 ├── index.html                    Homepage
 ├── contact.html                  Contact form + info
 ├── our-roots.html                About the nursery
-├── grow-strong.html              Growing methods
-├── selecting.html                Tree selection guide
+├── grow-strong.html              Growing methods overview
+├── how-we-grow-our-trees.html    Detailed growing methods
+├── selecting-a-tree.html         Tree selection guide
 ├── availability.html             Stock list + downloads
 ├── planting-aftercare.html       Planting guide
+├── services-we-provide.html      Services page
+├── gallery.html                  Photo gallery
+├── faq.html                      Frequently asked questions
+├── tree-catalogue.html           Full tree catalogue index
 ├── shop.html                     Ecwid shop embed
+├── thank-you.html                Form submission confirmation
+├── 404.html                      404 error page
+│
+├── trees/                        Auto-generated product pages (~430 files)
+│   └── [species-slug].html       One page per tree product
 │
 ├── components/
-│   └── ukisg-banner.js          Custom web component for UKISG banner
+│   ├── app-nav.js               Global navigation web component
+│   ├── app-footer.js            Global footer web component
+│   ├── shared.js                Shared component utilities
+│   └── ukisg-banner.js         UKISG banner web component
+│
+├── scripts/
+│   └── generate-availability.ps1  Generates availability pages from Ecwid data
 │
 ├── assets/
 │   ├── images/                   Photography
 │   ├── brand/                    Logo, favicon
 │   └── video/                    Hero video (when self-hosted)
+│
+├── files/                        Downloadable files (PDFs, price lists, etc.)
+│
+├── ecwid-real-products.json      Live Ecwid product data
+├── ecwid-products.json           Ecwid product data (working copy)
+├── ecwid-placeholder-ids.json    Placeholder product IDs
+├── ecwid-slugs.txt               Product slug list
+│
+├── netlify.toml                  Netlify build + redirect config
+├── _redirects                    Netlify URL redirects
+├── robots.txt                    Search engine crawl rules
+├── sitemap.xml                   XML sitemap
+├── site.webmanifest              PWA manifest
+├── llms.txt                      LLMs.txt (AI crawler guidance)
 │
 ├── docs/
 │   ├── DESIGN.md                 Design tokens & system
@@ -46,6 +76,8 @@ papervale-site/
 │   ├── INTERNAL-LINKING-STRATEGY.md   Internal link structure
 │   ├── ECWID.md                  Shop embed reference
 │   ├── DEPLOY.md                 Netlify deployment guide
+│   ├── DEPLOYMENT.md             Deployment checklist
+│   ├── CLIENT-SETUP.md           Client onboarding guide
 │   └── CONTENT.md                Shared copy & contact details
 │
 └── README.md                     This file
@@ -80,13 +112,17 @@ See `docs/PAGES.md` for the full page inventory and build status.
 ## Making Changes
 
 **For site-wide changes** (colours, nav, footer, buttons, spacing):
-1. Edit `styles.css` — changes apply to all 8 pages automatically
+1. Edit `styles.css` — changes apply to all pages automatically
 
 **For page-specific changes** (hero section, specific band styling, etc.):
-1. Open the relevant `.html` file in any text editor (VS Code recommended)
+1. Open the relevant `.html` file in VS Code
 2. Edit the page-specific `<style>` block and save
 3. Refresh in browser to preview
-4. When happy, push to GitHub → Netlify auto-deploys
+4. Push to GitHub → Netlify auto-deploys
+
+**For tree product pages** (`trees/`):
+- Pages are auto-generated from Ecwid product data via `scripts/generate-availability.ps1`
+- Do not edit individual tree pages by hand; regenerate from the script
 
 ---
 
