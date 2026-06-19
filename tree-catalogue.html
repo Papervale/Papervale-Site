@@ -3121,6 +3121,7 @@
 
 <script>
 (function () {
+  const grid    = document.getElementById('treeGrid');
   const cards   = Array.from(document.querySelectorAll('.ci-card'));
   const filters = Array.from(document.querySelectorAll('.ci-filter'));
   const search  = document.getElementById('searchInput');
@@ -3130,8 +3131,14 @@
 
   let activeCat = 'all';
 
+  function getTreeName(card) {
+    const nameEl = card.querySelector('.ci-name');
+    return nameEl ? nameEl.textContent.trim() : '';
+  }
+
   function refresh() {
     const term = search.value.trim().toLowerCase();
+    const visible = [];
     let shown = 0;
 
     cards.forEach(card => {
@@ -3139,10 +3146,22 @@
       const text    = card.textContent.toLowerCase();
       const catOk   = activeCat === 'all' || cats.toLowerCase().includes(activeCat);
       const termOk  = !term || text.includes(term);
-      const visible = catOk && termOk;
-      card.classList.toggle('hidden', !visible);
-      if (visible) shown++;
+      const isVisible = catOk && termOk;
+      card.classList.toggle('hidden', !isVisible);
+
+      if (isVisible) {
+        visible.push(card);
+        shown++;
+      }
     });
+
+    visible.sort((a, b) => {
+      const nameA = getTreeName(a).toLowerCase();
+      const nameB = getTreeName(b).toLowerCase();
+      return nameA.localeCompare(nameB);
+    });
+
+    visible.forEach(card => grid.appendChild(card));
 
     count.textContent = shown;
     empty.classList.toggle('show', shown === 0);
@@ -3167,6 +3186,8 @@
     document.querySelector('[data-cat="all"]').classList.add('active');
     refresh();
   });
+
+  refresh();
 })();
 </script>
 
