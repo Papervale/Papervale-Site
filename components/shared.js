@@ -51,3 +51,27 @@ if (lightbox) {
     }
   });
 }
+
+// Inject a site-wide Google Merchant ID meta tag so the Merchant ID
+// is present on every page. This does not replace Merchant Center
+// verification or feeds — see docs/ECWID.md and docs/DEPLOYMENT.md for next steps.
+(function() {
+  try {
+    const MERCHANT_ID = '5694263882';
+    if (typeof document !== 'undefined' && document.head) {
+      if (!document.head.querySelector('meta[name="google-merchant-id"]')) {
+        const m = document.createElement('meta');
+        m.setAttribute('name', 'google-merchant-id');
+        m.setAttribute('content', MERCHANT_ID);
+        document.head.appendChild(m);
+      }
+      // helpful HTML comment for humans inspecting the source
+      const commentText = ` Google Merchant ID: ${MERCHANT_ID} `;
+      const existing = Array.from(document.head.childNodes).some(n => n.nodeType === Node.COMMENT_NODE && n.nodeValue && n.nodeValue.includes('Google Merchant ID'));
+      if (!existing) document.head.appendChild(document.createComment(commentText));
+    }
+  } catch (err) {
+    // fail silently; this script runs in many static pages
+    console.error('Merchant ID injection failed', err);
+  }
+})();
