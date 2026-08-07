@@ -693,6 +693,9 @@ footer {
   );
 }
 
+/* LinkedIn */
+.social-link-li { background: #0A66C2; }
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 1024px) {
   :root { --sp-section: 80px; }
