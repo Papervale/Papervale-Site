@@ -54,7 +54,6 @@ class UkisgBanner extends HTMLElement {
         }
       </style>
       <span class="headline">🌿 Northern Ireland's first <strong>UKISG Certified</strong> tree nursery</span>
-      <span class="subline">genuinely homegrown | fully traceable</span>
     `;
   }
 }
