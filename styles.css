@@ -479,20 +479,19 @@ nav[aria-label] {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255,255,255,0.12);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.3);
+  background: var(--brand-forest);
+  border: 1px solid #fff;
   color: #fff;
   padding: 13px 24px;
   border-radius: var(--radius-md);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
   height: 48px;
-  transition: background 0.2s;
+  transition: background 0.2s, opacity 0.2s;
   cursor: pointer;
 }
-.btn-ghost:hover { background: rgba(255,255,255,0.2); }
+.btn-ghost:hover { background: var(--brand-moss); opacity: 0.95; }
 
 /* ─── FORMS ─── */
 .form-control {
@@ -1060,8 +1059,8 @@ footer {
   .sustain-card h4 { font-size: 16px; font-weight: 600; color: #fff; margin-bottom: 6px; }
   .sustain-card p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.65; }
   .sustain-card-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--brand-fern); margin-bottom: var(--sp-md); }
-  .sustain-legacy { margin-top: var(--sp-xxl); padding-top: var(--sp-xxl); border-top: 1px solid rgba(255,255,255,0.1); }
-  .sustain-legacy p { font-family: var(--font-display); font-size: clamp(20px, 2.5vw, 28px); font-style: italic; font-weight: 300; color: rgba(255,255,255,0.85); line-height: 1.5; letter-spacing: -0.3px; max-width: 700px; }
+  .sustain-legacy { margin-top: var(--sp-xxl); padding-top: var(--sp-xxl); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: center; }
+  .sustain-legacy p { font-family: var(--font-display); font-size: clamp(20px, 2.5vw, 28px); font-style: italic; font-weight: 300; color: rgba(255,255,255,0.85); line-height: 1.5; letter-spacing: -0.3px; max-width: 700px; text-align: center; margin: 0; }
 
   /* ─── CERTIFICATIONS ─── */
   .certs { padding: var(--sp-section) 0; }
@@ -2187,8 +2186,8 @@ footer {
 .sustain-card h4 { font-size: 16px; font-weight: 600; color: #fff; margin-bottom: 6px; }
 .sustain-card p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.65; }
 .sustain-card-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--brand-fern); margin-bottom: var(--sp-md); }
-.sustain-legacy { margin-top: var(--sp-xxl); padding-top: var(--sp-xxl); border-top: 1px solid rgba(255,255,255,0.1); }
-.sustain-legacy p { font-family: var(--font-display); font-size: clamp(20px, 2.5vw, 28px); font-style: italic; font-weight: 300; color: rgba(255,255,255,0.85); line-height: 1.5; letter-spacing: -0.3px; max-width: 700px; }
+.sustain-legacy { margin-top: var(--sp-xxl); padding-top: var(--sp-xxl); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: center; }
+.sustain-legacy p { font-family: var(--font-display); font-size: clamp(20px, 2.5vw, 28px); font-style: italic; font-weight: 300; color: rgba(255,255,255,0.85); line-height: 1.5; letter-spacing: -0.3px; max-width: 700px; text-align: center; margin: 0; }
 .certs { padding: var(--sp-section) 0; }
 .certs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-lg); }
 .cert-card { border-radius: var(--radius-xl); padding: var(--sp-xl); }
