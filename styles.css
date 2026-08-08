@@ -1135,9 +1135,9 @@ footer {
 
   /* ─── NAV ─── */
   nav { background: var(--canvas); border-bottom: 1px solid var(--hairline); position: sticky; top: 0; z-index: 100; height: 64px; }
-  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; max-width: 1240px; margin: 0 auto; padding: 0 var(--sp-xl); }
-  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
-  .nav-links { display: flex; align-items: center; gap: var(--sp-lg); list-style: none; margin-left: var(--sp-xl); }
+  .nav-inner { display: flex; align-items: center; height: 64px; max-width: 1240px; margin: 0 auto; padding: 0 var(--sp-xl); gap: var(--sp-xl); }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); flex-shrink: 0; }
+  .nav-links { display: flex; align-items: center; gap: var(--sp-lg); list-style: none; margin-left: auto; flex-shrink: 0; }
   .nav-links a { text-decoration: none; font-size: 14px; font-weight: 500; color: var(--primary); transition: color 0.2s; white-space: nowrap; }
   .nav-links a:hover, .nav-links a.active { color: var(--primary); }
   .nav-cta { background: var(--primary); color: var(--on-primary) !important; padding: 9px 18px; border-radius: var(--radius-md); font-weight: 600 !important; font-size: 14px !important; }
@@ -1264,7 +1264,7 @@ footer {
   :root { --brand-bark: #5a7259; }
 
   /* Nav search customization for index */
-  .nav-search { flex: 1; max-width: 380px; }
+  .nav-search { flex: 0 1 380px; margin: 0 auto; }
   .nav-search .ecwid-Search,
   .nav-search .ec-search { width: 100% !important; }
   .nav-search input[type="text"],
