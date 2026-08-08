@@ -1,10 +1,12 @@
 class AppNav extends HTMLElement {
   connectedCallback() {
     const page = window.location.pathname.split('/').pop() || 'index.html';
-    const rootsPages = ['our-roots.html', 'gallery.html', 'services-we-provide.html', 'faq.html', 'how-we-grow-our-trees.html'];
+    const rootsPages = ['our-roots.html', 'gallery.html', 'services-we-provide.html', 'faq.html'];
+    const growPages = ['grow-strong.html', 'how-we-grow-our-trees.html'];
 
     const active = (href) => page === href ? ' active' : '';
     const rootsActive = rootsPages.includes(page) ? ' active' : '';
+    const growActive = growPages.includes(page) ? ' active' : '';
 
     this.innerHTML = `
       <nav>
@@ -24,13 +26,17 @@ class AppNav extends HTMLElement {
             <li class="nav-dropdown">
               <a href="our-roots.html"${rootsActive ? ' class="active"' : ''}>Our Roots</a>
               <ul class="nav-submenu">
-                <li><a href="how-we-grow-our-trees.html">How We Grow</a></li>
                 <li><a href="gallery.html">Life at Papervale</a></li>
                 <li><a href="services-we-provide.html">Services We Provide</a></li>
                 <li><a href="faq.html">FAQs</a></li>
               </ul>
             </li>
-            <li><a href="grow-strong.html"${active('grow-strong.html') ? ' class="active"' : ''}>Grow Strong</a></li>
+            <li class="nav-dropdown">
+              <a href="grow-strong.html"${growActive ? ' class="active"' : ''}>Grow Strong</a>
+              <ul class="nav-submenu">
+                <li><a href="how-we-grow-our-trees.html">How We Grow</a></li>
+              </ul>
+            </li>
             <li><a href="contact.html" class="nav-cta${active('contact.html')}">Contact Us</a></li>
           </ul>
           <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
@@ -47,13 +53,18 @@ class AppNav extends HTMLElement {
           <button class="mobile-submenu-toggle">Our Roots</button>
           <div class="mobile-submenu-items">
             <a href="our-roots.html">Our Roots</a>
-            <a href="how-we-grow-our-trees.html">How We Grow</a>
             <a href="gallery.html">Life at Papervale</a>
             <a href="services-we-provide.html">Services We Provide</a>
             <a href="faq.html">FAQs</a>
           </div>
         </div>
-        <a href="grow-strong.html">Grow Strong</a>
+        <div class="mobile-submenu">
+          <button class="mobile-submenu-toggle">Grow Strong</button>
+          <div class="mobile-submenu-items">
+            <a href="grow-strong.html">Grow Strong</a>
+            <a href="how-we-grow-our-trees.html">How We Grow</a>
+          </div>
+        </div>
         <a href="contact.html" class="mob-cta">Contact Us</a>
       </div>
     `;
