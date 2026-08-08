@@ -15,7 +15,7 @@ from reportlab.pdfgen import canvas
 root = Path(__file__).parent.parent
 xlsx_file = root / "files" / "availability-list-2026.xlsx"
 pdf_file = root / "files" / "availability-list-2026.pdf"
-logo_file = root / "assets" / "brand" / "Papervale_LogoMark_Colour_RGB.png"
+logo_file = root / "assets" / "brand" / "Papervale_LogoMark_Colour_RGB.jpg"
 
 # Load data from XLSX
 wb = load_workbook(xlsx_file)

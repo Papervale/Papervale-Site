@@ -10,8 +10,11 @@ xlsx_file = root / "files" / "availability-list-2026.xlsx"
 
 def format_botanical_name(name):
     """
-    Format botanical name: Genus capital, species lowercase, variant quoted with capitals.
-    Examples: Abies alba, Acer campestre 'Elsrijk'
+    Format botanical name:
+    - Genus: capital
+    - Species without variant: CAPITAL
+    - Species with variant: lowercase, variant in quotes with capitals
+    Examples: Acer Campestre (no variant), Acer campestre 'Red Shine' (with variant)
     """
     if not name or not isinstance(name, str):
         return name
@@ -31,7 +34,7 @@ def format_botanical_name(name):
         if len(parts) >= 2:
             # Handle 'x' specially (hybrid indicator)
             genus = parts[0].lower() if parts[0].lower() == 'x' else parts[0].capitalize()
-            species = parts[1].lower()
+            species = parts[1].lower()  # lowercase species when variant present
             # Capitalize each word in the variant
             variant_words = variant_text.split()
             variant_capitalized = ' '.join(w.capitalize() for w in variant_words)
@@ -43,12 +46,12 @@ def format_botanical_name(name):
             variant_capitalized = ' '.join(w.capitalize() for w in variant_words)
             return f"{genus} '{variant_capitalized}'"
     else:
-        # No variant - just format genus and species
+        # No variant - species should be CAPITALIZED
         parts = name.split()
         if len(parts) >= 2:
             # Handle 'x' specially (hybrid indicator)
             genus = parts[0].lower() if parts[0].lower() == 'x' else parts[0].capitalize()
-            species = parts[1].lower()
+            species = parts[1].capitalize()  # CAPITALIZE species when NO variant
             return f"{genus} {species}"
         elif len(parts) == 1:
             # Single word (genus only)
