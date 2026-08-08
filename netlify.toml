@@ -16,6 +16,13 @@
   status = 404
   force = true
 
+# Allow reviews data (public), block other data files (private)
+[[redirects]]
+  from = "/data/ecwid-reviews.json"
+  to = "/data/ecwid-reviews.json"
+  status = 200
+  force = false
+
 [[redirects]]
   from = "/data/*"
   to = "/"

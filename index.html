@@ -424,7 +424,16 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', set
 // Load and display reviews from Ecwid
 async function initTestimonials() {
   try {
-    const response = await fetch('data/ecwid-reviews.json');
+    // Try absolute path first (works on Netlify), fall back to relative
+    let response = await fetch('/data/ecwid-reviews.json').catch(() =>
+      fetch('data/ecwid-reviews.json')
+    );
+
+    if (!response.ok) {
+      console.warn('Reviews not available:', response.status);
+      return;
+    }
+
     const reviews = await response.json();
 
     if (!reviews.length) return;
