@@ -139,7 +139,7 @@ if ($edge) {
 <title>Papervale Trees — Availability List 2026</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}body{font-family:'Segoe UI',Arial,sans-serif;font-size:9pt;color:#1a1a1a}
-.header{padding:16px 20px 12px;border-bottom:2px solid #334832;margin-bottom:12px;display:flex;justify-content:space-between;align-items:flex-end}
+.header{padding:16px 20px 12px;border-bottom:2px solid #334832;margin-bottom:12px;display:flex;justify-content:space-between;align-items:flex-end;gap:16px}.logo-section{display:flex;align-items:flex-end}.logo{height:40px;width:auto;margin-right:12px}
 .header h1{font-size:16pt;font-weight:600;color:#334832}.header p{font-size:8pt;color:#666;margin-top:2px}.meta{font-size:8pt;color:#666;text-align:right}
 table{width:100%;border-collapse:collapse}
 thead th{background:#334832;color:#fff;padding:6px 8px;text-align:left;font-size:8pt;font-weight:600}
@@ -148,7 +148,7 @@ tbody tr:nth-child(even){background:#f8f7f5}td{padding:5px 8px;border-bottom:1px
 .footer{margin-top:16px;padding-top:10px;border-top:1px solid #e8e6e4;font-size:7.5pt;color:#999;display:flex;justify-content:space-between}
 @media print{@page{size:A4 landscape;margin:12mm 10mm}thead th{background:#334832 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;color:#fff !important}tbody tr:nth-child(even){background:#f8f7f5 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.ins{background:#eaf2ea !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.oos{background:#fdecea !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style></head><body>
-<div class="header"><div><h1>Papervale Trees</h1><p>Spring / Summer 2026 Availability · $($sorted.Count) stock lines · papervaletrees.com</p></div><div class="meta">Generated $date<br>028 3085 0059 · info@papervaletrees.com</div></div>
+<div class="header"><div class="logo-section"><img src="assets/brand/Papervale_LogoMark_Colour_RGB.png" alt="Papervale Trees" class="logo"></div><div><h1>Papervale Trees</h1><p>Spring / Summer 2026 Availability · $($sorted.Count) stock lines · papervaletrees.com</p></div><div class="meta">Generated $date<br>028 3085 0059 · info@papervaletrees.com</div></div>
 <table><thead><tr><th>Botanical Name</th><th>Common Name</th><th>Pot Size</th><th>Height (cm)</th><th style="text-align:right">Price</th><th>Stock</th><th>SKU</th></tr></thead>
 <tbody>$($tableRows -join '')</tbody></table>
 <div class="footer"><span>Papervale Trees · 48 Old Newry Road, Rathfriland, Co. Down BT34 5BQ</span><span>Bareroot &amp; rootball: Nov–Mar only · Container-grown: year-round · Prices exc. delivery</span></div>
