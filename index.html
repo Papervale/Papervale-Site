@@ -22,9 +22,20 @@
 <meta name="twitter:description" content="Discover homegrown, peat-free trees from our UKISG certified Northern Ireland nursery. Over 300 varieties with UK & Ireland delivery.">
 <meta name="twitter:image" content="https://www.papervaletrees.com/assets/images/nursery-overview.jpg">
 <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
-<link rel="icon" type="image/x-icon" href="assets/brand/favicon-dark.ico">
+<link rel="icon" type="image/x-icon" href="assets/brand/favicon-light.ico" id="favicon">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="styles.css?v=b2f01c4">
+<script>
+function setFavicon() {
+  const favicon = document.getElementById('favicon');
+  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const url = isDark ? 'assets/brand/favicon-dark.ico?v2' : 'assets/brand/favicon-light.ico?v2';
+  favicon.href = url;
+  console.log('Favicon set to:', url, 'Dark mode:', isDark);
+}
+setFavicon();
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setFavicon);
+</script>
 
 <script type="application/ld+json">
 {

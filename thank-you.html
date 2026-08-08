@@ -7,8 +7,16 @@
 <title>Message Received — Papervale Trees</title>
 <meta name="description" content="Thank you for contacting Papervale Trees. We will be in touch shortly.">
 <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
-<link rel="icon" type="image/x-icon" href="assets/brand/favicon-dark.ico">
-
+<link rel="icon" type="image/x-icon" href="assets/brand/favicon-light.ico" id="favicon">
+<script>
+function setFavicon() {
+  const favicon = document.getElementById('favicon');
+  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  favicon.href = isDark ? 'assets/brand/favicon-dark.ico?v2' : 'assets/brand/favicon-light.ico?v2';
+}
+setFavicon();
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setFavicon);
+</script>
 <link rel="stylesheet" href="styles.css?v=b2f01c4">
 <style>
 .thank-you {

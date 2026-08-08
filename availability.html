@@ -21,8 +21,16 @@
 <meta name="twitter:description" content="Check real-time availability of homegrown trees. Browse our current stock with delivery options.">
 <meta name="twitter:image" content="https://www.papervaletrees.com/assets/images/bareroot-trees-dispatch.jpg">
 <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
-<link rel="icon" type="image/x-icon" href="assets/brand/favicon-dark.ico">
-<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/x-icon" href="assets/brand/favicon-light.ico" id="favicon">
+<script>
+function setFavicon() {
+  const favicon = document.getElementById('favicon');
+  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  favicon.href = isDark ? 'assets/brand/favicon-dark.ico?v2' : 'assets/brand/favicon-light.ico?v2';
+}
+setFavicon();
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setFavicon);
+</script><link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="styles.css?v=b2f01c4">
 </head>
 <body>
