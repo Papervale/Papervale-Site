@@ -1,7 +1,7 @@
 class AppNav extends HTMLElement {
   connectedCallback() {
     const page = window.location.pathname.split('/').pop() || 'index.html';
-    const rootsPages = ['our-roots.html', 'gallery.html', 'services-we-provide.html', 'faq.html'];
+    const rootsPages = ['our-roots.html', 'gallery.html', 'services-we-provide.html', 'faq.html', 'how-we-grow-our-trees.html'];
 
     const active = (href) => page === href ? ' active' : '';
     const rootsActive = rootsPages.includes(page) ? ' active' : '';
@@ -24,6 +24,7 @@ class AppNav extends HTMLElement {
             <li class="nav-dropdown">
               <a href="our-roots.html"${rootsActive ? ' class="active"' : ''}>Our Roots</a>
               <ul class="nav-submenu">
+                <li><a href="how-we-grow-our-trees.html">How We Grow</a></li>
                 <li><a href="gallery.html">Life at Papervale</a></li>
                 <li><a href="services-we-provide.html">Services We Provide</a></li>
                 <li><a href="faq.html">FAQs</a></li>
@@ -46,6 +47,7 @@ class AppNav extends HTMLElement {
           <button class="mobile-submenu-toggle">Our Roots</button>
           <div class="mobile-submenu-items">
             <a href="our-roots.html">Our Roots</a>
+            <a href="how-we-grow-our-trees.html">How We Grow</a>
             <a href="gallery.html">Life at Papervale</a>
             <a href="services-we-provide.html">Services We Provide</a>
             <a href="faq.html">FAQs</a>
