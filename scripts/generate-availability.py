@@ -22,17 +22,20 @@ wb = load_workbook(xlsx_file)
 ws = wb.active
 rows = []
 
-for idx, row in enumerate(ws.iter_rows(min_row=2, values_only=True)):
-    if row[0] is None:
+# Read data from row 3 onwards (row 2 has headers)
+for row_idx in range(3, ws.max_row + 1):
+    sku = ws.cell(row=row_idx, column=1).value
+    if sku is None:
         continue
     rows.append({
-        'botanical': row[0],
-        'common': row[1],
-        'pot_size': row[2],
-        'height': row[3],
-        'price': row[4],
-        'stock': row[5],
-        'sku': row[6]
+        'sku': sku,
+        'botanical': ws.cell(row=row_idx, column=2).value,
+        'common': ws.cell(row=row_idx, column=3).value,
+        'pot_size': ws.cell(row=row_idx, column=4).value,
+        'height': ws.cell(row=row_idx, column=5).value,
+        'girth': ws.cell(row=row_idx, column=6).value,
+        'price': ws.cell(row=row_idx, column=7).value,
+        'stock': ws.cell(row=row_idx, column=8).value,
     })
 
 date_str = datetime.now().strftime('%B %Y')
@@ -49,10 +52,10 @@ doc = SimpleDocTemplate(
     title="Papervale Trees — Availability List 2026"
 )
 
-# Build table data with header
+# Build table data with header (matching Excel column order)
 header_row = [
-    "Botanical Name", "Common Name", "Pot Size",
-    "Height (cm)", "Price", "Stock", "SKU"
+    "SKU", "Botanical Name", "Common Name", "Pot Size",
+    "Height (cm)", "Girth (cm)", "Price (GBP)", "Stock"
 ]
 
 # Table rows
@@ -64,13 +67,14 @@ for row in rows:
     except (ValueError, TypeError):
         price_str = ""
     table_data.append([
-        row['botanical'],
-        row['common'],
+        str(row['sku']) if row['sku'] else "",
+        row['botanical'] or "",
+        row['common'] or "",
         row['pot_size'] or "",
         str(row['height']) if row['height'] else "",
+        str(row['girth']) if row['girth'] else "",
         price_str,
-        str(row['stock']) if row['stock'] else "",
-        row['sku'] or ""
+        str(row['stock']) if row['stock'] else ""
     ])
 
 # Create table with styling
@@ -96,12 +100,12 @@ table.setStyle(TableStyle([
     # Alternating row colors
     ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, colors.HexColor('#f8f7f5')]),
 
-    # Right align price column
-    ('ALIGN', (4, 1), (4, -1), 'RIGHT'),
+    # Right align price column (now column 6)
+    ('ALIGN', (6, 1), (6, -1), 'RIGHT'),
 
-    # Stock column styling
-    ('ALIGN', (5, 1), (5, -1), 'CENTER'),
-    ('FONTNAME', (5, 1), (5, -1), 'Helvetica-Bold'),
+    # Stock column styling (now column 7)
+    ('ALIGN', (7, 1), (7, -1), 'CENTER'),
+    ('FONTNAME', (7, 1), (7, -1), 'Helvetica-Bold'),
 ]))
 
 # Build story with header
