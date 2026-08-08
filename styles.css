@@ -1796,7 +1796,7 @@ footer {
     .supporting-header p { font-size: 15px; }
 
     /* About */
-    .about-stats { grid-template-columns: 1fr 1fr; }
+    .about-stats { grid-template-columns: 1fr; }
     .about-copy p { font-size: 15px; }
 
     /* Image band */
