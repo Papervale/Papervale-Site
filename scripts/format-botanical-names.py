@@ -115,9 +115,16 @@ for row_idx in range(3, ws.max_row + 1):
         girth_cell.value = ""
         removed_girths += 1
 
+# Make header row bold
+from openpyxl.styles import Font
+header_font = Font(bold=True)
+for col in range(1, 9):
+    ws.cell(row=2, column=col).font = header_font
+
 # Save updated Excel
 wb.save(xlsx_file)
 print(f"\n✓ Excel file updated: {xlsx_file}")
 print(f"  Botanical names formatted: {updated_names}")
 print(f"  Heights with 0s removed: {removed_heights}")
 print(f"  Girths with 0s removed: {removed_girths}")
+print(f"  Header row made bold")

@@ -111,27 +111,22 @@ table.setStyle(TableStyle([
 # Build story with header
 story = []
 
-# Custom header with logo
+# Custom header
 def header_footer(canvas, doc):
     canvas.saveState()
 
-    # Logo - positioned lower to avoid margin cutoff
-    if logo_file.exists():
-        # Position logo at 15mm from top, 20mm from left, smaller size
-        canvas.drawImage(str(logo_file), 10*mm, landscape(A4)[1] - 25*mm, width=22*mm, height=22*mm)
-
     # Title and info
     canvas.setFont("Helvetica-Bold", 14)
-    canvas.drawString(40*mm, landscape(A4)[1] - 17*mm, "Papervale Trees")
+    canvas.drawString(10*mm, landscape(A4)[1] - 20*mm, "Papervale Trees")
 
     canvas.setFont("Helvetica", 8)
-    canvas.drawString(40*mm, landscape(A4)[1] - 22*mm,
+    canvas.drawString(10*mm, landscape(A4)[1] - 25*mm,
                       f"Spring / Summer 2026 Availability · {total_lines} stock lines · papervaletrees.com")
 
     # Right side metadata
     canvas.setFont("Helvetica", 8)
-    canvas.drawRightString(landscape(A4)[0] - 10*mm, landscape(A4)[1] - 17*mm, f"Generated {date_str}")
-    canvas.drawRightString(landscape(A4)[0] - 10*mm, landscape(A4)[1] - 22*mm, "028 3085 0059 · info@papervaletrees.com")
+    canvas.drawRightString(landscape(A4)[0] - 10*mm, landscape(A4)[1] - 20*mm, f"Generated {date_str}")
+    canvas.drawRightString(landscape(A4)[0] - 10*mm, landscape(A4)[1] - 25*mm, "028 3085 0059 · info@papervaletrees.com")
 
     canvas.restoreState()
 
