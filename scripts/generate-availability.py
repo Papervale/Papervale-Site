@@ -45,7 +45,7 @@ total_lines = len(rows)
 doc = SimpleDocTemplate(
     str(pdf_file),
     pagesize=landscape(A4),
-    topMargin=50*mm,
+    topMargin=30*mm,
     bottomMargin=15*mm,
     leftMargin=10*mm,
     rightMargin=10*mm,
