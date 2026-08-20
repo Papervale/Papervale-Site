@@ -1,7 +1,14 @@
 #!/usr/bin/env python3
 """
 Fetch tree products from Ecwid and populate availability-list-2026.xlsx
-Maintains exact tree names from Ecwid and populates all columns.
+
+IMPORTANT REQUIREMENTS:
+- Preserve existing column order: SKU, Botanical Name, Common Name, Pot Size, Height (cm), Girth (cm), Price (GBP), Stock
+- Do NOT modify, reformat, or clean tree names — keep exactly as stored in Lightspeed/Ecwid
+- Do NOT add or remove columns
+- Tree names are the source of truth for botanical nomenclature — preserve all formatting, casing, special characters
+
+Example: "ACACIA melanoxylon / Australian Blackwood" stays exactly as-is (do not split or transform)
 """
 
 import requests
@@ -49,12 +56,16 @@ def fetch_products():
     return products
 
 def create_availability_xlsx(products):
-    """Create XLSX with exact product data from Ecwid."""
+    """Create XLSX with exact product data from Ecwid.
+
+    CRITICAL: Column order and names must match existing file structure.
+    Tree names from Ecwid must be preserved exactly — no reformatting or modification.
+    """
     wb = Workbook()
     ws = wb.active
     ws.title = "Availability"
 
-    # Header row with styling
+    # Header row with styling — DO NOT REORDER OR MODIFY THESE COLUMNS
     headers = ["SKU", "Botanical Name", "Common Name", "Pot Size", "Height (cm)", "Girth (cm)", "Price (GBP)", "Stock"]
     header_fill = PatternFill(start_color="334832", end_color="334832", fill_type="solid")
     header_font = Font(bold=True, color="FFFFFF", size=10)
@@ -70,16 +81,17 @@ def create_availability_xlsx(products):
     row_idx = 3
     for product in products:
         sku = product.get('sku', '')
-        name = product.get('name', '')  # Keep exact name from Ecwid
+        name = product.get('name', '')  # PRESERVE EXACTLY AS STORED IN LIGHTSPEED
         price = product.get('price', 0)
         quantity = product.get('quantity', 0)
 
         # Parse product name for botanical and common names
-        # Format assumed: "BOTANICAL common-name" or just name
-        parts = name.split(' - ')
+        # Example format: "ACACIA melanoxylon / Australian Blackwood"
+        # Keep exact formatting from Ecwid — do NOT modify casing, special chars, or spacing
+        parts = name.split(' / ')
         if len(parts) >= 2:
-            botanical = parts[0].strip()
-            common = ' - '.join(parts[1:]).strip()
+            botanical = parts[0].strip()  # e.g., "ACACIA melanoxylon"
+            common = ' / '.join(parts[1:]).strip()  # e.g., "Australian Blackwood"
         else:
             botanical = name
             common = ""
