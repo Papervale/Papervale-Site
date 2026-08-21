@@ -11,6 +11,7 @@ IMPORTANT REQUIREMENTS:
 Example: "ACACIA melanoxylon / Australian Blackwood" stays exactly as-is (do not split or transform)
 """
 
+import os
 import requests
 import json
 from pathlib import Path
@@ -18,7 +19,10 @@ from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment
 
 STORE_ID = "73482057"
-SECRET_TOKEN = "secret_CydqzttNqkyKHwie7NUEWsQvjTCFzykc"
+SECRET_TOKEN = os.getenv('ECWID_API_TOKEN')
+if not SECRET_TOKEN:
+    print("✗ Error: ECWID_API_TOKEN environment variable not set")
+    exit(1)
 BASE_URL = f"https://app.ecwid.com/api/v3/{STORE_ID}"
 
 root = Path(__file__).parent.parent

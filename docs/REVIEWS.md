@@ -19,7 +19,7 @@ Edit `.env` and replace `your_secret_token_here`:
 
 ```env
 ECWID_STORE_ID=73482057
-ECWID_SECRET_TOKEN=secret_CydqzttNqkyKHwie7NUEWsQvjTCFzykc
+ECWID_SECRET_TOKEN=your_secret_token_here
 ```
 
 **Get your token:**
