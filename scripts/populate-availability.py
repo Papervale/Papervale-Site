@@ -66,13 +66,14 @@ def create_availability_xlsx(products):
 
     CRITICAL: Column order and names must match existing file structure.
     Tree names from Ecwid must be preserved exactly — no reformatting or modification.
+    NOTE: Gift card and non-tree products are excluded. Data sorted by botanical name.
     """
     wb = Workbook()
     ws = wb.active
     ws.title = "Availability"
 
     # Header row with styling — DO NOT REORDER OR MODIFY THESE COLUMNS
-    headers = ["SKU", "Botanical Name", "Pot Size", "Height (cm)", "Girth (cm)", "Price (GBP)", "Stock"]
+    headers = ["SKU", "Botanical Name", "Common Name", "Pot Size", "Height (cm)", "Girth (cm)", "Price (GBP)", "Stock"]
     header_fill = PatternFill(start_color="334832", end_color="334832", fill_type="solid")
     header_font = Font(bold=True, color="FFFFFF", size=10)
 
@@ -83,15 +84,21 @@ def create_availability_xlsx(products):
         cell.font = header_font
         cell.alignment = Alignment(horizontal="left", vertical="center")
 
-    # Populate data rows
-    row_idx = 3
+    # Build data array, filter out gift cards and non-trees, then sort by botanical name
+    data_rows = []
+
     for product in products:
-        sku = product.get('sku', '')
-        name = product.get('name', '')  # PRESERVE EXACTLY AS STORED IN LIGHTSPEED
+        sku = product.get('sku', '').replace(' - Base', '')  # Remove " - Base" suffix
+        full_name = product.get('name', '')  # Original from Ecwid
+
+        # Split into botanical and common names
+        parts = full_name.split(' / ')
+        botanical = parts[0].strip() if parts else full_name
+        common = parts[1].strip() if len(parts) > 1 else ""
+
         price = product.get('price', 0)
 
         # Calculate total quantity from combinations (variants)
-        # If product has combinations, sum their quantities; otherwise use product quantity
         quantity = 0
         combinations = product.get('combinations', [])
         if combinations:
@@ -99,15 +106,14 @@ def create_availability_xlsx(products):
         else:
             quantity = product.get('quantity', 0)
 
-        # Keep original name exactly as stored in Ecwid — NO PARSING OR MODIFICATION
-        botanical = name
-
-        # Get custom fields if available (pot size, height, girth)
-        attributes = product.get('attributes', [])
+        # Extract pot size, height, and girth from attributes, combinations
+        # NOTE: Remove zero/empty values (0, 0., 0 ) — leave blank if no valid measurement
         pot_size = ""
         height = ""
         girth = ""
 
+        # Try product attributes first
+        attributes = product.get('attributes', [])
         for attr in attributes:
             attr_name = attr.get('name', '').lower()
             attr_value = attr.get('value', '')
@@ -118,25 +124,100 @@ def create_availability_xlsx(products):
             elif 'girth' in attr_name or 'circumference' in attr_name:
                 girth = attr_value
 
-        # Write row
-        ws.cell(row=row_idx, column=1).value = sku
-        ws.cell(row=row_idx, column=2).value = botanical  # Original name exactly as stored in Ecwid
-        ws.cell(row=row_idx, column=3).value = pot_size
-        ws.cell(row=row_idx, column=4).value = height
-        ws.cell(row=row_idx, column=5).value = girth
-        ws.cell(row=row_idx, column=6).value = price
-        ws.cell(row=row_idx, column=7).value = quantity
+        # Try combination options if no data found yet
+        if (not pot_size or not height or not girth) and combinations:
+            for combo in combinations:
+                options = combo.get('options', [])
+                for opt in options:
+                    opt_name = opt.get('name', '').lower()
+                    opt_value = opt.get('value', '')
+                    if 'pot' in opt_name and not pot_size:
+                        pot_size = opt_value
+                    elif 'height' in opt_name and not height:
+                        height = opt_value
+                    elif ('girth' in opt_name or 'circumference' in opt_name) and not girth:
+                        girth = opt_value
 
+        # Clean up invalid girth/height data
+        # NOTE: Remove patterns: 0, 0., 0 , '0, 0', 0', - 0, and other zero-only values
+        # Keep valid formats like: 50 - 75, 8/10, 200 - 225, etc.
+        for val_var in [('height', height), ('girth', girth)]:
+            val_name, val = val_var
+            if val:
+                val_str = str(val).strip()
+                # Check for invalid patterns: zero with quotes (0', '0), dash-zero (- 0, -0, etc.), etc.
+                invalid_patterns = ["0'", "'0", '0"', '"0', "- 0", "-0", "0 -"]
+                if any(pattern in val_str for pattern in invalid_patterns) or val_str.endswith("- 0"):
+                    if val_name == 'height':
+                        height = ""
+                    else:
+                        girth = ""
+                else:
+                    # Remove quotes and trailing dots for comparison
+                    val_clean = val_str.strip("'\"").rstrip('.')
+                    # Only remove if it's just a zero (with or without quotes/dots)
+                    if val_clean == '0' or val_clean == '' or not val_clean:
+                        if val_name == 'height':
+                            height = ""
+                        else:
+                            girth = ""
+
+        # Skip gift cards, non-tree products, and zero stock items
+        if (sku and 'gift' not in sku.lower() and 'gift' not in full_name.lower()
+            and quantity > 0):  # Only include items with stock
+
+            # Format height and girth with better spacing, remove "cm", trim spaces
+            # Apply rules: remove leading/trailing spaces and invalid patterns
+            formatted_height = height
+            if height:
+                formatted_height = str(height).lower().replace('cm', '').replace('-', ' - ').replace('  ', ' ').strip()
+                # Apply cleanup rules after formatting
+                if any(pat in formatted_height for pat in ["0'", "'0", '0"', '"0', "- 0", "-0"]):
+                    formatted_height = ""
+
+            formatted_girth = girth
+            if girth:
+                formatted_girth = str(girth).lower().replace('cm', '').replace('-', ' - ').replace('  ', ' ').strip()
+                # Apply cleanup rules after formatting
+                if any(pat in formatted_girth for pat in ["0'", "'0", '0"', '"0', "- 0", "-0"]):
+                    formatted_girth = ""
+
+            data_rows.append({
+                'sku': sku,
+                'botanical': botanical,
+                'common': common,
+                'pot_size': pot_size,
+                'height': formatted_height,
+                'girth': formatted_girth,
+                'price': price,
+                'quantity': quantity,
+            })
+
+    # Sort by botanical name
+    data_rows.sort(key=lambda x: (x['botanical'] or '').lower())
+
+    # Write sorted rows to XLSX
+    row_idx = 3
+    for row_data in data_rows:
+        ws.cell(row=row_idx, column=1).value = row_data['sku']
+        ws.cell(row=row_idx, column=2).value = row_data['botanical']
+        ws.cell(row=row_idx, column=3).value = row_data['common']
+        ws.cell(row=row_idx, column=4).value = row_data['pot_size']
+        ws.cell(row=row_idx, column=5).value = row_data['height']
+        ws.cell(row=row_idx, column=6).value = row_data['girth']
+        ws.cell(row=row_idx, column=7).value = row_data['price']
+        ws.cell(row=row_idx, column=8).value = row_data['quantity']
         row_idx += 1
 
     # Adjust column widths
-    ws.column_dimensions['A'].width = 12
-    ws.column_dimensions['B'].width = 40  # Botanical Name (exact from Ecwid)
-    ws.column_dimensions['C'].width = 12
-    ws.column_dimensions['D'].width = 15
-    ws.column_dimensions['E'].width = 15
-    ws.column_dimensions['F'].width = 12
-    ws.column_dimensions['G'].width = 10
+    ws.column_dimensions['A'].width = 12  # SKU
+    ws.column_dimensions['B'].width = 25  # Botanical Name
+    ws.column_dimensions['C'].width = 25  # Common Name
+    ws.column_dimensions['D'].width = 12  # Pot Size
+    ws.column_dimensions['E'].width = 12  # Height (cm)
+    ws.column_dimensions['F'].width = 12  # Girth (cm)
+    ws.column_dimensions['G'].width = 12  # Price (GBP)
+    ws.column_dimensions['H'].width = 10  # Stock
 
     # Save
     wb.save(str(xlsx_file))
