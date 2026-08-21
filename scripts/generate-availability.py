@@ -13,8 +13,9 @@ from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, 
 from reportlab.pdfgen import canvas
 
 root = Path(__file__).parent.parent
-xlsx_file = root / "files" / "availability-list-2026.xlsx"
-pdf_file = root / "files" / "availability-list-2026.pdf"
+current_month = datetime.now().strftime('%B').lower()
+xlsx_file = root / "files" / f"availability-list-{current_month}-2026.xlsx"
+pdf_file = root / "files" / f"availability-list-{current_month}-2026.pdf"
 logo_file = root / "assets" / "brand" / "Papervale_LogoMark_Colour_RGB.jpg"
 
 # Load data from XLSX

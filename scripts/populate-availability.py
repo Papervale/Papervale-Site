@@ -22,7 +22,9 @@ SECRET_TOKEN = "secret_CydqzttNqkyKHwie7NUEWsQvjTCFzykc"
 BASE_URL = f"https://app.ecwid.com/api/v3/{STORE_ID}"
 
 root = Path(__file__).parent.parent
-xlsx_file = root / "files" / "availability-list-2026.xlsx"
+from datetime import datetime
+current_month = datetime.now().strftime('%B').lower()
+xlsx_file = root / "files" / f"availability-list-{current_month}-2026.xlsx"
 
 def fetch_products():
     """Fetch all products from Ecwid API."""
