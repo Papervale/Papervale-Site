@@ -30,15 +30,14 @@ for row_idx in range(3, ws.max_row + 1):
     rows.append({
         'sku': sku,
         'botanical': ws.cell(row=row_idx, column=2).value,
-        'common': ws.cell(row=row_idx, column=3).value,
-        'pot_size': ws.cell(row=row_idx, column=4).value,
-        'height': ws.cell(row=row_idx, column=5).value,
-        'girth': ws.cell(row=row_idx, column=6).value,
-        'price': ws.cell(row=row_idx, column=7).value,
-        'stock': ws.cell(row=row_idx, column=8).value,
+        'pot_size': ws.cell(row=row_idx, column=3).value,
+        'height': ws.cell(row=row_idx, column=4).value,
+        'girth': ws.cell(row=row_idx, column=5).value,
+        'price': ws.cell(row=row_idx, column=6).value,
+        'stock': ws.cell(row=row_idx, column=7).value,
     })
 
-date_str = datetime.now().strftime('%B %Y')
+date_str = datetime.now().strftime('%-d %B %Y')
 total_lines = len(rows)
 
 # Create PDF
@@ -54,7 +53,7 @@ doc = SimpleDocTemplate(
 
 # Build table data with header (matching Excel column order)
 header_row = [
-    "SKU", "Botanical Name", "Common Name", "Pot Size",
+    "SKU", "Botanical Name", "Pot Size",
     "Height (cm)", "Girth (cm)", "Price (GBP)", "Stock"
 ]
 
@@ -69,7 +68,6 @@ for row in rows:
     table_data.append([
         str(row['sku']) if row['sku'] else "",
         row['botanical'] or "",
-        row['common'] or "",
         row['pot_size'] or "",
         str(row['height']) if row['height'] else "",
         str(row['girth']) if row['girth'] else "",
@@ -100,12 +98,12 @@ table.setStyle(TableStyle([
     # Alternating row colors
     ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, colors.HexColor('#f8f7f5')]),
 
-    # Right align price column (now column 6)
-    ('ALIGN', (6, 1), (6, -1), 'RIGHT'),
+    # Right align price column (now column 5)
+    ('ALIGN', (5, 1), (5, -1), 'RIGHT'),
 
-    # Stock column styling (now column 7)
-    ('ALIGN', (7, 1), (7, -1), 'CENTER'),
-    ('FONTNAME', (7, 1), (7, -1), 'Helvetica-Bold'),
+    # Stock column styling (now column 6)
+    ('ALIGN', (6, 1), (6, -1), 'CENTER'),
+    ('FONTNAME', (6, 1), (6, -1), 'Helvetica-Bold'),
 ]))
 
 # Build story with header

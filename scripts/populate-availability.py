@@ -66,7 +66,7 @@ def create_availability_xlsx(products):
     ws.title = "Availability"
 
     # Header row with styling — DO NOT REORDER OR MODIFY THESE COLUMNS
-    headers = ["SKU", "Botanical Name", "Common Name", "Pot Size", "Height (cm)", "Girth (cm)", "Price (GBP)", "Stock"]
+    headers = ["SKU", "Botanical Name", "Pot Size", "Height (cm)", "Girth (cm)", "Price (GBP)", "Stock"]
     header_fill = PatternFill(start_color="334832", end_color="334832", fill_type="solid")
     header_font = Font(bold=True, color="FFFFFF", size=10)
 
@@ -83,18 +83,18 @@ def create_availability_xlsx(products):
         sku = product.get('sku', '')
         name = product.get('name', '')  # PRESERVE EXACTLY AS STORED IN LIGHTSPEED
         price = product.get('price', 0)
-        quantity = product.get('quantity', 0)
 
-        # Parse product name for botanical and common names
-        # Example format: "ACACIA melanoxylon / Australian Blackwood"
-        # Keep exact formatting from Ecwid — do NOT modify casing, special chars, or spacing
-        parts = name.split(' / ')
-        if len(parts) >= 2:
-            botanical = parts[0].strip()  # e.g., "ACACIA melanoxylon"
-            common = ' / '.join(parts[1:]).strip()  # e.g., "Australian Blackwood"
+        # Calculate total quantity from combinations (variants)
+        # If product has combinations, sum their quantities; otherwise use product quantity
+        quantity = 0
+        combinations = product.get('combinations', [])
+        if combinations:
+            quantity = sum(c.get('quantity', 0) for c in combinations)
         else:
-            botanical = name
-            common = ""
+            quantity = product.get('quantity', 0)
+
+        # Keep original name exactly as stored in Ecwid — NO PARSING OR MODIFICATION
+        botanical = name
 
         # Get custom fields if available (pot size, height, girth)
         attributes = product.get('attributes', [])
@@ -114,25 +114,23 @@ def create_availability_xlsx(products):
 
         # Write row
         ws.cell(row=row_idx, column=1).value = sku
-        ws.cell(row=row_idx, column=2).value = botanical
-        ws.cell(row=row_idx, column=3).value = common
-        ws.cell(row=row_idx, column=4).value = pot_size
-        ws.cell(row=row_idx, column=5).value = height
-        ws.cell(row=row_idx, column=6).value = girth
-        ws.cell(row=row_idx, column=7).value = price
-        ws.cell(row=row_idx, column=8).value = quantity
+        ws.cell(row=row_idx, column=2).value = botanical  # Original name exactly as stored in Ecwid
+        ws.cell(row=row_idx, column=3).value = pot_size
+        ws.cell(row=row_idx, column=4).value = height
+        ws.cell(row=row_idx, column=5).value = girth
+        ws.cell(row=row_idx, column=6).value = price
+        ws.cell(row=row_idx, column=7).value = quantity
 
         row_idx += 1
 
     # Adjust column widths
     ws.column_dimensions['A'].width = 12
-    ws.column_dimensions['B'].width = 25
-    ws.column_dimensions['C'].width = 25
-    ws.column_dimensions['D'].width = 12
+    ws.column_dimensions['B'].width = 40  # Botanical Name (exact from Ecwid)
+    ws.column_dimensions['C'].width = 12
+    ws.column_dimensions['D'].width = 15
     ws.column_dimensions['E'].width = 15
-    ws.column_dimensions['F'].width = 15
-    ws.column_dimensions['G'].width = 12
-    ws.column_dimensions['H'].width = 10
+    ws.column_dimensions['F'].width = 12
+    ws.column_dimensions['G'].width = 10
 
     # Save
     wb.save(str(xlsx_file))
