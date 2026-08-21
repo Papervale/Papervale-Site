@@ -178,8 +178,8 @@ def create_availability_xlsx(products):
             formatted_girth = girth
             if girth:
                 formatted_girth = str(girth).lower().replace('cm', '').replace('-', ' - ').replace('  ', ' ').strip()
-                # Apply cleanup rules after formatting
-                if any(pat in formatted_girth for pat in ["0'", "'0", '0"', '"0', "- 0", "-0"]):
+                # Apply cleanup rules after formatting: remove .0, .), 0', etc.
+                if any(pat in formatted_girth for pat in ["0'", "'0", '0"', '"0', "- 0", "-0", ".0", ".)"]):
                     formatted_girth = ""
 
             data_rows.append({
