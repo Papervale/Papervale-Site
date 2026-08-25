@@ -23,8 +23,8 @@ wb = load_workbook(xlsx_file)
 ws = wb.active
 rows = []
 
-# Read data from row 3 onwards (row 2 has headers)
-for row_idx in range(3, ws.max_row + 1):
+# Read data from row 5 onwards (rows 1-4 are header section in XLSX)
+for row_idx in range(5, ws.max_row + 1):
     sku = ws.cell(row=row_idx, column=1).value
     if sku is None:
         continue
@@ -37,6 +37,7 @@ for row_idx in range(3, ws.max_row + 1):
         'girth': ws.cell(row=row_idx, column=6).value,
         'price': ws.cell(row=row_idx, column=7).value,
         'stock': ws.cell(row=row_idx, column=8).value,
+        'order': ws.cell(row=row_idx, column=9).value,
     })
 
 date_str = datetime.now().strftime('%-d %B %Y')
@@ -56,17 +57,22 @@ doc = SimpleDocTemplate(
 # Build table data with header (matching Excel column order)
 header_row = [
     "SKU", "Botanical Name", "Common Name", "Pot Size",
-    "Height (cm)", "Girth (cm)", "Price (GBP)", "Stock"
+    "Height (cm)", "Girth (cm)", "Price (inc. vat)", "Stock", "Order"
 ]
 
 # Table rows
 table_data = [header_row]
 for row in rows:
-    try:
-        price = float(row['price']) if row['price'] else 0
-        price_str = f"{price:.2f}" if price > 0 else ""
-    except (ValueError, TypeError):
+    # Format price with £ symbol and 2 decimal places
+    if row['price']:
+        try:
+            price_val = float(str(row['price']).replace('£', ''))
+            price_str = f"£{price_val:.2f}"
+        except (ValueError, TypeError):
+            price_str = str(row['price']) if row['price'] else ""
+    else:
         price_str = ""
+
     table_data.append([
         str(row['sku']) if row['sku'] else "",
         row['botanical'] or "",
@@ -75,7 +81,8 @@ for row in rows:
         str(row['height']) if row['height'] else "",
         str(row['girth']) if row['girth'] else "",
         price_str,
-        str(row['stock']) if row['stock'] else ""
+        str(row['stock']) if row['stock'] else "",
+        ""  # Order column (blank)
     ])
 
 # Create table with styling
@@ -101,12 +108,16 @@ table.setStyle(TableStyle([
     # Alternating row colors
     ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, colors.HexColor('#f8f7f5')]),
 
-    # Right align price column (now column 6)
+    # Right align price column (column 6)
     ('ALIGN', (6, 1), (6, -1), 'RIGHT'),
 
-    # Stock column styling (now column 7)
+    # Stock column styling (column 7)
     ('ALIGN', (7, 1), (7, -1), 'CENTER'),
     ('FONTNAME', (7, 1), (7, -1), 'Helvetica-Bold'),
+
+    # Order column styling (column 8) with slightly darker green for visibility
+    ('ALIGN', (8, 1), (8, -1), 'CENTER'),
+    ('BACKGROUND', (8, 1), (8, -1), colors.HexColor('#B8D4B8')),
 ]))
 
 # Build story with header

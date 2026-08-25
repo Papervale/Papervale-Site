@@ -16,7 +16,8 @@ import requests
 import json
 from pathlib import Path
 from openpyxl import Workbook
-from openpyxl.styles import Font, PatternFill, Alignment
+from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+from openpyxl.drawing.image import Image as XLImage
 
 root = Path(__file__).parent.parent
 env_file = root / ".env"
@@ -80,21 +81,64 @@ def create_availability_xlsx(products):
     NOTE: Gift card and non-tree products are excluded. Each combination variant
           gets its own row. Only non-zero quantity variants are included.
     """
+    from datetime import datetime
+
     wb = Workbook()
     ws = wb.active
     ws.title = "Availability"
 
-    # Header row with styling — DO NOT REORDER OR MODIFY THESE COLUMNS
-    headers = ["SKU", "Botanical Name", "Common Name", "Pot Size", "Height (cm)", "Girth (cm)", "Price (GBP)", "Stock"]
+    # Add header section with logo and title
+    current_month = datetime.now().strftime('%B')
+    date_str = datetime.now().strftime('%-d %B %Y')
+
+    # Add logo image
+    logo_path = root / "assets" / "brand" / "Papervale_LogoMark_Colour_RGB.jpg"
+    if logo_path.exists():
+        try:
+            img = XLImage(str(logo_path))
+            img.width = 40
+            img.height = 40
+            ws.add_image(img, 'A1')
+            ws.row_dimensions[1].height = 45
+        except Exception as e:
+            print(f"  Warning: Could not insert logo: {e}")
+
+    # Row 1: Title and info (shifted to account for logo)
+    ws.merge_cells('C1:I1')
+    title_cell = ws.cell(row=1, column=3)
+    title_cell.value = "Papervale Trees"
+    title_cell.font = Font(bold=True, size=14)
+    title_cell.alignment = Alignment(horizontal="left", vertical="center")
+
+    # Row 2: Subtitle
+    ws.merge_cells('A2:I2')
+    subtitle_cell = ws.cell(row=2, column=1)
+    subtitle_cell.value = f"Spring / Summer 2026 Availability · Generated {date_str} · papervaletrees.com · 028 3085 0059"
+    subtitle_cell.font = Font(size=9)
+    subtitle_cell.alignment = Alignment(horizontal="left", vertical="center")
+    ws.row_dimensions[2].height = 15
+
+    # Add blank row for spacing
+    ws.row_dimensions[3].height = 5
+
+    # Table header row (now at row 4)
+    headers = ["SKU", "Botanical Name", "Common Name", "Pot Size", "Height (cm)", "Girth (cm)", "Price (inc. vat)", "Stock", "Order"]
     header_fill = PatternFill(start_color="334832", end_color="334832", fill_type="solid")
     header_font = Font(bold=True, color="FFFFFF", size=10)
+    header_border = Border(
+        left=Side(style='thin', color='FFFFFF'),
+        right=Side(style='thin', color='FFFFFF'),
+        top=Side(style='thin', color='FFFFFF'),
+        bottom=Side(style='thin', color='FFFFFF')
+    )
 
     for col_idx, header in enumerate(headers, 1):
-        cell = ws.cell(row=2, column=col_idx)
+        cell = ws.cell(row=4, column=col_idx)
         cell.value = header
         cell.fill = header_fill
         cell.font = header_font
         cell.alignment = Alignment(horizontal="left", vertical="center")
+        cell.border = header_border
 
     # Build data array, filter out gift cards and non-trees, then sort by botanical name
     data_rows = []
@@ -148,45 +192,29 @@ def create_availability_xlsx(products):
                 elif 'girth' in opt_name or 'circumference' in opt_name:
                     girth = opt_value
 
-            # Height: trim whitespace only, keep exactly as provided
-            formatted_height = str(height).strip() if height else ""
+            # Height: trim whitespace only, keep exactly as provided, add "cm" suffix
+            formatted_height = ""
+            if height:
+                h_str = str(height).strip()
+                # Add "cm" if not already present
+                if h_str and not h_str.lower().endswith('cm'):
+                    formatted_height = f"{h_str}cm"
+                else:
+                    formatted_height = h_str
 
-            # Girth: remove zero-only values (.0, 0., 0, etc.), trim whitespace for others
+            # Girth: remove zero-only values (0, .0, 0., 0', 0`, .), etc.), trim whitespace for others
             formatted_girth = ""
             if girth:
                 val_str = str(girth).strip()
-                # Check if girth is just zero (in various formats)
-                invalid_patterns = ["0'", "'0", '0"', '"0', "- 0", "-0", "0 -", ".0", "0."]
-                should_remove = False
 
-                if any(pattern in val_str for pattern in invalid_patterns):
-                    should_remove = True
-                else:
-                    # Check if it's just a zero after cleaning
-                    val_clean = val_str.strip().strip("'\"").strip().rstrip('.')
-                    if val_clean == '0' or val_clean == '' or not val_clean:
-                        should_remove = True
+                # Strip quotes, backticks, spaces, dots to get clean value for checking
+                val_clean = val_str.strip().strip("'\"`.").strip().rstrip('.').strip()
 
-                if not should_remove:
+                # Check if it's just zero (in any format) or empty/invalid characters
+                is_zero = val_clean == '0' or val_clean == '' or not val_clean
+
+                if not is_zero:
                     formatted_girth = val_str
-
-            # Format height and girth with better spacing, remove "cm", trim spaces
-            # Apply rules: remove leading/trailing spaces and invalid patterns
-            formatted_height = height
-            if height:
-                formatted_height = str(height).lower().replace('cm', '').replace('-', ' - ').replace('  ', ' ').strip()
-                # Apply cleanup rules after formatting
-                formatted_height = formatted_height.strip()  # Extra strip for safety
-                if any(pat in formatted_height for pat in ["0'", "'0", '0"', '"0', "- 0", "-0"]):
-                    formatted_height = ""
-
-            formatted_girth = girth
-            if girth:
-                formatted_girth = str(girth).lower().replace('cm', '').replace('-', ' - ').replace('  ', ' ').strip()
-                formatted_girth = formatted_girth.strip()  # Extra strip for safety
-                # Apply cleanup rules after formatting: remove .0, 0., .), 0', etc.
-                if any(pat in formatted_girth for pat in ["0'", "'0", '0"', '"0', "- 0", "-0", ".0", "0.", ".)"]):
-                    formatted_girth = ""
 
             data_rows.append({
                 'sku': combo_sku,
@@ -202,8 +230,19 @@ def create_availability_xlsx(products):
     # Sort by botanical name
     data_rows.sort(key=lambda x: (x['botanical'] or '').lower())
 
-    # Write sorted rows to XLSX
-    row_idx = 3
+    # Slightly darker light green for Order column for better visibility
+    order_fill = PatternFill(start_color="B8D4B8", end_color="B8D4B8", fill_type="solid")
+
+    # Border for Order column
+    thin_border = Border(
+        left=Side(style='thin', color='000000'),
+        right=Side(style='thin', color='000000'),
+        top=Side(style='thin', color='000000'),
+        bottom=Side(style='thin', color='000000')
+    )
+
+    # Write sorted rows to XLSX (starting at row 5, after header section)
+    row_idx = 5
     for row_data in data_rows:
         ws.cell(row=row_idx, column=1).value = row_data['sku']
         ws.cell(row=row_idx, column=2).value = row_data['botanical']
@@ -211,8 +250,15 @@ def create_availability_xlsx(products):
         ws.cell(row=row_idx, column=4).value = row_data['pot_size']
         ws.cell(row=row_idx, column=5).value = row_data['height']
         ws.cell(row=row_idx, column=6).value = row_data['girth']
-        ws.cell(row=row_idx, column=7).value = row_data['price']
+        ws.cell(row=row_idx, column=7).value = f"£{row_data['price']:.2f}"
         ws.cell(row=row_idx, column=8).value = row_data['quantity']
+
+        # Order column with light green background and visible borders
+        order_cell = ws.cell(row=row_idx, column=9)
+        order_cell.value = ""
+        order_cell.fill = order_fill
+        order_cell.border = thin_border
+
         row_idx += 1
 
     # Adjust column widths
@@ -222,15 +268,19 @@ def create_availability_xlsx(products):
     ws.column_dimensions['D'].width = 12  # Pot Size
     ws.column_dimensions['E'].width = 12  # Height (cm)
     ws.column_dimensions['F'].width = 12  # Girth (cm)
-    ws.column_dimensions['G'].width = 12  # Price (GBP)
+    ws.column_dimensions['G'].width = 12  # Price (inc. vat)
     ws.column_dimensions['H'].width = 10  # Stock
+    ws.column_dimensions['I'].width = 10  # Order
+
+    # Freeze header rows (rows 1-4) so they stay visible when scrolling
+    ws.freeze_panes = 'A5'
 
     # Save
     wb.save(str(xlsx_file))
     print(f"✓ XLSX created: {xlsx_file}")
-    print(f"  Total rows: {row_idx - 3}")
+    print(f"  Total rows: {row_idx - 5}")
 
-    return row_idx - 3
+    return row_idx - 5
 
 def main():
     """Main flow."""
