@@ -18,10 +18,21 @@ from pathlib import Path
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment
 
+root = Path(__file__).parent.parent
+env_file = root / ".env"
+if env_file.exists():
+    with open(env_file) as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith('#') and '=' in line:
+                key, value = line.split('=', 1)
+                os.environ[key.strip()] = value.strip()
+
 STORE_ID = "73482057"
-SECRET_TOKEN = os.getenv('ECWID_API_TOKEN')
+SECRET_TOKEN = os.getenv('ECWID_SECRET_TOKEN')
 if not SECRET_TOKEN:
-    print("✗ Error: ECWID_API_TOKEN environment variable not set")
+    print("✗ Error: ECWID_SECRET_TOKEN environment variable not set")
+    print("  Add your token to .env file: ECWID_SECRET_TOKEN=your_secret_token")
     exit(1)
 BASE_URL = f"https://app.ecwid.com/api/v3/{STORE_ID}"
 
@@ -62,11 +73,12 @@ def fetch_products():
     return products
 
 def create_availability_xlsx(products):
-    """Create XLSX with exact product data from Ecwid.
+    """Create XLSX with variant data from Ecwid combinations.
 
     CRITICAL: Column order and names must match existing file structure.
     Tree names from Ecwid must be preserved exactly — no reformatting or modification.
-    NOTE: Gift card and non-tree products are excluded. Data sorted by botanical name.
+    NOTE: Gift card and non-tree products are excluded. Each combination variant
+          gets its own row. Only non-zero quantity variants are included.
     """
     wb = Workbook()
     ws = wb.active
@@ -88,83 +100,75 @@ def create_availability_xlsx(products):
     data_rows = []
 
     for product in products:
-        sku = product.get('sku', '').replace(' - Base', '')  # Remove " - Base" suffix
         full_name = product.get('name', '')  # Original from Ecwid
+
+        # Skip gift cards and non-tree products
+        if 'gift' in full_name.lower():
+            continue
 
         # Split into botanical and common names
         parts = full_name.split(' / ')
         botanical = parts[0].strip() if parts else full_name
         common = parts[1].strip() if len(parts) > 1 else ""
 
-        price = product.get('price', 0)
-
-        # Calculate total quantity from combinations (variants)
-        quantity = 0
+        # Get combinations (variants) from product
         combinations = product.get('combinations', [])
-        if combinations:
-            quantity = sum(c.get('quantity', 0) for c in combinations)
-        else:
-            quantity = product.get('quantity', 0)
 
-        # Extract pot size, height, and girth from attributes, combinations
-        # NOTE: Remove zero/empty values (0, 0., 0 ) — leave blank if no valid measurement
-        pot_size = ""
-        height = ""
-        girth = ""
+        if not combinations:
+            # If no combinations, skip (we need variant data)
+            continue
 
-        # Try product attributes first
-        attributes = product.get('attributes', [])
-        for attr in attributes:
-            attr_name = attr.get('name', '').lower()
-            attr_value = attr.get('value', '')
-            if 'pot' in attr_name:
-                pot_size = attr_value
-            elif 'height' in attr_name:
-                height = attr_value
-            elif 'girth' in attr_name or 'circumference' in attr_name:
-                girth = attr_value
+        # Process each combination/variant
+        for combo in combinations:
+            quantity = combo.get('quantity', 0)
 
-        # Try combination options if no data found yet
-        if (not pot_size or not height or not girth) and combinations:
-            for combo in combinations:
-                options = combo.get('options', [])
-                for opt in options:
-                    opt_name = opt.get('name', '').lower()
-                    opt_value = opt.get('value', '')
-                    if 'pot' in opt_name and not pot_size:
-                        pot_size = opt_value
-                    elif 'height' in opt_name and not height:
-                        height = opt_value
-                    elif ('girth' in opt_name or 'circumference' in opt_name) and not girth:
-                        girth = opt_value
+            # Only include variants with qty > 0
+            if quantity <= 0:
+                continue
 
-        # Clean up invalid girth/height data
-        # NOTE: Remove patterns: 0, 0., 0 , '0, 0', 0', - 0, and other zero-only values
-        # Keep valid formats like: 50 - 75, 8/10, 200 - 225, etc.
-        for val_var in [('height', height), ('girth', girth)]:
-            val_name, val = val_var
-            if val:
-                val_str = str(val).strip()
-                # Check for invalid patterns: zero with quotes (0', '0), dash-zero (- 0, -0, etc.), etc.
-                invalid_patterns = ["0'", "'0", '0"', '"0', "- 0", "-0", "0 -"]
-                if any(pattern in val_str for pattern in invalid_patterns) or val_str.endswith("- 0"):
-                    if val_name == 'height':
-                        height = ""
-                    else:
-                        girth = ""
+            # Get SKU from combination
+            combo_sku = combo.get('sku', '').replace(' - Base', '')
+
+            # Get price from combination
+            price = combo.get('defaultDisplayedPrice', 0)
+
+            # Extract pot size, height, and girth from combination options
+            pot_size = ""
+            height = ""
+            girth = ""
+
+            options = combo.get('options', [])
+            for opt in options:
+                opt_name = opt.get('name', '').lower()
+                opt_value = opt.get('value', '')
+                if 'pot' in opt_name:
+                    pot_size = opt_value
+                elif 'height' in opt_name:
+                    height = opt_value
+                elif 'girth' in opt_name or 'circumference' in opt_name:
+                    girth = opt_value
+
+            # Height: trim whitespace only, keep exactly as provided
+            formatted_height = str(height).strip() if height else ""
+
+            # Girth: remove zero-only values (.0, 0., 0, etc.), trim whitespace for others
+            formatted_girth = ""
+            if girth:
+                val_str = str(girth).strip()
+                # Check if girth is just zero (in various formats)
+                invalid_patterns = ["0'", "'0", '0"', '"0', "- 0", "-0", "0 -", ".0", "0."]
+                should_remove = False
+
+                if any(pattern in val_str for pattern in invalid_patterns):
+                    should_remove = True
                 else:
-                    # Remove quotes and trailing dots for comparison
-                    val_clean = val_str.strip("'\"").rstrip('.')
-                    # Only remove if it's just a zero (with or without quotes/dots)
+                    # Check if it's just a zero after cleaning
+                    val_clean = val_str.strip().strip("'\"").strip().rstrip('.')
                     if val_clean == '0' or val_clean == '' or not val_clean:
-                        if val_name == 'height':
-                            height = ""
-                        else:
-                            girth = ""
+                        should_remove = True
 
-        # Skip gift cards, non-tree products, and zero stock items
-        if (sku and 'gift' not in sku.lower() and 'gift' not in full_name.lower()
-            and quantity > 0):  # Only include items with stock
+                if not should_remove:
+                    formatted_girth = val_str
 
             # Format height and girth with better spacing, remove "cm", trim spaces
             # Apply rules: remove leading/trailing spaces and invalid patterns
@@ -172,18 +176,20 @@ def create_availability_xlsx(products):
             if height:
                 formatted_height = str(height).lower().replace('cm', '').replace('-', ' - ').replace('  ', ' ').strip()
                 # Apply cleanup rules after formatting
+                formatted_height = formatted_height.strip()  # Extra strip for safety
                 if any(pat in formatted_height for pat in ["0'", "'0", '0"', '"0', "- 0", "-0"]):
                     formatted_height = ""
 
             formatted_girth = girth
             if girth:
                 formatted_girth = str(girth).lower().replace('cm', '').replace('-', ' - ').replace('  ', ' ').strip()
-                # Apply cleanup rules after formatting: remove .0, .), 0', etc.
-                if any(pat in formatted_girth for pat in ["0'", "'0", '0"', '"0', "- 0", "-0", ".0", ".)"]):
+                formatted_girth = formatted_girth.strip()  # Extra strip for safety
+                # Apply cleanup rules after formatting: remove .0, 0., .), 0', etc.
+                if any(pat in formatted_girth for pat in ["0'", "'0", '0"', '"0', "- 0", "-0", ".0", "0.", ".)"]):
                     formatted_girth = ""
 
             data_rows.append({
-                'sku': sku,
+                'sku': combo_sku,
                 'botanical': botanical,
                 'common': common,
                 'pot_size': pot_size,
