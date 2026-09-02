@@ -12,6 +12,7 @@ Example: "ACACIA melanoxylon / Australian Blackwood" stays exactly as-is (do not
 """
 
 import os
+import re
 import requests
 import json
 from pathlib import Path
@@ -227,8 +228,22 @@ def create_availability_xlsx(products):
                 'quantity': quantity,
             })
 
-    # Sort by botanical name
-    data_rows.sort(key=lambda x: (x['botanical'] or '').lower())
+    def numeric_sort_key(value):
+        """Sort blank values first, then display values by their first number."""
+        value_text = str(value or '').strip().lower()
+        if not value_text:
+            return (0, 0, '')
+
+        match = re.search(r'\d+(?:\.\d+)?', value_text)
+        if match:
+            return (1, float(match.group()), value_text)
+        return (2, float('inf'), value_text)
+
+    data_rows.sort(key=lambda x: (
+        (x['botanical'] or '').lower(),
+        numeric_sort_key(x['pot_size']),
+        numeric_sort_key(x['girth']),
+    ))
 
     # Slightly darker light green for Order column for better visibility
     order_fill = PatternFill(start_color="B8D4B8", end_color="B8D4B8", fill_type="solid")
