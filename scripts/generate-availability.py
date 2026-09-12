@@ -137,7 +137,7 @@ def header_footer(canvas, doc):
 
     canvas.setFont("Helvetica", 8)
     canvas.drawString(40*mm, landscape(A4)[1] - 22*mm,
-                      f"Spring / Summer 2026 Availability · {total_lines} stock lines · papervaletrees.com")
+                      f"{date_str} · {total_lines} stock lines · papervaletrees.com")
 
     # Right side metadata
     canvas.setFont("Helvetica", 8)

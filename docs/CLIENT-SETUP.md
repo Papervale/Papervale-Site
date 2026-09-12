@@ -115,7 +115,7 @@ The Excel file is now auto-generated from Ecwid product data and served directly
    ```
 3. Commit and push `files/availability-list-2026.xlsx`
 
-Without the token the script uses the cached `ecwid-products.json`. The heading in `availability.html` may need updating each season (currently: Spring / Summer 2026).
+Without the token the script uses the cached `ecwid-products.json`. The heading in `availability.html` can be updated as needed, but the date on the generated availability headers is sufficient and the seasonal label should be omitted.
 
 ---
 

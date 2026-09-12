@@ -114,7 +114,7 @@ def create_availability_xlsx(products):
     # Row 2: Subtitle
     ws.merge_cells('A2:I2')
     subtitle_cell = ws.cell(row=2, column=1)
-    subtitle_cell.value = f"Spring / Summer 2026 Availability · Generated {date_str} · papervaletrees.com · 028 3085 0059"
+    subtitle_cell.value = f"Generated {date_str} · papervaletrees.com · 028 3085 0059"
     subtitle_cell.font = Font(size=9)
     subtitle_cell.alignment = Alignment(horizontal="left", vertical="center")
     ws.row_dimensions[2].height = 15
