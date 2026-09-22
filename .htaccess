@@ -1,0 +1,20 @@
+# Cache control for optimized images (1 year)
+<FilesMatch "\.(jpg|jpeg|png|gif|webp)$">
+  Header set Cache-Control "max-age=31536000, public, immutable"
+  Header set Expires "Thu, 01 Jan 2027 00:00:00 GMT"
+</FilesMatch>
+
+# CSS and JS (1 week, with revalidation)
+<FilesMatch "\.(css|js)$">
+  Header set Cache-Control "max-age=604800, public"
+</FilesMatch>
+
+# HTML (no cache - always check)
+<FilesMatch "\.html?$">
+  Header set Cache-Control "max-age=0, must-revalidate, no-cache"
+</FilesMatch>
+
+# Enable compression for text files
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
