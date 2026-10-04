@@ -617,7 +617,7 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', set
   images.forEach((img, i) => {
     const thumb = document.createElement('div');
     thumb.className = 'lightbox-thumb';
-    thumb.innerHTML = `<img src="${img.src}" alt="">`;
+    thumb.innerHTML = '<img src="' + img.src + '" alt="Papervale Trees gallery image" loading="lazy">';
     thumb.addEventListener('click', () => goTo(i));
     lightboxThumbs.appendChild(thumb);
   });
